@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.2.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
+# gem 'mysql2', '>= 0.3.13', '< 0.5'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,6 +38,9 @@ gem 'turbolinks'
 gem 'foundation-rails', '~> 5.5.3.2'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 # gem 'will_paginate-foundation'
+
+# haml
+gem 'haml-rails', '~> 0.9'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
