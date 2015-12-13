@@ -11,3 +11,31 @@
 /log/*
 !/log/.keep
 /tmp
+
+### custom ignores
+# config
+config/database.yml
+
+# Backup files
+\#*
+*~
+.#*
+.DS_Store
+*.swp
+.directory
+.project
+
+# https://raw.github.com/github/gitignore/master/Rails.gitignore
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/vendor/bundle
+
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+
