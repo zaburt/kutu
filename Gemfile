@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.5'
+gem 'rails-i18n'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # gem 'mysql2', '>= 0.3.13', '< 0.5'
@@ -18,6 +19,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# gem 'jquery-ui-rails'
+# gem 'jquery-datatables-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -25,6 +29,7 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0', group: :doc
 
+# comes with devise
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -39,10 +44,11 @@ gem 'foundation-rails', '~> 5.5.3.2'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 # gem 'will_paginate-foundation'
 
-# haml
 gem 'haml-rails', '~> 0.9'
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 
 group :development, :test do
@@ -53,5 +59,13 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  gem 'annotate'
+  gem 'mailcatcher'
+  gem 'brakeman'
+  gem 'rubocop'
+
+  # gem 'flog'
+  # gem 'flay'
 end
 
