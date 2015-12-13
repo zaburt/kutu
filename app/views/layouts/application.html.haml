@@ -11,5 +11,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    = render 'layouts/header'
+    = render 'layouts/alerts'
+    #main.row.full-min-height
+      = yield
+    = render 'layouts/footer'
 
