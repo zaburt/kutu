@@ -1,0 +1,27 @@
+
+global: &global
+  adapter:   postgresql
+  encoding:  unicode
+  reconnect: false
+  pool:      5
+  # host:      localhost
+  # port:      5432
+  # url:       postgres://myuser:mypass@localhost/somedatabase
+  # schema_search_path: myapp,sharedapp,public
+  # min_messages: notice
+  username:  myuser
+  password:  mypassword
+
+
+development:
+  <<      :  *global
+  database:  kutu
+
+test:
+  <<      :  *global
+  database:  kutu_test
+
+production:
+  <<      :  *global
+  database:  kutu_production
+
