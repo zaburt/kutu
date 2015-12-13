@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     :sign_up => 'register'
   }
 
+  root :to => 'home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -62,7 +64,9 @@ Rails.application.routes.draw do
   #   end
 
 
-  root :to => 'home#index'
+  scope :path => '/home', :controller => :home, :as => :home do
+    get :index
+  end
 
 end
 
