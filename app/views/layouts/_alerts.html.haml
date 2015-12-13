@@ -1,0 +1,8 @@
+- if notice.present? || alert.present?
+  .row
+    - is_alert = alert.present? ? 'alert' : ''
+      .alert-box{'data-alert' => '', :class => is_alert}
+        = notice || alert
+        %a.close{:href => '#'}
+          &times;
+
