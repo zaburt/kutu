@@ -39,6 +39,17 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  ### custom settings
+
   # config.action_mailer.default_url_options = { :host => 'localhost:9000' }
 
+  # silence asset info in logs
+  # config.quiet_assets = false
+  # config.quiet_assets_paths << '/silent/'
+
+  # MailCatcher
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {:address => 'localhost', :port => 1025}
+
 end
+
