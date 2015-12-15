@@ -1,16 +1,34 @@
-%h2= t('.sign_in', :default => "Sign in")
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  - if devise_mapping.rememberable?
-    %div
-      = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit t('.sign_in', :default => "Sign in")
-= render "devise/shared/links"
+%fieldset
+  %legend
+    = t('.sign_in', :default => 'Sign in')
+
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    .row
+      .small-6.columns
+        = f.label :email, :class => 'inline'
+      .small-18.columns
+        = f.email_field :email
+    .row
+      .small-6.columns
+        = f.label :password, :class => 'inline'
+      .small-18.columns
+        = f.password_field :password
+    - if devise_mapping.rememberable?
+      .row
+        .small-6.columns
+          = f.label :remember_me
+        .small-18.columns
+          /.switch.round.small
+          /  .inline-block.left
+          /    = f.check_box :remember_me
+          /    = f.label :remember_me
+          = f.check_box :remember_me
+
+    .row
+      .small-6.columns.small-offset-18
+        = f.submit t('.sign_in', :default => 'Sign in'), :class => 'button radius small'
+
+  .row
+    .small-12.columns.small-offset-1
+      = render 'devise/shared/links'
+
