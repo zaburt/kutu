@@ -4,8 +4,7 @@
       %li.name
         %h1
           %a{:href => '/'}
-            %i.fi-play-video
-              Videos
+            %i.fi-home
       %li.toggle-topbar
         %a{:href => '#'}
           %span
@@ -13,8 +12,14 @@
 
     %section.top-bar-section
       %ul.right
-        %li
-          = link_to 'Register', '#'
-        %li
-          = link_to 'Login', '#'
+        - if signed_in?
+          %li
+            = link_to current_user.email, edit_user_registration_path
+          %li
+            = link_to 'Logout', destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to t('devise.shared.links.sign_up'), new_user_registration_path
+          %li
+            = link_to t('devise.shared.links.sign_in'), new_user_session_path
 
