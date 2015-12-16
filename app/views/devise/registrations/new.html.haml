@@ -2,28 +2,14 @@
   %legend
     = t('.sign_up', :default => 'Sign up')
 
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-    .row
-      = devise_error_messages!
-    .row
-      .small-6.columns
-        = f.label :email, :class => 'inline'
-      .small-18.columns
-        = f.email_field :email
-    .row
-      .small-6.columns
-        = f.label :password, :class => 'inline'
-      .small-18.columns
-        = f.password_field :password
-    .row
-      .small-6.columns
-        = f.label :password_confirmation, :class => 'inline'
-      .small-18.columns
-        = f.password_field :password_confirmation
-    .row
-      .small-6.columns.small-offset-18
-        = f.submit t('.sign_up', :default => 'Sign up'), :class => 'button radius small'
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    = f.submit t('.sign_up', :default => 'Sign up'), :class => 'button radius small small-offset-18'
 
-  .row
+.row
+  .small-12.columns.small-offset-1
     = render 'devise/shared/links'
 
