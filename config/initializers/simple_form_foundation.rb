@@ -57,7 +57,7 @@ SimpleForm.setup do |config|
     b.wrapper :right_input_wrapper, tag: :div, class: 'small-18 columns' do |ba|
       ba.use :input
       ba.use :error, wrap_with: { tag: :small, class: :error }
-      # ba.use :hint,  wrap_with: { tag: :span, class: :hint }
+      ba.use :hint,  wrap_with: { tag: :span, class: :hint }
     end
   end
 
