@@ -1,3 +1,6 @@
-.row
+%br
+%br
+.small-12.columns.small-offset-6
   Welcome
+  = current_user.try(:email) || 'stranger'
 
