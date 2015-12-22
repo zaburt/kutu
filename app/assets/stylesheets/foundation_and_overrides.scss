@@ -119,6 +119,14 @@ $total-columns: 24;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
+// $primary-color: #FF781F;
+// $primary-color: #D26319;
+// $primary-color: #1FC9D2;
+// $primary-color: #1BAEB6;
+// $primary-color: #A539B6;
+$primary-color: #699CA6;
+// $primary-color: #60A69E;
+
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -127,7 +135,8 @@ $total-columns: 24;
 
 // We use these to control various global styles
 // $body-bg: $white;
-$body-bg: repeating-linear-gradient(0deg, #eee, #ccc 5px);
+// $body-bg: repeating-linear-gradient(0deg, #eee, #ccc 5px);
+$body-bg: url(red_wood.jpg) no-repeat;
 
 // $body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
