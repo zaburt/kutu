@@ -1,0 +1,21 @@
+%h1 Listing game_categories
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @game_categories.each do |game_category|
+      %tr
+        %td= game_category.name
+        %td= link_to 'Show', game_category
+        %td= link_to 'Edit', edit_game_category_path(game_category)
+        %td= link_to 'Destroy', game_category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Game category', new_game_category_path

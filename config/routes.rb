@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :game_categories
   resources :houses
   # devise_for :users
   devise_for :users, :path_names => {
