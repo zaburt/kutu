@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :houses
   # devise_for :users
   devise_for :users, :path_names => {
     :sign_in => 'login',
