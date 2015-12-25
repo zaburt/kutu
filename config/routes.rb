@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pictures
   resources :games
   resources :cities
   resources :article_categories

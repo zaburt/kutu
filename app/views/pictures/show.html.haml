@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @picture.name
+%p
+  %b Game:
+  = @picture.game
+
+= link_to 'Edit', edit_picture_path(@picture)
+\|
+= link_to 'Back', pictures_path
