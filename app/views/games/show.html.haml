@@ -1,0 +1,51 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @game.name
+%p
+  %b Address:
+  = @game.address
+%p
+  %b City:
+  = @game.city
+%p
+  %b Game category:
+  = @game.game_category
+%p
+  %b House:
+  = @game.house
+%p
+  %b Phone:
+  = @game.phone
+%p
+  %b Email:
+  = @game.email
+%p
+  %b Website:
+  = @game.website
+%p
+  %b Facebook:
+  = @game.facebook
+%p
+  %b Twitter:
+  = @game.twitter
+%p
+  %b Instagram:
+  = @game.instagram
+%p
+  %b Lat:
+  = @game.lat
+%p
+  %b Lng:
+  = @game.lng
+%p
+  %b Story:
+  = @game.story
+%p
+  %b Game times:
+  = @game.game_times
+
+= link_to 'Edit', edit_game_path(@game)
+\|
+= link_to 'Back', games_path

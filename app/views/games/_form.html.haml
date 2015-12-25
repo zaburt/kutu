@@ -1,0 +1,22 @@
+= simple_form_for(@game) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :address
+    = f.association :city
+    = f.association :game_category
+    = f.association :house
+    = f.input :phone
+    = f.input :email
+    = f.input :website
+    = f.input :facebook
+    = f.input :twitter
+    = f.input :instagram
+    = f.input :lat
+    = f.input :lng
+    = f.input :story
+    = f.input :game_times
+
+  .form-actions
+    = f.button :submit

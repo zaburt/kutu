@@ -1,0 +1,49 @@
+%h1 Listing games
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Address
+      %th City
+      %th Game category
+      %th House
+      %th Phone
+      %th Email
+      %th Website
+      %th Facebook
+      %th Twitter
+      %th Instagram
+      %th Lat
+      %th Lng
+      %th Story
+      %th Game times
+      %th
+      %th
+      %th
+
+  %tbody
+    - @games.each do |game|
+      %tr
+        %td= game.name
+        %td= game.address
+        %td= game.city
+        %td= game.game_category
+        %td= game.house
+        %td= game.phone
+        %td= game.email
+        %td= game.website
+        %td= game.facebook
+        %td= game.twitter
+        %td= game.instagram
+        %td= game.lat
+        %td= game.lng
+        %td= game.story
+        %td= game.game_times
+        %td= link_to 'Show', game
+        %td= link_to 'Edit', edit_game_path(game)
+        %td= link_to 'Destroy', game, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Game', new_game_path
