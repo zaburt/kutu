@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :article_categories
   resources :game_categories
   resources :houses
   # devise_for :users
