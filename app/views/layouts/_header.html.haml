@@ -15,21 +15,21 @@
     %section.top-bar-section
       %ul
         %li
-          = link_to article_categories
+          = link_to 'article_categories', article_categories_path
         %li
-          = link_to articles
+          = link_to 'articles', articles_path
         %li
-          = link_to cities
+          = link_to 'cities', cities_path
         %li
-          = link_to game_categories
+          = link_to 'game_categories', game_categories_path
         %li
-          = link_to game_comments
+          = link_to 'game_comments', game_comments_path
         %li
-          = link_to games
+          = link_to 'games', games_path
         %li
-          = link_to houses
+          = link_to 'houses', houses_path
         %li
-          = link_to pictures
+          = link_to 'pictures', pictures_path
       %ul.right
         - if signed_in?
           %li

@@ -11,10 +11,94 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213214425) do
+ActiveRecord::Schema.define(version: 20151225015026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.boolean  "publish"
+    t.datetime "publish_time"
+    t.integer  "game_id"
+    t.integer  "picture_id"
+    t.text     "content"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "articles", ["game_id"], name: "index_articles_on_game_id", using: :btree
+  add_index "articles", ["picture_id"], name: "index_articles_on_picture_id", using: :btree
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "game_comments", ["game_id"], name: "index_game_comments_on_game_id", using: :btree
+  add_index "game_comments", ["user_id"], name: "index_game_comments_on_user_id", using: :btree
+
+  create_table "games", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.integer  "city_id"
+    t.integer  "game_category_id"
+    t.integer  "house_id"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "website"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.float    "lat"
+    t.float    "lng"
+    t.text     "story"
+    t.text     "game_times"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "games", ["city_id"], name: "index_games_on_city_id", using: :btree
+  add_index "games", ["game_category_id"], name: "index_games_on_game_category_id", using: :btree
+  add_index "games", ["house_id"], name: "index_games_on_house_id", using: :btree
+
+  create_table "houses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pictures", ["game_id"], name: "index_pictures_on_game_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +118,12 @@ ActiveRecord::Schema.define(version: 20151213214425) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "articles", "games"
+  add_foreign_key "articles", "pictures"
+  add_foreign_key "game_comments", "games"
+  add_foreign_key "game_comments", "users"
+  add_foreign_key "games", "cities"
+  add_foreign_key "games", "game_categories"
+  add_foreign_key "games", "houses"
+  add_foreign_key "pictures", "games"
 end
