@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  resources :game_comments
-  resources :articles
-  resources :pictures
-  resources :games
-  resources :cities
-  resources :article_categories
-  resources :game_categories
-  resources :houses
+
   # devise_for :users
   devise_for :users, :path_names => {
     :sign_in => 'login',
@@ -15,6 +8,27 @@ Rails.application.routes.draw do
   }
 
   root :to => 'home#index'
+
+  resources :article_categories
+
+  resources :articles
+
+  resources :cities
+
+  resources :game_categories
+
+  resources :game_comments
+
+  resources :games
+
+  scope :path => '/home', :controller => :home, :as => :home do
+    get :index
+  end
+
+  resources :houses
+
+  resources :pictures
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -71,10 +85,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-
-  scope :path => '/home', :controller => :home, :as => :home do
-    get :index
-  end
 
 end
 
