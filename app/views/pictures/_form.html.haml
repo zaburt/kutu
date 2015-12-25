@@ -4,6 +4,8 @@
   .form-inputs
     = f.input :name
     = f.association :game
+    = f.input :image, :as => :file
 
   .form-actions
     = f.button :submit
+

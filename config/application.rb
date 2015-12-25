@@ -51,6 +51,13 @@ module Kutu
     # force add fonts to asset pipeline
     # config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
+    # see Paperclip::Attachment.default_options
+    #
+    # config.paperclip_defaults = {
+    #   :url => '/system/:hash.:extension',
+    #   :hash_secret => '7112897296c6733b3e80cd621b6331031555d12b'
+    # }
+
   end
 end
 

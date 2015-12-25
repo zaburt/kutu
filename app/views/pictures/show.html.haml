@@ -6,6 +6,9 @@
 %p
   %b Game:
   = @picture.game
+%p
+  %b Image:
+  = image_tag @picture.image.url(:medium)
 
 = link_to 'Edit', edit_picture_path(@picture)
 \|
