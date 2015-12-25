@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Comment:
+  = @game_comment.comment
+%p
+  %b Game:
+  = @game_comment.game
+%p
+  %b User:
+  = @game_comment.user
+
+= link_to 'Edit', edit_game_comment_path(@game_comment)
+\|
+= link_to 'Back', game_comments_path

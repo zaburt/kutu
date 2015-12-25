@@ -1,0 +1,10 @@
+= simple_form_for(@game_comment) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :comment
+    = f.association :game
+    = f.association :user
+
+  .form-actions
+    = f.button :submit

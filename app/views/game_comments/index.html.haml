@@ -1,0 +1,25 @@
+%h1 Listing game_comments
+
+%table
+  %thead
+    %tr
+      %th Comment
+      %th Game
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @game_comments.each do |game_comment|
+      %tr
+        %td= game_comment.comment
+        %td= game_comment.game
+        %td= game_comment.user
+        %td= link_to 'Show', game_comment
+        %td= link_to 'Edit', edit_game_comment_path(game_comment)
+        %td= link_to 'Destroy', game_comment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Game comment', new_game_comment_path
