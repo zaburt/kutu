@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @article.title
+%p
+  %b Publish:
+  = @article.publish
+%p
+  %b Publish time:
+  = @article.publish_time
+%p
+  %b Game:
+  = @article.game
+%p
+  %b Picture:
+  = @article.picture
+%p
+  %b Content:
+  = @article.content
+%p
+  %b Created by:
+  = @article.created_by
+%p
+  %b Updated by:
+  = @article.updated_by
+
+= link_to 'Edit', edit_article_path(@article)
+\|
+= link_to 'Back', articles_path

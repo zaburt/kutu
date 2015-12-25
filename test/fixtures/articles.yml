@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  publish: false
+  publish_time: 2015-12-25 03:42:11
+  game_id: 
+  picture_id: 
+  content: MyText
+  created_by: 1
+  updated_by: 1
+
+two:
+  title: MyString
+  publish: false
+  publish_time: 2015-12-25 03:42:11
+  game_id: 
+  picture_id: 
+  content: MyText
+  created_by: 1
+  updated_by: 1
