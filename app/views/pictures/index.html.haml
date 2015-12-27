@@ -3,6 +3,8 @@
 %table
   %thead
     %tr
+      %th
+      %th File Name
       %th Name
       %th Game
       %th
@@ -12,12 +14,16 @@
   %tbody
     - @pictures.each do |picture|
       %tr
+        %td= image_tag picture.image.url(:thumb)
+        %td= picture.image_file_name
         %td= picture.name
         %td= picture.game
-        %td= link_to 'Show', picture
-        %td= link_to 'Edit', edit_picture_path(picture)
-        %td= link_to 'Destroy', picture, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to fonticon('eye'), picture, :title => 'View'
+        %td= link_to fonticon('pencil'), edit_picture_path(picture), :title => 'Edit'
+        %td= link_to fonticon('x', 'red'), picture, :method => :delete, :data => { :confirm => 'Are you sure?' }, :title => 'Delete'
 
 %br
 
 = link_to 'New Picture', new_picture_path
+= link_to 'New Multi Picture', new_multi_pictures_path
+

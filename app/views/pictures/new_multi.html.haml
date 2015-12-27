@@ -1,0 +1,18 @@
+%fieldset
+  %legend
+    Multiple Pictures
+
+  = simple_form_for(:multi_pictures, :url => create_multi_pictures_path, :method => :post) do |f|
+    = f.error_notification
+    .form-inputs
+      /= file_field_tag 'images[]', :type => :file, :multiple => true, :class => 'button small radius'
+      = f.input :images, :as => :file, :label => false,
+        :input_html => {:class => 'button small radius', :multiple => :multiple}
+
+    .form-actions
+      = f.button :submit, :class => 'button small radius small-offset-12'
+
+.row
+  .small-12.columns.small-offset-1
+    = link_to 'Back', pictures_path, :class => 'button small radius'
+

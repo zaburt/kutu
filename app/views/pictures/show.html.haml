@@ -1,14 +1,16 @@
 %p#notice= notice
 
 %p
+  = image_tag @picture.image.url(:medium)
+%p
   %b Name:
   = @picture.name
 %p
+  %b File Name:
+  = @picture.image_file_name
+%p
   %b Game:
   = @picture.game
-%p
-  %b Image:
-  = image_tag @picture.image.url(:medium)
 
 = link_to 'Edit', edit_picture_path(@picture)
 \|

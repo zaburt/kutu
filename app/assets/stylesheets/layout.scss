@@ -59,6 +59,21 @@ footer {
 
 body {
   background-size: cover;
+  background-repeat: repeat-y;
 }
 
+.fonticon {
+  font-size: 1.6em;
+  padding: 0 2px;
+  vertical-align: middle;
+}
+
+/*
+ * color alias
+ *
+ */
+
+.red {
+  color: red;
+}
 

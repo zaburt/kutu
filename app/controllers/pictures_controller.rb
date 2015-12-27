@@ -45,6 +45,25 @@ class PicturesController < ApplicationController
     redirect_to pictures_url, notice: 'Picture was successfully destroyed.'
   end
 
+  def new_multi
+  end
+
+  def create_multi
+    params.require(:multi_pictures)
+    all_processed = true
+
+    params[:multi_pictures][:images].each do |image|
+      Rails.logger.debug image.inspect
+      Picture.create(:image => image)
+    end
+
+    if all_processed
+      redirect_to pictures_path
+    else
+      render :new_multi
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_picture

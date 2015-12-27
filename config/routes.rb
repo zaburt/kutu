@@ -27,7 +27,12 @@ Rails.application.routes.draw do
 
   resources :houses
 
-  resources :pictures
+  resources :pictures do
+    collection do
+      get :new_multi
+      post :create_multi
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
