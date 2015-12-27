@@ -39,3 +39,7 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
+# paperclip
+/public/system
+
+
