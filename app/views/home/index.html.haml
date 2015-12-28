@@ -2,9 +2,6 @@
 %br
 %br
 %br
-/.small-12.columns.small-offset-6
-/  Welcome
-/  = current_user.try(:email) || 'stranger'
 
 .row
   .article_gallery.small-23.columns.small-centered
@@ -12,4 +9,11 @@
       /= link_to image_tag(article.picture.image(:medium))
       %a{:href => article_path(article), :title => article.title, :class => random_rotation_class}
         = image_tag article.picture.image(:medium), :alt => article.title, :title => article.title
+
+:javascript
+  $('.article_gallery a').draggable({
+    containment: '#main',
+    scroll: false
+  });
+
 
