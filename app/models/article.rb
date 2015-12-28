@@ -23,4 +23,8 @@
 class Article < ActiveRecord::Base
   belongs_to :game
   belongs_to :picture
+
+  scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
+
 end
+

@@ -1,6 +1,14 @@
 %br
 %br
-.small-12.columns.small-offset-6
-  Welcome
-  = current_user.try(:email) || 'stranger'
+/.small-12.columns.small-offset-6
+/  Welcome
+/  = current_user.try(:email) || 'stranger'
+
+.row.article_gallery
+  - @articles.each do |article|
+    .small-6.columns
+      .row
+        = image_tag article.picture.image(:medium)
+      .row
+        = article.title
 
