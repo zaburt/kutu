@@ -206,6 +206,74 @@ body {
   transform: rotate(-24deg);
 }
 
+/* box shadows */
+
+.box_shadow_bottom_full {
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.box_shadow_bottom_both {
+  position: relative;
+}
+
+.box_shadow_bottom_both:before,
+.box_shadow_bottom_both:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+
+.box_shadow_bottom_both:after {
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.box_shadow_bottom_left {
+  position: relative;
+}
+
+.box_shadow_bottom_left:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+}
+
+.box_shadow_bottom_right {
+  position: relative;
+}
+
+.box_shadow_bottom_right:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  right: 10px;
+  left: auto;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(3deg);
+}
+
 
 
 
