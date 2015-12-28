@@ -14,7 +14,11 @@
     = render 'layouts/header'
     = render 'layouts/alerts'
     #main.row.full-min-height
-      .small-24.large-16.columns.small-centered
-        = yield
+      - if @fullwidth
+        .small-24.columns.small-centered
+          = yield
+      - else
+        .small-24.large-16.columns.small-centered
+          = yield
     =# render 'layouts/footer'
 
