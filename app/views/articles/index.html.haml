@@ -1,4 +1,5 @@
-%h1 Listing articles
+%h1
+  = t('articles')
 
 %table
   %thead
@@ -26,10 +27,11 @@
         %td= article.content
         %td= article.created_by
         %td= article.updated_by
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to fonticon('eye'), article, :title => t('show')
+        %td= link_to fonticon('pencil'), edit_article_path(article), :title => t('edit')
+        %td= link_to fonticon('x', 'red'), article, :method => :delete, :data => { :confirm => t('Are you sure?') }, :title => t('delete')
 
 %br
 
-= link_to 'New Article', new_article_path
+= link_to t('new_article'), new_article_path, :class => 'button small radius'
+
