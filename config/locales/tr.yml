@@ -1,4 +1,9 @@
-
+---
 tr:
-  logout: 'Çıkış'
-
+  are_you_sure: Emin misiniz ?
+  articles: yazılar
+  delete: sil
+  edit: düzenle
+  logout: "çıkış"
+  new_article: yeni yazı
+  show: göster

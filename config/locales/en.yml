@@ -1,4 +1,9 @@
-
+---
 en:
-  logout: 'Logout'
-
+  are_you_sure: Are you sure ?
+  articles: articles
+  delete: delete
+  edit: edit
+  logout: logout
+  new_article: new article
+  show: show

@@ -1,5 +1,5 @@
 %h1
-  = t('articles')
+  = t('articles').titleize
 
 %table
   %thead
@@ -29,7 +29,7 @@
         %td= article.updated_by
         %td= link_to fonticon('eye'), article, :title => t('show')
         %td= link_to fonticon('pencil'), edit_article_path(article), :title => t('edit')
-        %td= link_to fonticon('x', 'red'), article, :method => :delete, :data => { :confirm => t('Are you sure?') }, :title => t('delete')
+        %td= link_to fonticon('x', 'red'), article, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 
