@@ -71,5 +71,7 @@ group :development do
 
   # gem 'flog'
   # gem 'flay'
+
+  gem 'i18n-tasks', '~> 0.9.2'
 end
 
