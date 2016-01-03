@@ -5,13 +5,13 @@ en:
   delete: Delete
   edit: Edit
   logout: Logout
-  new_article: New Article
   show: Show
   back: Back
   generic:
     new_model: "New %{name}"
     edit_model: "Edit %{name}"
     delete_model: "Delete %{name}"
+    show_model: "Show %{name}"
   activerecord:
     attributes:
       article:

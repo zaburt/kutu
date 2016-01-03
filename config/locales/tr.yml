@@ -5,13 +5,13 @@ tr:
   delete: Sil
   edit: Düzenle
   logout: "Çıkış"
-  new_article: Yeni Yazı
   show: Göster
   back: Geri
   generic:
     new_model: "Yeni %{name}"
     edit_model: "%{name} Düzenle"
     delete_model: "%{name} Sil"
+    show_model: "%{name} Göster"
   activerecord:
     attributes:
       article:

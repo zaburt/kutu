@@ -1,6 +1,6 @@
 %fieldset
   %legend
-    = t('new_article')
+    = t('generic.new_model', :name => Article.model_name.human)
 
   = render 'form'
 

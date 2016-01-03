@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Title:
   = @article.title
@@ -11,7 +9,7 @@
   = @article.publish_time
 %p
   %b Game:
-  = @article.game
+  = @article.game.try(:name)
 %p
   %b Picture:
   = @article.picture
@@ -20,11 +18,13 @@
   = @article.content
 %p
   %b Created by:
-  = @article.created_by
+  = @article.created_by.try(:display_name)
 %p
   %b Updated by:
-  = @article.updated_by
+  = @article.updated_by.try(:display_name)
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('edit'), edit_article_path(@article), :class => 'button radius small'
+    = link_to t('back'), articles_path, :class => 'button radius small'
+
