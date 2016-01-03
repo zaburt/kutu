@@ -1,17 +1,17 @@
 %h1
-  = t('articles').titleize
+  = t('articles')
 
 %table
   %thead
     %tr
-      %th Title
-      %th Publish
-      %th Publish time
-      %th Game
-      %th Picture
-      %th Content
-      %th Created by
-      %th Updated by
+      %th= t('activerecord.attributes.article.title')
+      %th= t('activerecord.attributes.article.publish')
+      %th= t('activerecord.attributes.article.publish_time')
+      %th= t('activerecord.attributes.article.game')
+      %th= t('activerecord.attributes.article.picture')
+      %th= t('activerecord.attributes.article.content')
+      %th= t('activerecord.attributes.article.created_by')
+      %th= t('activerecord.attributes.article.updated_by')
       %th
       %th
       %th
@@ -33,5 +33,5 @@
 
 %br
 
-= link_to t('new_article'), new_article_path, :class => 'button small radius'
+= link_to t('generic.new_model', :name => Article.model_name.human), new_article_path, :class => 'button small radius'
 

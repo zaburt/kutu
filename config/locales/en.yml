@@ -1,9 +1,29 @@
 ---
 en:
   are_you_sure: Are you sure ?
-  articles: articles
-  delete: delete
-  edit: edit
-  logout: logout
-  new_article: new article
-  show: show
+  articles: Articles
+  delete: Delete
+  edit: Edit
+  logout: Logout
+  new_article: New Article
+  show: Show
+  back: Back
+  generic:
+    new_model: "New %{name}"
+    edit_model: "Edit %{name}"
+    delete_model: "Delete %{name}"
+  activerecord:
+    attributes:
+      article:
+        publish: Publish
+        publish_time: Publish Time
+        title: Title
+        game: Game
+        picture: Picture
+        content: Content
+        created_by: Created By
+        updated_by: Updated By
+    models:
+      article: Article
+
+

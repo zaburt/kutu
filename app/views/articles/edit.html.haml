@@ -1,7 +1,13 @@
-%h1 Editing article
+%fieldset
+  %legend
+    = t('generic.edit_model', :name => Article.model_name.human)
+    \-
+    = @article.title
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @article
-\|
-= link_to 'Back', articles_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('show'), @article, :class => 'button radius small'
+    = link_to t('back'), articles_path, :class => 'button radius small'
+

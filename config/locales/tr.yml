@@ -1,9 +1,29 @@
 ---
 tr:
   are_you_sure: Emin misiniz ?
-  articles: yazılar
-  delete: sil
-  edit: düzenle
-  logout: "çıkış"
-  new_article: yeni yazı
-  show: göster
+  articles: Yazılar
+  delete: Sil
+  edit: Düzenle
+  logout: "Çıkış"
+  new_article: Yeni Yazı
+  show: Göster
+  back: Geri
+  generic:
+    new_model: "Yeni %{name}"
+    edit_model: "%{name} Düzenle"
+    delete_model: "%{name} Sil"
+  activerecord:
+    attributes:
+      article:
+        publish: Yayınla
+        publish_time: Yayın Zamanı
+        title: Başlık
+        game: Oyun
+        picture: Görsel
+        content: İçerik
+        created_by: Oluşturan
+        updated_by: Güncelleyen
+    models:
+      article: Yazı
+
+

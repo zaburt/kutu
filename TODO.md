@@ -5,6 +5,9 @@ Tasks
     - add house seed
     - add game seed
     - cleanup seed for article content
+    - 404 500 pages
+    - simple_form time values styling
+    - simple_form created_by / updated_by
     - style article show
     - style tables (datatables ?)
     - caption support to images
