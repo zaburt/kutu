@@ -1,26 +1,34 @@
 %p
-  %b Title:
+  %b
+    = t('activerecord.attributes.article.title')
   = @article.title
 %p
-  %b Publish:
+  %b
+    = t('activerecord.attributes.article.publish')
   = @article.publish
 %p
-  %b Publish time:
+  %b
+    = t('activerecord.attributes.article.publish_time')
   = @article.publish_time
 %p
-  %b Game:
+  %b
+    = t('activerecord.attributes.article.game')
   = @article.game.try(:name)
 %p
-  %b Picture:
+  %b
+    = t('activerecord.attributes.article.picture')
   = @article.picture
 %p
-  %b Content:
+  %b
+    = t('activerecord.attributes.article.content')
   = @article.content
 %p
-  %b Created by:
+  %b
+    = t('activerecord.attributes.article.created_by')
   = @article.created_by.try(:display_name)
 %p
-  %b Updated by:
+  %b
+    = t('activerecord.attributes.article.updated_by')
   = @article.updated_by.try(:display_name)
 
 .row

@@ -1,16 +1,20 @@
 %p
   = image_tag @picture.image.url(:medium)
 %p
-  %b Name:
+  %b
+    = t('activerecord.attributes.picture.name')
   = @picture.name
 %p
-  %b File Name:
+  %b
+    = t('activerecord.attributes.picture.file_name')
   = @picture.image_file_name
 %p
-  %b Caption:
+  %b
+    = t('activerecord.attributes.picture.caption')
   = @picture.caption
 %p
-  %b Game:
+  %b
+    = t('activerecord.attributes.picture.game')
   = @picture.game
 
 .row
