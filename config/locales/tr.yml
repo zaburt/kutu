@@ -39,5 +39,10 @@ tr:
       article: Yazı
       article_category: Yazı Kategorisi
       city: Şehir
+      game_category: Oyun Kategorisi
+      game_comment: Oyun Yorumu
+      game: Oyun
+      house: Ev
+      picture: Görsel
 
 

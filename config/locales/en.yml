@@ -39,5 +39,9 @@ en:
       article: Article
       article_category: Article Category
       city: City
-
+      game_category: Game Category
+      game_comment: Game Comment
+      game: Game
+      house: House
+      picture: Picture
 
