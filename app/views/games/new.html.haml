@@ -1,5 +1,10 @@
-%h1 New game
+%fieldset
+  %legend
+    = t('generic.new_model', :name => Game.model_name.human)
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Back', games_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('back'), games_path, :class => 'button radius small'
+

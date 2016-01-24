@@ -2,6 +2,14 @@
 en:
   are_you_sure: Are you sure ?
   articles: Articles
+  article_categories: Article Categories
+  cities: Cities
+  game_categories: Game Categories
+  game_comments: Game Comments
+  games: Games
+  home: Main Page
+  houses: Houses
+  pictures: Pictures
   delete: Delete
   edit: Edit
   logout: Logout
@@ -23,7 +31,13 @@ en:
         content: Content
         created_by: Created By
         updated_by: Updated By
+      article_category:
+        name: Name
+      city:
+        name: Name
     models:
       article: Article
+      article_category: Article Category
+      city: City
 
 

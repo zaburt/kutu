@@ -1,13 +1,14 @@
-%h1 Listing pictures
+%h1
+  = t('pictures')
 
 %table
   %thead
     %tr
       %th
-      %th File Name
-      %th Name
-      %th Caption
-      %th Game
+      %th= t('activerecord.attributes.picture.file_name')
+      %th= t('activerecord.attributes.picture.name')
+      %th= t('activerecord.attributes.picture.caption')
+      %th= t('activerecord.attributes.picture.game')
       %th
       %th
       %th
@@ -26,6 +27,6 @@
 
 %br
 
-= link_to 'New Picture', new_picture_path
-= link_to 'New Multi Picture', new_multi_pictures_path
+= link_to t('generic.new_model', :name => Picture.model_name.human), new_picture_path, :class => 'button small radius'
+= link_to t('new_multi_picture'), new_multi_pictures_path, :class => 'button small radius'
 

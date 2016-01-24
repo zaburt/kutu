@@ -1,9 +1,10 @@
-%h1 Listing houses
+%h1
+  = t('houses')
 
 %table
   %thead
     %tr
-      %th Name
+      %th= t('activerecord.attributes.house.name')
       %th
       %th
       %th
@@ -12,10 +13,11 @@
     - @houses.each do |house|
       %tr
         %td= house.name
-        %td= link_to 'Show', house
-        %td= link_to 'Edit', edit_house_path(house)
-        %td= link_to 'Destroy', house, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to fonticon('eye'), house, :title => t('show')
+        %td= link_to fonticon('pencil'), edit_house_path(house), :title => t('edit')
+        %td= link_to fonticon('x', 'red'), house, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 
-= link_to 'New House', new_house_path
+= link_to t('generic.new_model', :name => House.model_name.human), new_house_path, :class => 'button small radius'
+

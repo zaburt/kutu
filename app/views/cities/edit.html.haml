@@ -1,7 +1,13 @@
-%h1 Editing city
+%fieldset
+  %legend
+    = t('generic.edit_model', :name => City.model_name.human)
+    \-
+    = @city.title
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @city
-\|
-= link_to 'Back', cities_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('show'), @city, :class => 'button radius small'
+    = link_to t('back'), cities_path, :class => 'button radius small'
+

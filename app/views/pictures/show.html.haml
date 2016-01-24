@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   = image_tag @picture.image.url(:medium)
 %p
@@ -15,6 +13,8 @@
   %b Game:
   = @picture.game
 
-= link_to 'Edit', edit_picture_path(@picture)
-\|
-= link_to 'Back', pictures_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('edit'), edit_picture_path(@picture), :class => 'button radius small'
+    = link_to t('back'), pictures_path, :class => 'button radius small'
+

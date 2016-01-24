@@ -1,7 +1,11 @@
-%h1 Editing game_comment
+%fieldset
+  %legend
+    = t('generic.edit_model', :name => GameComment.model_name.human)
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @game_comment
-\|
-= link_to 'Back', game_comments_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('show'), @game_comment, :class => 'button radius small'
+    = link_to t('back'), game_comments_path, :class => 'button radius small'
+

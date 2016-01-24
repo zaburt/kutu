@@ -1,7 +1,13 @@
-%h1 Editing game_category
+%fieldset
+  %legend
+    = t('generic.edit_model', :name => GameCategory.model_name.human)
+    \-
+    = @game_category.title
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @game_category
-\|
-= link_to 'Back', game_categories_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('show'), @game_category, :class => 'button radius small'
+    = link_to t('back'), game_categories_path, :class => 'button radius small'
+

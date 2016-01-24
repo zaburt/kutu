@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Name:
   = @game.name
@@ -46,6 +44,8 @@
   %b Game times:
   = @game.game_times
 
-= link_to 'Edit', edit_game_path(@game)
-\|
-= link_to 'Back', games_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('edit'), edit_game_path(@game), :class => 'button radius small'
+    = link_to t('back'), games_path, :class => 'button radius small'
+

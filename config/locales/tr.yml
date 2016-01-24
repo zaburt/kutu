@@ -2,6 +2,14 @@
 tr:
   are_you_sure: Emin misiniz ?
   articles: Yazılar
+  article_categories: Yazı Kategorileri
+  cities: Şehirler
+  game_categories: Oyun Kategorileri
+  game_comments: Oyun Yorumları
+  games: Oyunlar
+  home: Ana Sayfa
+  houses: Evler
+  pictures: Görseller
   delete: Sil
   edit: Düzenle
   logout: "Çıkış"
@@ -23,7 +31,13 @@ tr:
         content: İçerik
         created_by: Oluşturan
         updated_by: Güncelleyen
+      article_category:
+        name: İsim
+      city:
+        name: İsim
     models:
       article: Yazı
+      article_category: Yazı Kategorisi
+      city: Şehir
 
 

@@ -1,7 +1,13 @@
-%h1 Editing picture
+%fieldset
+  %legend
+    = t('generic.edit_model', :name => Picture.model_name.human)
+    \-
+    = @picture.title
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @picture
-\|
-= link_to 'Back', pictures_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('show'), @picture, :class => 'button radius small'
+    = link_to t('back'), pictures_path, :class => 'button radius small'
+

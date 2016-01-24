@@ -1,9 +1,10 @@
-%h1 Listing cities
+%h1
+  = t('cities')
 
 %table
   %thead
     %tr
-      %th Name
+      %th= t('activerecord.attributes.city.name')
       %th
       %th
       %th
@@ -12,10 +13,11 @@
     - @cities.each do |city|
       %tr
         %td= city.name
-        %td= link_to 'Show', city
-        %td= link_to 'Edit', edit_city_path(city)
-        %td= link_to 'Destroy', city, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to fonticon('eye'), city, :title => t('show')
+        %td= link_to fonticon('pencil'), edit_city_path(city), :title => t('edit')
+        %td= link_to fonticon('x', 'red'), city, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 
-= link_to 'New City', new_city_path
+= link_to t('generic.new_model', :name => City.model_name.human), new_city_path, :class => 'button small radius'
+

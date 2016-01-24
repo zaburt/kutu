@@ -1,9 +1,9 @@
-%p#notice= notice
-
 %p
   %b Name:
   = @city.name
 
-= link_to 'Edit', edit_city_path(@city)
-\|
-= link_to 'Back', cities_path
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('edit'), edit_city_path(@city), :class => 'button radius small'
+    = link_to t('back'), cities_path, :class => 'button radius small'
+

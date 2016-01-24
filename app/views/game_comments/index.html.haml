@@ -1,11 +1,12 @@
-%h1 Listing game_comments
+%h1
+  = t('game_comments')
 
 %table
   %thead
     %tr
-      %th Comment
-      %th Game
-      %th User
+      %th= t('activerecord.attributes.game_comment.comment')
+      %th= t('activerecord.attributes.game_comment.game')
+      %th= t('activerecord.attributes.game_comment.user')
       %th
       %th
       %th
@@ -16,10 +17,11 @@
         %td= game_comment.comment
         %td= game_comment.game
         %td= game_comment.user
-        %td= link_to 'Show', game_comment
-        %td= link_to 'Edit', edit_game_comment_path(game_comment)
-        %td= link_to 'Destroy', game_comment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to fonticon('eye'), game_comment, :title => t('show')
+        %td= link_to fonticon('pencil'), edit_game_comment_path(game_comment), :title => t('edit')
+        %td= link_to fonticon('x', 'red'), game_comment, :method => :delete, :data => { :confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 
-= link_to 'New Game comment', new_game_comment_path
+= link_to t('generic.new_model', :name => GameComment.model_name.human), new_game_comment_path, :class => 'button small radius'
+
