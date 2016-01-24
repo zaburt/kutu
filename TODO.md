@@ -23,11 +23,11 @@ Tasks
     + i18n articles
     + i18n cities
     + i18n game_categories
-    - i18n game_comments
-    - i18n games
-    - i18n houses
-    - i18n pictures
-    - i18n show views
+    + i18n game_comments
+    + i18n games
+    + i18n houses
+    + i18n pictures
+    + i18n show views
     - i18n home
 
 
