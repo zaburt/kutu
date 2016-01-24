@@ -1,48 +1,77 @@
 ---
 tr:
-  are_you_sure: Emin misiniz ?
-  articles: Yazılar
-  article_categories: Yazı Kategorileri
-  cities: Şehirler
-  game_categories: Oyun Kategorileri
-  game_comments: Oyun Yorumları
-  games: Oyunlar
-  home: Ana Sayfa
-  houses: Evler
-  pictures: Görseller
-  delete: Sil
-  edit: Düzenle
-  logout: "Çıkış"
-  show: Göster
-  back: Geri
-  generic:
-    new_model: "Yeni %{name}"
-    edit_model: "%{name} Düzenle"
-    delete_model: "%{name} Sil"
-    show_model: "%{name} Göster"
   activerecord:
     attributes:
       article:
+        content: İçerik
+        created_by: Oluşturan
+        game: Oyun
+        picture: Görsel
         publish: Yayınla
         publish_time: Yayın Zamanı
         title: Başlık
-        game: Oyun
-        picture: Görsel
-        content: İçerik
-        created_by: Oluşturan
         updated_by: Güncelleyen
       article_category:
         name: İsim
       city:
         name: İsim
+      game:
+        address: Adres
+        city: Şehir
+        email: Eposta
+        facebook: Facebook
+        game_category: Oyun Kategorisi
+        game_times: Oyun Zamanları
+        house: Ev
+        instagram: Instagram
+        lat: Latitude
+        lng: Longitude
+        name: İsim
+        phone: Telefon
+        story: Hikaye
+        twitter: Twitter
+        website: Web Sitesi
+      game_category:
+        name: İsim
+      game_comment:
+        comment: Yorum
+        game: Oyun
+        user: Kullanıcı
+      house:
+        name: İsim
+      picture:
+        caption: Altyazı
+        file_name: Dosya Adı
+        game: Oyun
+        name: İsim
     models:
       article: Yazı
       article_category: Yazı Kategorisi
       city: Şehir
+      game: Oyun
       game_category: Oyun Kategorisi
       game_comment: Oyun Yorumu
-      game: Oyun
       house: Ev
       picture: Görsel
-
+  are_you_sure: Emin misiniz ?
+  article_categories: Yazı Kategorileri
+  articles: Yazılar
+  back: Geri
+  cities: Şehirler
+  delete: Sil
+  edit: Düzenle
+  game_categories: Oyun Kategorileri
+  game_comments: Oyun Yorumları
+  games: Oyunlar
+  generic:
+    delete_model: "%{name} Sil"
+    edit_model: "%{name} Düzenle"
+    new_model: Yeni %{name}
+    show_model: "%{name} Göster"
+  home: Ana Sayfa
+  houses: Evler
+  logout: Çıkış
+  new_multi_picture: Çoklu Resim Yükle
+  pictures: Görseller
+  show: Göster
 
