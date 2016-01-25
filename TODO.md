@@ -19,6 +19,7 @@ Tasks
     - disable user registration
     - style article show
     - 404 500 pages
+    - google analytics
     + i18n article_categories
     + i18n articles
     + i18n cities
