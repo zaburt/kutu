@@ -12,6 +12,7 @@ Tasks
     - Finish simple_form conversion on forms
     - front page optimize image layout
     - shared reveal image selector
+    - multiple pictures for articles
     - user management
     - show hide menu items for anonymous users
     - disable user registration
