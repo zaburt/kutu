@@ -2,6 +2,7 @@
 Tasks
 =======
 
+    - setup rbenv for secrets
     - add house seed
     - add game seed
     - cleanup seed for article content
