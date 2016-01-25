@@ -45,14 +45,19 @@ class GameCommentsController < ApplicationController
     redirect_to game_comments_url, notice: 'Game comment was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game_comment
-      @game_comment = GameComment.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def game_comment_params
-      params.require(:game_comment).permit(:comment, :game_id, :user_id)
-    end
+  private
+
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game_comment
+    @game_comment = GameComment.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def game_comment_params
+    params.require(:game_comment).permit(:comment, :game_id, :user_id)
+  end
+
 end
+

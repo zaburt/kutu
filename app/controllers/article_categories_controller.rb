@@ -46,13 +46,16 @@ class ArticleCategoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article_category
-      @article_category = ArticleCategory.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def article_category_params
-      params.require(:article_category).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article_category
+    @article_category = ArticleCategory.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def article_category_params
+    params.require(:article_category).permit(:name)
+  end
+
 end
+

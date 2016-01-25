@@ -57,7 +57,7 @@ module Kutu
     #   :url => '/system/:hash.:extension',
     #   :hash_secret => '7112897296c6733b3e80cd621b6331031555d12b'
     # }
-
   end
+
 end
 

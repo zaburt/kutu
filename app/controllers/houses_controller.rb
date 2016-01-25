@@ -45,14 +45,19 @@ class HousesController < ApplicationController
     redirect_to houses_url, notice: 'House was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_house
-      @house = House.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def house_params
-      params.require(:house).permit(:name)
-    end
+  private
+
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_house
+    @house = House.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def house_params
+    params.require(:house).permit(:name)
+  end
+
 end
+

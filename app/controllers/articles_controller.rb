@@ -45,14 +45,19 @@ class ArticlesController < ApplicationController
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def article_params
-      params.require(:article).permit(:title, :publish, :publish_time, :game_id, :picture_id, :content, :created_by, :updated_by)
-    end
+  private
+
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def article_params
+    params.require(:article).permit(:title, :publish, :publish_time, :game_id, :picture_id, :content, :created_by, :updated_by)
+  end
+
 end
+

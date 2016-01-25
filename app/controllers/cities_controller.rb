@@ -45,14 +45,19 @@ class CitiesController < ApplicationController
     redirect_to cities_url, notice: 'City was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_city
-      @city = City.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def city_params
-      params.require(:city).permit(:name)
-    end
+  private
+
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_city
+    @city = City.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def city_params
+    params.require(:city).permit(:name)
+  end
+
 end
+

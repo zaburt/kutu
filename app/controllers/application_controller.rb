@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   private
 
+
   SKIP_AUTH_FOR = {
     'home' => ['index']
   }

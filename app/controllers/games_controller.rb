@@ -45,14 +45,19 @@ class GamesController < ApplicationController
     redirect_to games_url, notice: 'Game was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game
-      @game = Game.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def game_params
-      params.require(:game).permit(:name, :address, :city_id, :game_category_id, :house_id, :phone, :email, :website, :facebook, :twitter, :instagram, :lat, :lng, :story, :game_times)
-    end
+  private
+
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game
+    @game = Game.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def game_params
+    params.require(:game).permit(:name, :address, :city_id, :game_category_id, :house_id, :phone, :email, :website, :facebook, :twitter, :instagram, :lat, :lng, :story, :game_times)
+  end
+
 end
+
