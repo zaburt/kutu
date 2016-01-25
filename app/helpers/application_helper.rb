@@ -35,5 +35,10 @@ module ApplicationHelper
     BOX_SHADOW_CLASS.sample
   end
 
+  def image_tag_for_picture(picture, img_size = :thumb)
+    return nil if picture.blank? || picture.image.blank?
+    image_tag(picture.image.url(img_size))
+  end
+
 end
 
