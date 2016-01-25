@@ -13,14 +13,14 @@ module ApplicationHelper
     # 'rotate_minus_20',
     # 'rotate_24',
     # 'rotate_minus_24'
-  ]
+  ].freeze
 
   BOX_SHADOW_CLASS = [
     'box_shadow_bottom_full',
     'box_shadow_bottom_left',
     'box_shadow_bottom_right',
     'box_shadow_bottom_both'
-  ]
+  ].freeze
 
   def fonticon(iconname, customclass = '')
     # haml_tag :i, :class => "fi-#{iconname} #{customclass} fonticon"

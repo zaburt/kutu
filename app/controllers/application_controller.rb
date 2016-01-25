@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
 
   SKIP_AUTH_FOR = {
     'home' => ['index']
-  }
+  }.freeze
 
   REQUIRE_AUTH_FOR = [
     'admin'
-  ]
+  ].freeze
 
   def authenticate_as_needed!
     return if SKIP_AUTH_FOR.include?(controller_name) && SKIP_AUTH_FOR[controller_name].include?(action_name)
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_dynamic_hosts
-    ActionController::Base.asset_host = Proc.new { |source, request|
+    ActionController::Base.asset_host = proc { |_source, request|
       "#{request.protocol}#{request.host_with_port}"
     }
 
