@@ -37,8 +37,8 @@
           %li
             = link_to t('logout'), destroy_user_session_path, method: :delete
         - else
-          %li
-            = link_to t('devise.shared.links.sign_up'), new_user_registration_path
+          /%li
+          /  = link_to t('devise.shared.links.sign_up'), new_user_registration_path
           %li
             = link_to t('devise.shared.links.sign_in'), new_user_session_path
 

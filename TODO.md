@@ -15,7 +15,7 @@ Tasks
  - multiple pictures for articles
  - user management
  - show hide menu items for anonymous users
- - disable user registration
+ + disable user registration
  - style article show
  - 404 500 pages
  - setup rbenv for secrets
