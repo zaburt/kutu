@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require console_fallback
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
