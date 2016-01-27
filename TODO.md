@@ -2,7 +2,6 @@
 Tasks
 =======
 
- - setup rbenv for secrets
  - add house seed
  - add game seed
  - cleanup seed for article content
@@ -19,6 +18,7 @@ Tasks
  - disable user registration
  - style article show
  - 404 500 pages
+ - setup rbenv for secrets
  - google analytics
  + i18n article_categories
  + i18n articles
