@@ -6,10 +6,10 @@ Tasks
  - add game seed
  - cleanup seed for article content
  - simple_form time value styling
- - simple_form created_by / updated_by
+ + simple_form created_by / updated_by
  - style tables (datatables ?)
  - caption support to images
- - Finish simple_form conversion on forms
+ + Finish simple_form conversion on forms
  - front page optimize image layout
  - shared reveal image selector
  - multiple pictures for articles
