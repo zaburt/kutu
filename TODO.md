@@ -2,6 +2,7 @@
 Tasks
 =======
 
+ - make article form textbox bigger
  - add house seed
  - add game seed
  - cleanup seed for article content
@@ -11,7 +12,7 @@ Tasks
  - caption support to images
  + Finish simple_form conversion on forms
  - front page optimize image layout
- - shared reveal image selector
+ + shared reveal image selector
  - multiple pictures for articles
  - user management
  - show hide menu items for anonymous users

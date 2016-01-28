@@ -22,6 +22,8 @@ module ApplicationHelper
     'box_shadow_bottom_both'
   ].freeze
 
+  QUESTION_MARK_IMAGE_URL = '/assets/question_mark.svg'
+
   def fonticon(iconname, customclass = '')
     # haml_tag :i, :class => "fi-#{iconname} #{customclass} fonticon"
     "<i class='fi-#{iconname} #{customclass} fonticon'></i>".html_safe
@@ -38,6 +40,11 @@ module ApplicationHelper
   def image_tag_for_picture(picture, img_size = :thumb)
     return nil if picture.blank? || picture.image.blank?
     image_tag(picture.image.url(img_size))
+  end
+
+  def image_thumb_url_or_fallback(picture)
+    return QUESTION_MARK_IMAGE_URL if picture.blank?
+    picture.image.url(:thumb)
   end
 
 end

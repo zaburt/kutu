@@ -1,0 +1,38 @@
+- form_attr_raw_name = "#{form_attr.to_s}_id"
+- model_element_name = form_object.model_name.element
+- form_attr_input_raw_name = "#{model_element_name}_#{form_attr_raw_name}"
+
+#image_selector_modal.reveal-modal.large{'data-reveal' => ''}
+  %h2
+    = t('select_an_image')
+  - Picture.order('updated_at DESC').each do |picture|
+    %a.image_selector_picture{:href => 'javascript:void(0);', 'data-image-id' => picture.id, 'data-thumb-url' => picture.image.url(:thumb)}
+      = image_tag picture.image.url(:medium), :title => picture.image_file_name
+
+  %a.close-reveal-modal
+    &times;
+
+= f.input form_attr_raw_name, :as => :hidden
+
+.row
+  .small-6.columns
+    = f.label form_attr
+  .small-18.columns
+    %a{'data-reveal-id' => 'image_selector_modal'}
+      - picture_obj = form_object.try(form_attr)
+      = image_tag image_thumb_url_or_fallback(picture_obj), :id => :form_image_preview, :class => 'image_thumb_preview'
+
+%br
+
+:javascript
+  $('.image_selector_picture').on('click', function(k) {
+    var selected_image_id = $(this).data('image-id');
+    var selected_image_thumb = $(this).data('thumb-url');
+    console.log('selected_image: ' + selected_image_id);
+
+    $('##{form_attr_input_raw_name}').val(selected_image_id);
+    $('#form_image_preview').attr('src', selected_image_thumb);
+
+    $('#image_selector_modal').foundation('reveal', 'close');
+  });
+
