@@ -3,8 +3,7 @@
 - form_attr_input_raw_name = "#{model_element_name}_#{form_attr_raw_name}"
 
 #image_selector_modal.reveal-modal.large{'data-reveal' => ''}
-  %h2
-    = t('select_an_image')
+  %br
   - Picture.order('updated_at DESC').each do |picture|
     %a.image_selector_picture{:href => 'javascript:void(0);', 'data-image-id' => picture.id, 'data-thumb-url' => picture.image.url(:thumb)}
       = image_tag picture.image.url(:medium), :title => picture.image_file_name
