@@ -2,7 +2,7 @@
 Tasks
 =======
 
- - make article form textbox bigger
+ + make article form textbox bigger
  - add house seed
  - add game seed
  - cleanup seed for article content
