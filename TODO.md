@@ -11,6 +11,7 @@ caption support to images
 front page optimize image layout
 multiple pictures for articles
 user management
+hidden user comments for games
 show hide menu items for anonymous users
 style article show
 404 500 pages
