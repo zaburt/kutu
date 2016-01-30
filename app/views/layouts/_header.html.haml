@@ -32,8 +32,8 @@
           = link_to t('pictures'), pictures_path
       %ul.right
         - if signed_in?
-          %li
-            = link_to current_user.email, edit_user_registration_path
+          /%li
+          /  = link_to current_user.email, edit_user_registration_path
           %li
             = link_to t('logout'), destroy_user_session_path, method: :delete
         - else
