@@ -42,4 +42,6 @@ pickle-email-*.html
 # paperclip
 /public/system
 
+# seeds
+/db/seeds/*.json
 
