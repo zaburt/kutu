@@ -17,6 +17,7 @@ style article show
 404 500 pages
 setup rbenv for secrets
 google analytics
+add favicon
 
 
 In Progress
