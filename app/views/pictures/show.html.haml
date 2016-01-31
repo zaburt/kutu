@@ -1,24 +1,44 @@
-%p
-  = image_tag @picture.image.url(:medium)
-%p
-  %b
-    = t('activerecord.attributes.picture.name')
-  = @picture.name
-%p
-  %b
-    = t('activerecord.attributes.picture.file_name')
-  = @picture.image_file_name
-%p
-  %b
-    = t('activerecord.attributes.picture.caption')
-  = @picture.caption
-%p
-  %b
-    = t('activerecord.attributes.picture.game')
-  = @picture.game.try(:name)
+%fieldset
+  %legend
+    = Picture.model_name.human
+  .row
+    .small-24.columns.small-centered.text-center.image_selector_picture
+      = image_tag @picture.image.url(:medium)
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.picture.name')
+    .small-16.columns
+      = @picture.name
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.picture.file_name')
+    .small-16.columns
+      = @picture.image_file_name
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.picture.caption')
+    .small-16.columns
+      = @picture.caption
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.picture.game')
+    .small-16.columns
+      = @picture.game.try(:name)
+  .row
+    .small-8.columns.text_bold
+      = t('created_at')
+    .small-16.columns
+      = format_time(@picture.created_at)
+  .row
+    .small-8.columns.text_bold
+      = t('updated_at')
+    .small-16.columns
+      = format_time(@picture.updated_at)
+
 
 .row
   .small-12.columns.small-offset-1
     = link_to t('edit'), edit_picture_path(@picture), :class => 'button radius small'
+    = link_to t('delete'), @picture, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
     = link_to t('back'), pictures_path, :class => 'button radius small'
 

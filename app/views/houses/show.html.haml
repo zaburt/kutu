@@ -1,10 +1,25 @@
-%p
-  %b
-    = t('activerecord.attributes.house.name')
-  = @house.name
+%fieldset
+  %legend
+    = House.model_name.human
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.house.name')
+    .small-16.columns
+      = @house.name
+  .row
+    .small-8.columns.text_bold
+      = t('created_at')
+    .small-16.columns
+      = format_time(@house.created_at)
+  .row
+    .small-8.columns.text_bold
+      = t('updated_at')
+    .small-16.columns
+      = format_time(@house.updated_at)
 
 .row
   .small-12.columns.small-offset-1
     = link_to t('edit'), edit_house_path(@house), :class => 'button radius small'
+    = link_to t('delete'), @house, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
     = link_to t('back'), houses_path, :class => 'button radius small'
 

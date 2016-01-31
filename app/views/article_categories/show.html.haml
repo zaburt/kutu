@@ -1,10 +1,25 @@
-%p
-  %b
-    = t('activerecord.attributes.article_category.name')
-  = @article_category.name
+%fieldset
+  %legend
+    = ArticleCategory.model_name.human
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.article_category.name')
+    .small-16.columns
+      = @article_category.name
+  .row
+    .small-8.columns.text_bold
+      = t('created_at')
+    .small-16.columns
+      = format_time(@article_category.created_at)
+  .row
+    .small-8.columns.text_bold
+      = t('updated_at')
+    .small-16.columns
+      = format_time(@article_category.updated_at)
 
 .row
   .small-12.columns.small-offset-1
     = link_to t('edit'), edit_article_category_path(@article_category), :class => 'button radius small'
+    = link_to t('delete'), @article_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
     = link_to t('back'), article_categories_path, :class => 'button radius small'
 

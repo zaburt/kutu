@@ -77,12 +77,36 @@ body {
 }
 
 /*
- * color alias
+ * helper class
  *
  */
 
 .red {
   color: red;
+}
+
+.text_bold {
+  font-weight: bold;
+}
+
+.text_small {
+  font-size: small;
+}
+
+.text_large {
+  font-size: 1.5rem;
+}
+
+.align_center {
+  text-align: center;
+}
+
+.align_left {
+  text-align: left;
+}
+
+.cursor_pointer:hover {
+  cursor: pointer;
 }
 
 /* main page article gallery */

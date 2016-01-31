@@ -1,18 +1,36 @@
-%p
-  %b
-    = t('activerecord.attributes.game_comment.comment')
-  = @game_comment.comment
-%p
-  %b
-    = t('activerecord.attributes.game_comment.game')
-  = @game_comment.game
-%p
-  %b
-    = t('activerecord.attributes.game_comment.user')
-  = @game_comment.user
+%fieldset
+  %legend
+    = GameComment.model_name.human
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game_comment.game')
+    .small-16.columns
+      = @game_comment.game.try(:name)
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game_comment.user')
+    .small-16.columns
+      = @game_comment.user.try(:display_name)
+  .row
+    .small-8.columns.text_bold
+      = t('created_at')
+    .small-16.columns
+      = format_time(@game_comment.created_at)
+  .row
+    .small-8.columns.text_bold
+      = t('updated_at')
+    .small-16.columns
+      = format_time(@game_comment.updated_at)
+  %br
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game_comment.comment')
+    .small-16.columns
+      = @game_comment.comment
 
 .row
   .small-12.columns.small-offset-1
     = link_to t('edit'), edit_game_comment_path(@game_comment), :class => 'button radius small'
+    = link_to t('delete'), @game_comment, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
     = link_to t('back'), game_comments_path, :class => 'button radius small'
 

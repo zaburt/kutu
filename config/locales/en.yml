@@ -75,4 +75,6 @@ en:
   multi_picture: Multiple Pictures
   pictures: Pictures
   show: Show
+  created_at: Created At
+  updated_at: Updated At
 

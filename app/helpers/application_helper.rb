@@ -47,5 +47,11 @@ module ApplicationHelper
     picture.image.url(:thumb)
   end
 
+  def format_time(timeval, timeformat = :db_no_tz)
+    return nil if timeval.blank?
+
+    timeval.to_s(timeformat)
+  end
+
 end
 

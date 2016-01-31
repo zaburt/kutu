@@ -75,4 +75,6 @@ tr:
   multi_picture: Çoklu Görsel
   pictures: Görseller
   show: Göster
+  created_at: Oluşturulma Zamanı
+  updated_at: Güncellenme Zamanı
 

@@ -2,7 +2,9 @@
 TODO
 =======================
 
-style show pages
+style article show
+style house show
+style game show
 simple_form time value styling
 caption support to images
 front page optimize image layout
@@ -10,7 +12,6 @@ multiple pictures for articles
 user management
 hidden user comments for games
 show hide menu items for anonymous users
-style article show
 404 500 pages
 setup rbenv for secrets
 google analytics
@@ -34,6 +35,7 @@ add map
 Done
 =======================
 
+style show pages
 style tables datatables
 show flash error
 cleanup seed for article content
