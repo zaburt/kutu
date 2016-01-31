@@ -77,4 +77,6 @@ tr:
   show: Göster
   created_at: Oluşturulma Zamanı
   updated_at: Güncellenme Zamanı
+  yes: Evet
+  no: Hayır
 

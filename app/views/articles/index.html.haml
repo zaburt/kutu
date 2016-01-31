@@ -21,13 +21,13 @@
       - @articles.each do |article|
         %tr
           %td= article.title
-          %td= article.publish
-          %td= article.publish_time
-          %td= article.game
+          %td= article.publish ? fonticon('check') : ''
+          %td= format_time(article.publish_time)
+          %td= article.game.try(:name)
           %td= image_tag_for_picture(article.picture)
           %td= article.content
-          %td= article.created_by
-          %td= article.updated_by
+          %td= article.created_by.try(:display_name)
+          %td= article.updated_by.try(:display_name)
           %td= link_to fonticon('eye'), article, :title => t('show')
           %td= link_to fonticon('pencil'), edit_article_path(article), :title => t('edit')
           %td= link_to fonticon('x', 'red'), article, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
