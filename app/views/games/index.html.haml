@@ -30,7 +30,7 @@
         %td= game.address
         %td= game.city
         %td= game.game_category
-        %td= game.house
+        %td= game.house.try(:name)
         %td= game.phone
         %td= game.email
         %td= game.website
