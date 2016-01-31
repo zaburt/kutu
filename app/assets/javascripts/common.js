@@ -36,6 +36,15 @@ $.extend($.fn.dataTableExt.oSort, {
   }
 });
 
+// override defaults for DataTables initialisation since defaults are for 12 column grid
+$.extend(true, $.fn.dataTable.defaults, {
+  dom:
+    "<'row'<'small-6 columns'l><'small-12 columns'f>r>"+
+    "t"+
+    "<'row'<'small-6 columns'i><'small-12 columns'p>>",
+  renderer: 'foundation'
+});
+
 // turbolinks doesnot work with ready, use page:change instead
 $(document).on('page:change', function() {
   var kutu_datatable_str = {
@@ -45,8 +54,10 @@ $(document).on('page:change', function() {
     info: 'Toplam _TOTAL_',
     first: 'İlk',
     last: 'Son',
-    next: 'Sonraki',
-    previous: 'Önceki'
+    // next: 'Sonraki',
+    // previous: 'Önceki'
+    next: '>>',
+    previous: '<<'
   };
 
   $('table.kutu_datatables').DataTable({
