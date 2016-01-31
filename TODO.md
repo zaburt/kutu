@@ -20,7 +20,6 @@ add favicon
 In Progress
 =======================
 
-style tables (datatables ?)
 
 
 Needs Investigation
@@ -35,6 +34,7 @@ add map
 Done
 =======================
 
+style tables datatables
 show flash error
 cleanup seed for article content
 add article seed
