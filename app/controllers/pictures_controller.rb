@@ -52,6 +52,8 @@ class PicturesController < ApplicationController
     params.require(:multi_pictures)
     all_processed = true
 
+    fail 'multiple_pictures_blank' if params[:multi_pictures].blank?
+
     params[:multi_pictures][:images].each do |image|
       Rails.logger.debug image.inspect
       Picture.create(:image => image)
@@ -62,6 +64,15 @@ class PicturesController < ApplicationController
     else
       render :new_multi
     end
+  rescue => e
+    case e.message
+    when 'multiple_pictures_blank'
+      flash[:error] = t('multiple_pictures_can_not_be_blank')
+    else
+      flash[:error] = e.message
+    end
+
+    redirect_to new_multi_pictures_path
   end
 
 

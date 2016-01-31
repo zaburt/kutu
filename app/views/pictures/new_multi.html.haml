@@ -1,6 +1,6 @@
 %fieldset
   %legend
-    Multiple Pictures
+    = t('multi_picture')
 
   = simple_form_for(:multi_pictures, :url => create_multi_pictures_path, :method => :post) do |f|
     = f.error_notification
@@ -10,9 +10,9 @@
         :input_html => {:class => 'button small radius', :multiple => :multiple}
 
     .form-actions
-      = f.button :submit, :class => 'button small radius small-offset-12'
+      = f.button :submit, t('new_multi_picture'), :class => 'button small radius small-offset-12'
 
 .row
   .small-12.columns.small-offset-1
-    = link_to 'Back', pictures_path, :class => 'button small radius'
+    = link_to t('back'), pictures_path, :class => 'button small radius'
 
