@@ -4,7 +4,6 @@ TODO
 
 style show pages
 simple_form time value styling
-style tables (datatables ?)
 caption support to images
 front page optimize image layout
 multiple pictures for articles
@@ -20,6 +19,8 @@ add favicon
 
 In Progress
 =======================
+
+style tables (datatables ?)
 
 
 Needs Investigation
