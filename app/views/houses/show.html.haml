@@ -17,6 +17,21 @@
     .small-16.columns
       = format_time(@house.updated_at)
 
+%fieldset
+  %legend
+    = t('games')
+
+  %table.kutu_datatables
+    %thead
+      %tr
+        %th= t('activerecord.attributes.game.name')
+        %th
+    %tbody
+      - @games.each do |game|
+        %tr
+          %td= game.name
+          %td= link_to fonticon('eye'), game, :title => t('show')
+
 .row
   .small-12.columns.small-offset-1
     = link_to t('edit'), edit_house_path(@house), :class => 'button radius small'

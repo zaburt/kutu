@@ -352,6 +352,15 @@ body {
     // color: grey;
     // font-weight: bold;
   }
+
+  table {
+    tbody {
+      tr:hover {
+        background-color: #BCFAFF;
+
+      }
+    }
+  }
 }
 
 

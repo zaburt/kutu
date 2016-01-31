@@ -8,6 +8,7 @@ class HousesController < ApplicationController
 
   # GET /houses/1
   def show
+    @games = Game.for_house(@house)
   end
 
   # GET /houses/new

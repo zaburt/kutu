@@ -32,4 +32,14 @@ class Game < ActiveRecord::Base
   belongs_to :city
   belongs_to :game_category
   belongs_to :house
+
+  scope :for_house, -> (house) {
+    if house.is_a?(House)
+      where(:house_id => house.id)
+    else
+      where(:house_id => house)
+    end
+  }
+
 end
+

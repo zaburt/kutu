@@ -3,7 +3,6 @@ TODO
 =======================
 
 style article show
-style house show
 style game show
 simple_form time value styling
 caption support to images
@@ -35,6 +34,7 @@ add map
 Done
 =======================
 
+style house show
 style show pages
 style tables datatables
 show flash error
