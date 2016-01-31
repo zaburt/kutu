@@ -2,6 +2,7 @@
 TODO
 =======================
 
+show flash error
 add house seed
 add game seed
 cleanup seed for article content
