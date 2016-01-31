@@ -16,13 +16,6 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require common
 
-
-// turbolinks messes up with foundation triggers, especially the image selector modal
-var foundation_ready_trigger;
-foundation_ready_trigger = function() {
-    $(document).foundation();
-};
-$(document).ready(foundation_ready_trigger);
-$(document).on('page:load', foundation_ready_trigger);
 
