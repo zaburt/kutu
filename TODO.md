@@ -3,9 +3,6 @@ TODO
 =======================
 
 show flash error
-add house seed
-add game seed
-cleanup seed for article content
 simple_form time value styling
 style tables (datatables ?)
 caption support to images
@@ -37,6 +34,12 @@ add map
 Done
 =======================
 
+cleanup seed for article content
+add article seed
+add user seed
+add city seed
+add house seed
+add game seed
 make article form textbox bigger
 simple_form created_by / updated_by
 Finish simple_form conversion on forms
