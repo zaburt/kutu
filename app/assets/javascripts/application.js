@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require console_fallback
-//= require jquery2
+//= require jquery
 //= require jquery-ui
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
