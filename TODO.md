@@ -2,7 +2,6 @@
 TODO
 =======================
 
-show flash error
 simple_form time value styling
 style tables (datatables ?)
 caption support to images
@@ -34,6 +33,7 @@ add map
 Done
 =======================
 
+show flash error
 cleanup seed for article content
 add article seed
 add user seed
