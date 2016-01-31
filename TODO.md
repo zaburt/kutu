@@ -2,6 +2,7 @@
 TODO
 =======================
 
+style show pages
 simple_form time value styling
 style tables (datatables ?)
 caption support to images

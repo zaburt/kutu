@@ -9,15 +9,15 @@
 %p
   %b
     = t('activerecord.attributes.game.city')
-  = @game.city
+  = @game.city.try(:name)
 %p
   %b
     = t('activerecord.attributes.game.game_category')
-  = @game.game_category
+  = @game.game_category.try(:name)
 %p
   %b
     = t('activerecord.attributes.game.house')
-  = @game.house
+  = @game.house.try(:name)
 %p
   %b
     = t('activerecord.attributes.game.phone')

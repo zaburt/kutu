@@ -15,7 +15,7 @@
 %p
   %b
     = t('activerecord.attributes.picture.game')
-  = @picture.game
+  = @picture.game.try(:name)
 
 .row
   .small-12.columns.small-offset-1

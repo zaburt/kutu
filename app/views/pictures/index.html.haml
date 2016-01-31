@@ -20,7 +20,7 @@
         %td= picture.image_file_name
         %td= picture.name
         %td= picture.caption
-        %td= picture.game
+        %td= picture.game.try(:name)
         %td= link_to fonticon('eye'), picture, :title => 'View'
         %td= link_to fonticon('pencil'), edit_picture_path(picture), :title => 'Edit'
         %td= link_to fonticon('x', 'red'), picture, :method => :delete, :data => { :confirm => 'Are you sure?' }, :title => 'Delete'
