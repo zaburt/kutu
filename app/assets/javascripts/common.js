@@ -50,7 +50,7 @@ $(document).on('page:change', function() {
   var kutu_datatable_str = {
     all: 'Hepsi',
     empty_table: 'Sonuç bulunamadı',
-    search: 'Ara',
+    search: '\uf16c',
     info: 'Toplam _TOTAL_',
     first: 'İlk',
     last: 'Son',
@@ -61,8 +61,9 @@ $(document).on('page:change', function() {
   };
 
   $('table.kutu_datatables').DataTable({
-    // iDisplayLength: 100,
+    iDisplayLength: 50,
     // lengthMenu: [[20, 50, 100, 250, -1], [20, 50, 100, 250, kutu_datatable_str.all]],
+    lengthMenu: [[20, 50, 100, 250, -1], [20, 50, 100, 250, kutu_datatable_str.all]],
     bPaginate: true,
     bSearchable: true,
     // order: [[2, 'asc']],
@@ -84,9 +85,7 @@ $(document).on('page:change', function() {
     }
   });
 
-  // TODO: replace with magnifying glass
   $('.dataTables_filter input').attr("placeholder", kutu_datatable_str.search);
 
 });
-
 
