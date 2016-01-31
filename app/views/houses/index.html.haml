@@ -1,21 +1,22 @@
-%h1
-  = t('houses')
+%fieldset
+  %legend
+    = t('houses')
 
-%table
-  %thead
-    %tr
-      %th= t('activerecord.attributes.house.name')
-      %th
-      %th
-      %th
-
-  %tbody
-    - @houses.each do |house|
+  %table.kutu_datatables
+    %thead
       %tr
-        %td= house.name
-        %td= link_to fonticon('eye'), house, :title => t('show')
-        %td= link_to fonticon('pencil'), edit_house_path(house), :title => t('edit')
-        %td= link_to fonticon('x', 'red'), house, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+        %th= t('activerecord.attributes.house.name')
+        %th
+        %th
+        %th
+
+    %tbody
+      - @houses.each do |house|
+        %tr
+          %td= house.name
+          %td= link_to fonticon('eye'), house, :title => t('show')
+          %td= link_to fonticon('pencil'), edit_house_path(house), :title => t('edit')
+          %td= link_to fonticon('x', 'red'), house, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 

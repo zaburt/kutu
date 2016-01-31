@@ -1,21 +1,22 @@
-%h1
-  = t('cities')
+%fieldset
+  %legend
+    = t('cities')
 
-%table.kutu_datatable
-  %thead
-    %tr
-      %th= t('activerecord.attributes.city.name')
-      %th
-      %th
-      %th
-
-  %tbody
-    - @cities.each do |city|
+  %table.kutu_datatables
+    %thead
       %tr
-        %td= city.name
-        %td= link_to fonticon('eye'), city, :title => t('show')
-        %td= link_to fonticon('pencil'), edit_city_path(city), :title => t('edit')
-        %td= link_to fonticon('x', 'red'), city, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+        %th= t('activerecord.attributes.city.name')
+        %th
+        %th
+        %th
+
+    %tbody
+      - @cities.each do |city|
+        %tr
+          %td= city.name
+          %td= link_to fonticon('eye'), city, :title => t('show')
+          %td= link_to fonticon('pencil'), edit_city_path(city), :title => t('edit')
+          %td= link_to fonticon('x', 'red'), city, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 

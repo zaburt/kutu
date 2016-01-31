@@ -1,21 +1,22 @@
-%h1
-  = t('game_categories')
+%fieldset
+  %legend
+    = t('game_categories')
 
-%table
-  %thead
-    %tr
-      %th= t('activerecord.attributes.game_category.name')
-      %th
-      %th
-      %th
-
-  %tbody
-    - @game_categories.each do |game_category|
+  %table.kutu_datatables
+    %thead
       %tr
-        %td= game_category.name
-        %td= link_to fonticon('eye'), game_category, :title => t('show')
-        %td= link_to fonticon('pencil'), edit_game_category_path(game_category), :title => t('edit')
-        %td= link_to fonticon('x', 'red'), game_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+        %th= t('activerecord.attributes.game_category.name')
+        %th
+        %th
+        %th
+
+    %tbody
+      - @game_categories.each do |game_category|
+        %tr
+          %td= game_category.name
+          %td= link_to fonticon('eye'), game_category, :title => t('show')
+          %td= link_to fonticon('pencil'), edit_game_category_path(game_category), :title => t('edit')
+          %td= link_to fonticon('x', 'red'), game_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 

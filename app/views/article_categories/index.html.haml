@@ -1,21 +1,22 @@
-%h1
-  = t('article_categories')
+%fieldset
+  %legend
+    = t('article_categories')
 
-%table
-  %thead
-    %tr
-      %th= t('activerecord.attributes.article_category.name')
-      %th
-      %th
-      %th
-
-  %tbody
-    - @article_categories.each do |article_category|
+  %table.kutu_datatables
+    %thead
       %tr
-        %td= article_category.name
-        %td= link_to fonticon('eye'), article_category, :title => t('show')
-        %td= link_to fonticon('pencil'), edit_article_category_path(article_category), :title => t('edit')
-        %td= link_to fonticon('x', 'red'), article_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+        %th= t('activerecord.attributes.article_category.name')
+        %th
+        %th
+        %th
+
+    %tbody
+      - @article_categories.each do |article_category|
+        %tr
+          %td= article_category.name
+          %td= link_to fonticon('eye'), article_category, :title => t('show')
+          %td= link_to fonticon('pencil'), edit_article_category_path(article_category), :title => t('edit')
+          %td= link_to fonticon('x', 'red'), article_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
 

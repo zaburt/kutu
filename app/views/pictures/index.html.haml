@@ -1,29 +1,30 @@
-%h1
-  = t('pictures')
+%fieldset
+  %legend
+    = t('pictures')
 
-%table
-  %thead
-    %tr
-      %th
-      %th= t('activerecord.attributes.picture.file_name')
-      %th= t('activerecord.attributes.picture.name')
-      %th= t('activerecord.attributes.picture.caption')
-      %th= t('activerecord.attributes.picture.game')
-      %th
-      %th
-      %th
-
-  %tbody
-    - @pictures.each do |picture|
+  %table.kutu_datatables
+    %thead
       %tr
-        %td= link_to image_tag(picture.image.url(:thumb)), picture
-        %td= picture.image_file_name
-        %td= picture.name
-        %td= picture.caption
-        %td= picture.game.try(:name)
-        %td= link_to fonticon('eye'), picture, :title => 'View'
-        %td= link_to fonticon('pencil'), edit_picture_path(picture), :title => 'Edit'
-        %td= link_to fonticon('x', 'red'), picture, :method => :delete, :data => { :confirm => 'Are you sure?' }, :title => 'Delete'
+        %th
+        %th= t('activerecord.attributes.picture.file_name')
+        %th= t('activerecord.attributes.picture.name')
+        %th= t('activerecord.attributes.picture.caption')
+        %th= t('activerecord.attributes.picture.game')
+        %th
+        %th
+        %th
+
+    %tbody
+      - @pictures.each do |picture|
+        %tr
+          %td= link_to image_tag(picture.image.url(:thumb)), picture
+          %td= picture.image_file_name
+          %td= picture.name
+          %td= picture.caption
+          %td= picture.game.try(:name)
+          %td= link_to fonticon('eye'), picture, :title => 'View'
+          %td= link_to fonticon('pencil'), edit_picture_path(picture), :title => 'Edit'
+          %td= link_to fonticon('x', 'red'), picture, :method => :delete, :data => { :confirm => 'Are you sure?' }, :title => 'Delete'
 
 %br
 

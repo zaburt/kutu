@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require console_fallback
-//= require jquery
+//= require jquery2
 //= require jquery-ui
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/dataTables.foundation
 //= require foundation
 //= require turbolinks
 //= require common
-
 

@@ -36,7 +36,8 @@ $.extend($.fn.dataTableExt.oSort, {
   }
 });
 
-$(function() {
+// turbolinks doesnot work with ready, use page:change instead
+$(document).on('page:change', function() {
   var kutu_datatable_str = {
     all: 'Hepsi',
     empty_table: 'Sonuç bulunamadı',
@@ -48,7 +49,7 @@ $(function() {
     previous: 'Önceki'
   };
 
-  $('.kutu_datatable').DataTable({
+  $('table.kutu_datatables').DataTable({
     // iDisplayLength: 100,
     // lengthMenu: [[20, 50, 100, 250, -1], [20, 50, 100, 250, kutu_datatable_str.all]],
     bPaginate: true,
@@ -74,6 +75,7 @@ $(function() {
 
   // TODO: replace with magnifying glass
   $('.dataTables_filter input').attr("placeholder", kutu_datatable_str.search);
+
 });
 
 
