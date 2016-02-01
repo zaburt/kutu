@@ -4,20 +4,20 @@ TODO
 
 style game show
 simple_form time value styling
-caption support to images
-front page optimize image layout
-multiple pictures for articles
 user management
-hidden user comments for games
 show hide menu items for anonymous users
 404 500 pages
 setup rbenv for secrets
+multiple pictures for articles
 google analytics
 add favicon
 
 
 In Progress
 =======================
+
+front page optimize image layout
+hidden user comments for games
 
 
 Needs Investigation
@@ -33,6 +33,7 @@ add map
 Done
 =======================
 
+caption support to images
 style article show
 style house show
 style show pages
