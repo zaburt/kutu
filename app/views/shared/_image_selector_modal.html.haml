@@ -5,8 +5,8 @@
 #image_selector_modal.reveal-modal.large{'data-reveal' => ''}
   %br
   - Picture.order('updated_at DESC').each do |picture|
-    %a.image_selector_picture{:href => 'javascript:void(0);', 'data-image-id' => picture.id, 'data-thumb-url' => picture.image.url(:thumb)}
-      = image_tag picture.image.url(:medium), :title => picture.image_file_name
+    %a.image_selector_picture_wrapper{:href => 'javascript:void(0);', 'data-image-id' => picture.id, 'data-thumb-url' => picture.image.url(:thumb)}
+      = image_tag picture.image.url(:medium), :title => picture.image_file_name, :class => 'image_selector_picture'
 
   %a.close-reveal-modal
     &times;
@@ -24,7 +24,7 @@
 %br
 
 :javascript
-  $('.image_selector_picture').on('click', function(k) {
+  $('.image_selector_picture_wrapper').on('click', function(k) {
     var selected_image_id = $(this).data('image-id');
     var selected_image_thumb = $(this).data('thumb-url');
     console.log('selected_image: ' + selected_image_id);

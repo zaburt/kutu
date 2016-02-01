@@ -2,8 +2,8 @@
   %legend
     = Picture.model_name.human
   .row
-    .small-24.columns.small-centered.text-center.image_selector_picture
-      = image_tag @picture.image.url(:medium)
+    .small-24.columns.small-centered.text-center
+      = image_tag @picture.image.url, :class => 'image_selector_picture'
   .row
     .small-8.columns.text_bold
       = t('activerecord.attributes.picture.name')

@@ -53,5 +53,19 @@ module ApplicationHelper
     timeval.to_s(timeformat)
   end
 
+  def title_for_game(game)
+    return '' unless game
+    return game.name unless game.house
+
+    game_name = game.name
+    house_name = game.house.try(:name)
+
+    if house_name != game_name
+      "#{game_name} (#{house_name})"
+    else
+      game_name
+    end
+  end
+
 end
 
