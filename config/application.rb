@@ -50,6 +50,7 @@ module Kutu
 
     # force add fonts to asset pipeline
     # config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('app', 'assets', 'images')
 
     # see Paperclip::Attachment.default_options
     #
