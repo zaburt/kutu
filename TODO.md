@@ -4,7 +4,6 @@ TODO
 
 simple_form time value styling
 user management
-show hide menu items for anonymous users
 404 500 pages
 setup rbenv for secrets
 multiple pictures for articles
@@ -32,6 +31,7 @@ add map
 Done
 =======================
 
+show hide menu items for anonymous users
 style game show
 caption support to images
 style article show
