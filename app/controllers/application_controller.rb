@@ -6,23 +6,50 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_time_zone
   before_filter :set_dynamic_hosts
-  before_filter :authenticate_as_needed!
+  # before_filter :authenticate_as_needed!
+  before_filter :check_authorization
+
+  PUBLIC_ROUTES = [
+    ['home', 'index'],
+    ['articles', 'index'],
+    ['articles', 'show'],
+    ['games', 'index'],
+    ['games', 'show'],
+    ['sessions', 'new'],
+    ['sessions', 'create']
+  ].freeze
 
 
   private
 
 
-  SKIP_AUTH_FOR = {
-    'home' => ['index']
-  }.freeze
+  # SKIP_AUTH_FOR = {
+  #   'home' => ['index']
+  # }.freeze
 
-  REQUIRE_AUTH_FOR = [
-    'admin'
-  ].freeze
+  # REQUIRE_AUTH_FOR = [
+  #   'admin'
+  # ].freeze
 
-  def authenticate_as_needed!
-    return if SKIP_AUTH_FOR.include?(controller_name) && SKIP_AUTH_FOR[controller_name].include?(action_name)
-    authenticate_user! if REQUIRE_AUTH_FOR.include?(controller_name)
+  # def authenticate_as_needed!
+  #   return if SKIP_AUTH_FOR.include?(controller_name) && SKIP_AUTH_FOR[controller_name].include?(action_name)
+  #   authenticate_user! if REQUIRE_AUTH_FOR.include?(controller_name)
+  # end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def check_authorization
+    return true if signed_in?
+
+    Rails.logger.debug "controller:#{controller_name} action:#{action_name}"
+
+    if PUBLIC_ROUTES.include?([controller_name, action_name])
+      return true
+    else
+      not_found
+    end
   end
 
   def set_dynamic_hosts
