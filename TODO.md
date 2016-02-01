@@ -2,7 +2,6 @@
 TODO
 =======================
 
-style game show
 simple_form time value styling
 user management
 show hide menu items for anonymous users
@@ -33,6 +32,7 @@ add map
 Done
 =======================
 
+style game show
 caption support to images
 style article show
 style house show

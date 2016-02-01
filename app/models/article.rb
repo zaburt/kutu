@@ -26,5 +26,13 @@ class Article < ActiveRecord::Base
 
   scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
 
+  scope :for_game, -> (game) {
+    if game.is_a?(Game)
+      where(:game_id => game.id)
+    else
+      where(:game_id => game)
+    end
+  }
+
 end
 

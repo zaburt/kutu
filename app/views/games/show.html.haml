@@ -1,66 +1,95 @@
-%p
-  %b
-    = t('activerecord.attributes.game.name')
-  = @game.name
-%p
-  %b
-    = t('activerecord.attributes.game.address')
-  = @game.address
-%p
-  %b
-    = t('activerecord.attributes.game.city')
-  = @game.city.try(:name)
-%p
-  %b
-    = t('activerecord.attributes.game.game_category')
-  = @game.game_category.try(:name)
-%p
-  %b
-    = t('activerecord.attributes.game.house')
-  = @game.house.try(:name)
-%p
-  %b
-    = t('activerecord.attributes.game.phone')
-  = @game.phone
-%p
-  %b
-    = t('activerecord.attributes.game.email')
-  = @game.email
-%p
-  %b
-    = t('activerecord.attributes.game.website')
-  = @game.website
-%p
-  %b
-    = t('activerecord.attributes.game.facebook')
-  = @game.facebook
-%p
-  %b
-    = t('activerecord.attributes.game.twitter')
-  = @game.twitter
-%p
-  %b
-    = t('activerecord.attributes.game.instagram')
-  = @game.instagram
-%p
-  %b
-    = t('activerecord.attributes.game.lat')
-  = @game.lat
-%p
-  %b
-    = t('activerecord.attributes.game.lng')
-  = @game.lng
-%p
-  %b
-    = t('activerecord.attributes.game.story')
-  = @game.story
-%p
-  %b
-    = t('activerecord.attributes.game.game_times')
-  = @game.game_times
+%fieldset
+  %legend
+    = title_for_game(@game)
+
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game.address')
+    .small-16.columns
+      = @game.address
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game.city')
+    .small-16.columns
+      = @game.city.try(:name)
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game.game_category')
+    .small-16.columns
+      = @game.game_category.try(:name)
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game.house')
+    .small-16.columns
+      = @game.house.try(:name)
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game.game_times')
+    .small-16.columns
+      = @game.game_times
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game.story')
+    .small-16.columns
+      = @game.story
+
+  %br
+  .row
+    .small-8.columns.text_bold
+      /= t('activerecord.attributes.game.phone')
+      = fonticon('telephone')
+    .small-16.columns
+      = @game.phone
+  .row
+    .small-8.columns.text_bold
+      /= t('activerecord.attributes.game.email')
+      = fonticon('mail')
+    .small-16.columns
+      - if @game.email
+        = mail_to @game.email
+  .row
+    .small-8.columns.text_bold
+      /= t('activerecord.attributes.game.website')
+      = fonticon('link')
+    .small-16.columns
+      - if @game.website
+        = link_to @game.website
+  .row
+    .small-8.columns.text_bold
+      /= t('activerecord.attributes.game.facebook')
+      = fonticon('social-facebook', 'facebook')
+    .small-16.columns
+      - if @game.facebook
+        = link_to @game.facebook
+  .row
+    .small-8.columns.text_bold
+      /= t('activerecord.attributes.game.twitter')
+      = fonticon('social-twitter', 'twitter')
+    .small-16.columns
+      - if @game.twitter
+        = link_to @game.twitter
+  .row
+    .small-8.columns.text_bold
+      /= t('activerecord.attributes.game.instagram')
+      = fonticon('social-instagram', 'instagram')
+    .small-16.columns
+      - if @game.instagram
+        = link_to @game.instagram
+
+  - if @articles.present?
+    %br
+    .row
+      .small-8.columns.text_bold
+        = t('related_articles')
+      .small-16.columns
+        - @articles.each do |article|
+          .row
+            .small-24.columns
+              = link_to article.title, article#, :class => 'button radius small'
 
 .row
   .small-12.columns.small-offset-1
     = link_to t('edit'), edit_game_path(@game), :class => 'button radius small'
+    = link_to t('delete'), @game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
     = link_to t('back'), games_path, :class => 'button radius small'
 

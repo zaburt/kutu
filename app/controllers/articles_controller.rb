@@ -3,7 +3,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
+    if signed_in?
+      @articles = Article.all
+    else
+      @articles = Article.publishable
+    end
   end
 
   # GET /articles/1

@@ -6,20 +6,20 @@
     %thead
       %tr
         %th= t('activerecord.attributes.game.name')
-        %th= t('activerecord.attributes.game.address')
+        /%th= t('activerecord.attributes.game.address')
         %th= t('activerecord.attributes.game.city')
         %th= t('activerecord.attributes.game.game_category')
-        %th= t('activerecord.attributes.game.house')
-        %th= t('activerecord.attributes.game.phone')
-        %th= t('activerecord.attributes.game.email')
+        /%th= t('activerecord.attributes.game.house')
+        /%th= t('activerecord.attributes.game.phone')
+        /%th= t('activerecord.attributes.game.email')
         %th= t('activerecord.attributes.game.website')
-        %th= t('activerecord.attributes.game.facebook')
-        %th= t('activerecord.attributes.game.twitter')
-        %th= t('activerecord.attributes.game.instagram')
-        %th= t('activerecord.attributes.game.lat')
-        %th= t('activerecord.attributes.game.lng')
-        %th= t('activerecord.attributes.game.story')
-        %th= t('activerecord.attributes.game.game_times')
+        /%th= t('activerecord.attributes.game.facebook')
+        /%th= t('activerecord.attributes.game.twitter')
+        /%th= t('activerecord.attributes.game.instagram')
+        /%th= t('activerecord.attributes.game.lat')
+        /%th= t('activerecord.attributes.game.lng')
+        /%th= t('activerecord.attributes.game.story')
+        /%th= t('activerecord.attributes.game.game_times')
         %th
         %th
         %th
@@ -27,21 +27,21 @@
     %tbody
       - @games.each do |game|
         %tr
-          %td= game.name
-          %td= game.address
+          %td= title_for_game(game)
+          /%td= game.address
           %td= game.city.try(:name)
           %td= game.game_category.try(:name)
-          %td= game.house.try(:name)
-          %td= game.phone
-          %td= game.email
-          %td= game.website
-          %td= game.facebook
-          %td= game.twitter
-          %td= game.instagram
-          %td= game.lat
-          %td= game.lng
-          %td= game.story
-          %td= game.game_times
+          /%td= game.house.try(:name)
+          /%td= game.phone
+          /%td= game.email
+          %td= game.website ? link_to(game.website) : ''
+          /%td= game.facebook
+          /%td= game.twitter
+          /%td= game.instagram
+          /%td= game.lat
+          /%td= game.lng
+          /%td= game.story
+          /%td= game.game_times
           %td= link_to fonticon('eye'), game, :title => t('show')
           %td= link_to fonticon('pencil'), edit_game_path(game), :title => t('edit')
           %td= link_to fonticon('x', 'red'), game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
