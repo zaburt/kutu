@@ -7,18 +7,20 @@
       %tr
         %th= t('activerecord.attributes.game_category.name')
         %th
-        %th
-        %th
+        - if signed_in?
+          %th
+          %th
 
     %tbody
       - @game_categories.each do |game_category|
         %tr
           %td= game_category.name
           %td= link_to fonticon('eye'), game_category, :title => t('show')
-          %td= link_to fonticon('pencil'), edit_game_category_path(game_category), :title => t('edit')
-          %td= link_to fonticon('x', 'red'), game_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+          - if signed_in?
+            %td= link_to fonticon('pencil'), edit_game_category_path(game_category), :title => t('edit')
+            %td= link_to fonticon('x', 'red'), game_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
-
-= link_to t('generic.new_model', :name => GameCategory.model_name.human), new_game_category_path, :class => 'button small radius'
+- if signed_in?
+  = link_to t('generic.new_model', :name => GameCategory.model_name.human), new_game_category_path, :class => 'button small radius'
 

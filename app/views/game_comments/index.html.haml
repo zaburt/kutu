@@ -9,8 +9,9 @@
         %th= t('activerecord.attributes.game_comment.game')
         %th= t('activerecord.attributes.game_comment.user')
         %th
-        %th
-        %th
+        - if signed_in?
+          %th
+          %th
 
     %tbody
       - @game_comments.each do |game_comment|
@@ -19,10 +20,11 @@
           %td= game_comment.game.try(:name)
           %td= game_comment.user.try(:display_name)
           %td= link_to fonticon('eye'), game_comment, :title => t('show')
-          %td= link_to fonticon('pencil'), edit_game_comment_path(game_comment), :title => t('edit')
-          %td= link_to fonticon('x', 'red'), game_comment, :method => :delete, :data => { :confirm => t('are_you_sure')}, :title => t('delete')
+          - if signed_in?
+            %td= link_to fonticon('pencil'), edit_game_comment_path(game_comment), :title => t('edit')
+            %td= link_to fonticon('x', 'red'), game_comment, :method => :delete, :data => { :confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
-
-= link_to t('generic.new_model', :name => GameComment.model_name.human), new_game_comment_path, :class => 'button small radius'
+- if signed_in?
+  = link_to t('generic.new_model', :name => GameComment.model_name.human), new_game_comment_path, :class => 'button small radius'
 

@@ -21,8 +21,9 @@
         /%th= t('activerecord.attributes.game.story')
         /%th= t('activerecord.attributes.game.game_times')
         %th
-        %th
-        %th
+        - if signed_in?
+          %th
+          %th
 
     %tbody
       - @games.each do |game|
@@ -43,10 +44,11 @@
           /%td= game.story
           /%td= game.game_times
           %td= link_to fonticon('eye'), game, :title => t('show')
-          %td= link_to fonticon('pencil'), edit_game_path(game), :title => t('edit')
-          %td= link_to fonticon('x', 'red'), game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+          - if signed_in?
+            %td= link_to fonticon('pencil'), edit_game_path(game), :title => t('edit')
+            %td= link_to fonticon('x', 'red'), game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
-
-= link_to t('generic.new_model', :name => Game.model_name.human), new_game_path, :class => 'button small radius'
+- if signed_in?
+  = link_to t('generic.new_model', :name => Game.model_name.human), new_game_path, :class => 'button small radius'
 

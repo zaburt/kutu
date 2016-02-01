@@ -7,18 +7,20 @@
       %tr
         %th= t('activerecord.attributes.article_category.name')
         %th
-        %th
-        %th
+        - if signed_in?
+          %th
+          %th
 
     %tbody
       - @article_categories.each do |article_category|
         %tr
           %td= article_category.name
           %td= link_to fonticon('eye'), article_category, :title => t('show')
-          %td= link_to fonticon('pencil'), edit_article_category_path(article_category), :title => t('edit')
-          %td= link_to fonticon('x', 'red'), article_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+          - if signed_in?
+            %td= link_to fonticon('pencil'), edit_article_category_path(article_category), :title => t('edit')
+            %td= link_to fonticon('x', 'red'), article_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
 %br
-
-= link_to t('generic.new_model', :name => ArticleCategory.model_name.human), new_article_category_path, :class => 'button small radius'
+- if signed_in?
+  = link_to t('generic.new_model', :name => ArticleCategory.model_name.human), new_article_category_path, :class => 'button small radius'
 
