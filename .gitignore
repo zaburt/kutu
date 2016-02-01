@@ -42,6 +42,9 @@ pickle-email-*.html
 # paperclip
 /public/system
 
+# asset cache for production
+/public/assets
+
 # seeds
 /db/seeds/*.json
 
