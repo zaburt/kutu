@@ -89,7 +89,8 @@
 
 .row
   .small-12.columns.small-offset-1
-    = link_to t('edit'), edit_game_path(@game), :class => 'button radius small'
-    = link_to t('delete'), @game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
+    - if signed_in?
+      = link_to t('edit'), edit_game_path(@game), :class => 'button radius small'
+      = link_to t('delete'), @game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
     = link_to t('back'), games_path, :class => 'button radius small'
 
