@@ -5,7 +5,6 @@ TODO
 simple_form time value styling
 user management
 multiple pictures for articles
-dynamic page title
 google analytics
 add favicon
 
@@ -30,6 +29,7 @@ add map
 Done
 =======================
 
+dynamic page title
 404 500 pages
 setup dotenv for secrets
 show hide menu items for anonymous users
