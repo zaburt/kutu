@@ -2,6 +2,8 @@
 TODO
 =======================
 
+add more picture sizes
+order games by name through relation
 simple_form time value styling
 user management
 multiple pictures for articles
