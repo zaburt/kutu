@@ -2,7 +2,6 @@
 TODO
 =======================
 
-order games by name through relation
 simple_form time value styling
 user management
 multiple pictures for articles
@@ -30,6 +29,7 @@ add map
 Done
 =======================
 
+order games by name through relation
 add more picture sizes
 dynamic page title
 404 500 pages

@@ -4,9 +4,9 @@
   .form-inputs
     = f.input :name
     = f.input :address
-    = f.association :city
-    = f.association :game_category
-    = f.association :house
+    = f.association :city, :collection => City.order(:name)
+    = f.association :game_category, :collection => GameCategory.order(:name)
+    = f.association :house, :collection => House.order(:name)
     = f.input :phone
     = f.input :email
     = f.input :website

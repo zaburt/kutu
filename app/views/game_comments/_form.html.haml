@@ -3,8 +3,8 @@
 
   .form-inputs
     = f.input :comment
-    = f.association :game
-    = f.association :user
+    = f.association :game, :collection => Game.order(:name)
+    = f.association :user, :collection => User.order(:display_name)
 
   .form-actions
     = f.button :submit, :class => 'button small radius small-offset-18'

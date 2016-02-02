@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :name
     = f.input :caption
-    = f.association :game
+    = f.association :game, :collection => Game.order(:name)
     = f.input :image, :as => :file
 
   .form-actions

@@ -5,7 +5,7 @@
     = f.input :title
     = f.input :publish
     = f.input :publish_time
-    = f.association :game
+    = f.association :game, :collection => Game.order(:name)
     =# f.association :picture
     = render :partial => 'shared/image_selector_modal', :locals => {:f => f, :form_object => @article, :form_attr => :picture}
     = f.input :content, :input_html => {:rows => 20}
