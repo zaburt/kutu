@@ -1,13 +1,14 @@
 %fieldset
   %legend
     = @article.title
-  .row
-    .small-20.columns.small-centered.text-center
-      /= image_tag @article.picture.image.url
-      %img.small-24.columns.image_selector_picture{'data-interchange' => "[#{@article.picture.image.url(:medium)}, (small)], [#{@article.picture.image.url}, (large)]"}
-      - if @article.picture.caption
-        .text_italic
-          = @article.picture.caption
+  - if @article.picture
+    .row
+      .small-20.columns.small-centered.text-center
+        /= image_tag @article.picture.image.url
+        %img.small-24.columns.image_selector_picture{'data-interchange' => "[#{@article.picture.image.url(:medium)}, (small)], [#{@article.picture.image.url}, (large)]"}
+        - if @article.picture.caption
+          .text_italic
+            = @article.picture.caption
   %br
   .row
     .small-6.columns.small-offset-18.text_italic.grey
