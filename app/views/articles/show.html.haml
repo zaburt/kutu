@@ -5,7 +5,7 @@
     .row
       .small-20.columns.small-centered.text-center
         /= image_tag @article.picture.image.url
-        %img.small-24.columns.image_selector_picture{'data-interchange' => "[#{@article.picture.image.url(:small)}, (small)], [#{@article.picture.image.url(:medium)}, (large)]"}
+        %img.small-24.large-16.columns.small-centered.image_selector_picture{'data-interchange' => "[#{@article.picture.image.url(:small)}, (small)], [#{@article.picture.image.url(:medium)}, (medium)]"}
         - if @article.picture.caption
           .text_italic
             = @article.picture.caption
