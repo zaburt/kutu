@@ -4,7 +4,6 @@ TODO
 
 simple_form time value styling
 user management
-404 500 pages
 multiple pictures for articles
 dynamic page title
 google analytics
@@ -31,6 +30,7 @@ add map
 Done
 =======================
 
+404 500 pages
 setup dotenv for secrets
 show hide menu items for anonymous users
 style game show
