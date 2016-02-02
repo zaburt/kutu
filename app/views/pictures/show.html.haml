@@ -3,7 +3,8 @@
     = Picture.model_name.human
   .row
     .small-24.columns.small-centered.text-center
-      = image_tag @picture.image.url, :class => 'image_selector_picture'
+      = image_tag @picture.image.url, :class => 'image_selector_picture small-24 columns'
+  %br
   .row
     .small-8.columns.text_bold
       = t('activerecord.attributes.picture.name')
@@ -34,7 +35,11 @@
       = t('updated_at')
     .small-16.columns
       = format_time(@picture.updated_at)
-
+  .row
+    .small-8.columns.text_bold
+      = fonticon('link')
+    .small-16.columns
+      = link_to @picture.image.url
 
 .row
   .small-12.columns.small-offset-1
