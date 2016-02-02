@@ -1,9 +1,11 @@
 
-How to get CSV dump from old site
+Kutu Project
 =================================
 
-```
-mysql -B fakatiyioynadik -e "SELECT post_date,post_title,post_content FROM wp_posts WHERE post_type = 'post' AND post_status = 'publish' ORDER BY post_date;" | sed -e "s/'/\'/;s/\t/\",\"/g;s/^/\"/;s/$/\"/;s/\n//g" -e 's/<img.*>//' -e 's/<a .*>//'
-```
+This is just a hobby project created to share our experience with real life room escape games
 
+Copyright
+=========
+
+2015, Onur Küçük <onur at delipenguen.net>
 
