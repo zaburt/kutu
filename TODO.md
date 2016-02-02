@@ -5,7 +5,7 @@ TODO
 simple_form time value styling
 user management
 404 500 pages
-setup rbenv for secrets
+setup dotenv for secrets
 multiple pictures for articles
 google analytics
 add favicon

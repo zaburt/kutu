@@ -48,3 +48,6 @@ pickle-email-*.html
 # seeds
 /db/seeds/*.json
 
+# secrets
+/.env
+

@@ -47,6 +47,8 @@ gem 'foundation-icons-sass-rails', '~> 3.0.0'
 
 gem 'haml-rails', '~> 0.9'
 
+gem 'dotenv-rails'
+
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
