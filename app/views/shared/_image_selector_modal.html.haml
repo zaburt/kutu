@@ -6,7 +6,7 @@
   %br
   - Picture.order('updated_at DESC').each do |picture|
     %a.image_selector_picture_wrapper{:href => 'javascript:void(0);', 'data-image-id' => picture.id, 'data-thumb-url' => picture.image.url(:thumb)}
-      = image_tag picture.image.url(:medium), :title => picture.image_file_name, :class => 'image_selector_picture'
+      = image_tag picture.image.url(:small), :title => picture.image_file_name, :class => 'image_selector_picture'
 
   %a.close-reveal-modal
     &times;

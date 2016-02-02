@@ -2,7 +2,6 @@
 TODO
 =======================
 
-add more picture sizes
 order games by name through relation
 simple_form time value styling
 user management
@@ -31,6 +30,7 @@ add map
 Done
 =======================
 
+add more picture sizes
 dynamic page title
 404 500 pages
 setup dotenv for secrets

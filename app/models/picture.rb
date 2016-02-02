@@ -23,7 +23,8 @@ class Picture < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => {
-                      :medium => '300x300>',
+                      :medium => '500x500>',
+                      :small => '300x300>',
                       :thumb => '100x100>'
                     },
                     # url: '/media/:class/:attachment/:id_partition/:style/:filename',

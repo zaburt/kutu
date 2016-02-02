@@ -6,10 +6,10 @@
 .row
   .article_gallery.small-23.columns.small-centered
     - @articles.each do |article|
-      /= link_to image_tag(article.picture.image(:medium))
+      /= link_to image_tag(article.picture.image(:small))
       / %a{:href => article_path(article), :title => article.title, :class => "#{random_rotation_class} #{random_box_shadow_class}"}
       %a{:href => article_path(article), :title => article.title, :class => "#{random_rotation_class}"}
-        - image_file_url = article.picture.present? ? article.picture.image(:medium) : '/assets/question_mark.svg'
+        - image_file_url = article.picture.present? ? article.picture.image(:small) : '/assets/question_mark.svg'
         = image_tag image_file_url, :alt => article.title, :title => article.title
 
 :javascript
