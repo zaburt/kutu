@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(article_params)
+    @article.created_by_id = current_user.try(:id)
 
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
@@ -61,7 +62,7 @@ class ArticlesController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def article_params
     params.require(:article).permit(:title, :publish, :publish_time, :game_id, :picture_id,
-                                    :content, :created_by, :updated_by)
+                                    :content, :created_by_id, :updated_by_id)
   end
 
 end

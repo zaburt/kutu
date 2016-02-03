@@ -19,7 +19,6 @@ hidden user comments for games
 Needs Investigation
 =======================
 
-should we have created_by updated_by in articles
 i18n home
 slug support to articles
 allow background change on the fly
@@ -29,6 +28,7 @@ add map
 Done
 =======================
 
+should we have created_by updated_by in articles
 order games by name through relation
 add more picture sizes
 dynamic page title

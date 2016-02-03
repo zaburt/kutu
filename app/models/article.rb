@@ -9,8 +9,8 @@
 #  game_id      :integer
 #  picture_id   :integer
 #  content      :text
-#  created_by   :integer
-#  updated_by   :integer
+#  created_by_id   :integer
+#  updated_by_id   :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
@@ -23,6 +23,8 @@
 class Article < ActiveRecord::Base
   belongs_to :game
   belongs_to :picture
+  belongs_to :created_by, :foreign_key => 'created_by_id', :class_name => 'User'
+  belongs_to :updated_by, :foreign_key => 'updated_by_id', :class_name => 'User'
 
   scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
 

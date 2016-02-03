@@ -9,6 +9,7 @@
     =# f.association :picture
     = render :partial => 'shared/image_selector_modal', :locals => {:f => f, :form_object => @article, :form_attr => :picture}
     = f.input :content, :input_html => {:rows => 20}
+    = f.hidden_field :updated_by_id, :value => current_user.try(:id)
 
   .form-actions
     = f.button :submit, :class => 'button small radius small-offset-18'

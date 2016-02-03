@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 20151228212149) do
     t.integer  "game_id"
     t.integer  "picture_id"
     t.text     "content"
-    t.integer  "created_by"
-    t.integer  "updated_by"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "articles", ["game_id"], name: "index_articles_on_game_id", using: :btree
