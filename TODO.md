@@ -6,6 +6,7 @@ simple_form time value styling
 user management
 google analytics
 add favicon
+write README
 
 
 In Progress
