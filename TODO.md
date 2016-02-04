@@ -4,7 +4,6 @@ TODO
 
 simple_form time value styling
 user management
-multiple pictures for articles
 google analytics
 add favicon
 
@@ -19,7 +18,7 @@ hidden user comments for games
 Needs Investigation
 =======================
 
-i18n home
+multiple pictures for articles
 slug support to articles
 allow background change on the fly
 add map
@@ -28,6 +27,7 @@ add map
 Done
 =======================
 
+i18n home
 should we have created_by updated_by in articles
 order games by name through relation
 add more picture sizes
