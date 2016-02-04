@@ -2,17 +2,17 @@
 #
 # Table name: articles
 #
-#  id           :integer          not null, primary key
-#  title        :string
-#  publish      :boolean
-#  publish_time :datetime
-#  game_id      :integer
-#  picture_id   :integer
-#  content      :text
-#  created_by_id   :integer
-#  updated_by_id   :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id            :integer          not null, primary key
+#  title         :string
+#  publish       :boolean
+#  publish_time  :datetime
+#  game_id       :integer
+#  picture_id    :integer
+#  content       :text
+#  created_by_id :integer
+#  updated_by_id :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 # Indexes
 #
