@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 20151228212149) do
     t.datetime "updated_at",    null: false
   end
 
+  add_index "articles", ["created_by_id"], name: "index_articles_on_created_by_id", using: :btree
   add_index "articles", ["game_id"], name: "index_articles_on_game_id", using: :btree
   add_index "articles", ["picture_id"], name: "index_articles_on_picture_id", using: :btree
+  add_index "articles", ["updated_by_id"], name: "index_articles_on_updated_by_id", using: :btree
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
