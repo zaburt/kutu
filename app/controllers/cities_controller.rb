@@ -24,7 +24,7 @@ class CitiesController < ApplicationController
     @city = City.new(city_params)
 
     if @city.save
-      redirect_to @city, notice: 'City was successfully created.'
+      redirect_to @city, notice: t('generic.was_successfully_created', :name => City.model_name.human)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class CitiesController < ApplicationController
   # PATCH/PUT /cities/1
   def update
     if @city.update(city_params)
-      redirect_to @city, notice: 'City was successfully updated.'
+      redirect_to @city, notice: t('generic.was_successfully_updated', :name => City.model_name.human)
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class CitiesController < ApplicationController
   # DELETE /cities/1
   def destroy
     @city.destroy
-    redirect_to cities_url, notice: 'City was successfully destroyed.'
+    redirect_to cities_url, notice: t('generic.was_successfully_destroyed', :name => City.model_name.human)
   end
 
 

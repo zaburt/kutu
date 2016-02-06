@@ -24,7 +24,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
 
     if @picture.save
-      redirect_to @picture, notice: 'Picture was successfully created.'
+      redirect_to @picture, notice: t('generic.was_successfully_created', :name => Picture.model_name.human)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class PicturesController < ApplicationController
   # PATCH/PUT /pictures/1
   def update
     if @picture.update(picture_params)
-      redirect_to @picture, notice: 'Picture was successfully updated.'
+      redirect_to @picture, notice: t('generic.was_successfully_updated', :name => Picture.model_name.human)
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1
   def destroy
     @picture.destroy
-    redirect_to pictures_url, notice: 'Picture was successfully destroyed.'
+    redirect_to pictures_url, notice: t('generic.was_successfully_destroyed', :name => Picture.model_name.human)
   end
 
   def new_multi

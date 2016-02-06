@@ -25,7 +25,7 @@ class HousesController < ApplicationController
     @house = House.new(house_params)
 
     if @house.save
-      redirect_to @house, notice: 'House was successfully created.'
+      redirect_to @house, notice: t('generic.was_successfully_created', :name => House.model_name.human)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class HousesController < ApplicationController
   # PATCH/PUT /houses/1
   def update
     if @house.update(house_params)
-      redirect_to @house, notice: 'House was successfully updated.'
+      redirect_to @house, notice: t('generic.was_successfully_updated', :name => House.model_name.human)
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class HousesController < ApplicationController
   # DELETE /houses/1
   def destroy
     @house.destroy
-    redirect_to houses_url, notice: 'House was successfully destroyed.'
+    redirect_to houses_url, notice: t('generic.was_successfully_destroyed', :name => House.model_name.human)
   end
 
 

@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
     @article.created_by_id = current_user.try(:id)
 
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      redirect_to @article, notice: t('generic.was_successfully_created', :name => Article.model_name.human)
     else
       render :new
     end
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      redirect_to @article, notice: t('generic.was_successfully_updated', :name => Article.model_name.human)
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   def destroy
     @article.destroy
-    redirect_to articles_url, notice: 'Article was successfully destroyed.'
+    redirect_to articles_url, notice: t('generic.was_successfully_destroyed', :name => Article.model_name.human)
   end
 
 

@@ -24,7 +24,7 @@ class GameCategoriesController < ApplicationController
     @game_category = GameCategory.new(game_category_params)
 
     if @game_category.save
-      redirect_to @game_category, notice: 'Game category was successfully created.'
+      redirect_to @game_category, notice: t('generic.was_successfully_created', :name => GameCategory.model_name.human)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class GameCategoriesController < ApplicationController
   # PATCH/PUT /game_categories/1
   def update
     if @game_category.update(game_category_params)
-      redirect_to @game_category, notice: 'Game category was successfully updated.'
+      redirect_to @game_category, notice: t('generic.was_successfully_updated', :name => GameCategory.model_name.human)
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class GameCategoriesController < ApplicationController
   # DELETE /game_categories/1
   def destroy
     @game_category.destroy
-    redirect_to game_categories_url, notice: 'Game category was successfully destroyed.'
+    redirect_to game_categories_url, notice: t('generic.was_successfully_destroyed', :name => GameCategory.model_name.human)
   end
 
 

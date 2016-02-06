@@ -2,7 +2,7 @@
 TODO
 =======================
 
-i18n flash messages
+multiple tags for articles
 simple_form time value styling
 google analytics
 add favicon
@@ -28,6 +28,7 @@ add map
 Done
 =======================
 
+i18n flash messages
 user management
 i18n home
 should we have created_by updated_by in articles

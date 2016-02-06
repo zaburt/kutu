@@ -75,8 +75,11 @@ tr:
   generic:
     delete_model: "%{name} Sil"
     edit_model: "%{name} Düzenle"
-    new_model: Yeni %{name}
+    new_model: "Yeni %{name}"
     show_model: "%{name} Göster"
+    was_successfully_created: "%{name} oluşturuldu"
+    was_successfully_updated: "%{name} güncellendi"
+    was_successfully_destroyed: "%{name} silindi"
   home: Ana Sayfa
   houses: Evler
   logout: Çıkış

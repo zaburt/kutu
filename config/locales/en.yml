@@ -73,10 +73,13 @@ en:
   game_comments: Game Comments
   games: Games
   generic:
-    delete_model: Delete %{name}
-    edit_model: Edit %{name}
-    new_model: New %{name}
-    show_model: Show %{name}
+    delete_model: "Delete %{name}"
+    edit_model: "Edit %{name}"
+    new_model: "New %{name}"
+    show_model: "Show %{name}"
+    was_successfully_created: "%{name} was successfully created"
+    was_successfully_updated: "%{name} was successfully updated"
+    was_successfully_destroyed: "%{name} was successfully destroyed"
   home: Main Page
   houses: Houses
   logout: Logout

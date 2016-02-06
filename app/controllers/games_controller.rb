@@ -25,7 +25,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
-      redirect_to @game, notice: 'Game was successfully created.'
+      redirect_to @game, notice: t('generic.was_successfully_created', :name => Game.model_name.human)
     else
       render :new
     end
@@ -34,7 +34,7 @@ class GamesController < ApplicationController
   # PATCH/PUT /games/1
   def update
     if @game.update(game_params)
-      redirect_to @game, notice: 'Game was successfully updated.'
+      redirect_to @game, notice: t('generic.was_successfully_updated', :name => Game.model_name.human)
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class GamesController < ApplicationController
   # DELETE /games/1
   def destroy
     @game.destroy
-    redirect_to games_url, notice: 'Game was successfully destroyed.'
+    redirect_to games_url, notice: t('generic.was_successfully_destroyed', :name => Game.model_name.human)
   end
 
 
