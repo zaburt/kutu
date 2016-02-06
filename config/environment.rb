@@ -6,8 +6,8 @@ Rails.application.initialize!
 
 # to be able to do Time.now.to_s(:db_no_tz)
 custom_date_time_formats = {
-  :db_no_tz  => '%Y-%m-%d %H:%M:%S',
-  :db_date_no_time => '%Y-%m-%d',
+  :db_no_tz => '%Y-%m-%d %H:%M:%S',
+  :db_date_no_time => '%Y-%m-%d'
 }
 
 Date::DATE_FORMATS.merge!(custom_date_time_formats)

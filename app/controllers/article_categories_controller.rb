@@ -24,7 +24,8 @@ class ArticleCategoriesController < ApplicationController
     @article_category = ArticleCategory.new(article_category_params)
 
     if @article_category.save
-      redirect_to @article_category, notice: t('generic.was_successfully_created', :name => ArticleCategory.model_name.human)
+      redirect_to @article_category, notice: t('generic.was_successfully_created',
+                                               :name => ArticleCategory.model_name.human)
     else
       render :new
     end
@@ -33,7 +34,8 @@ class ArticleCategoriesController < ApplicationController
   # PATCH/PUT /article_categories/1
   def update
     if @article_category.update(article_category_params)
-      redirect_to @article_category, notice: t('generic.was_successfully_updated', :name => ArticleCategory.model_name.human)
+      redirect_to @article_category, notice: t('generic.was_successfully_updated',
+                                               :name => ArticleCategory.model_name.human)
     else
       render :edit
     end
@@ -42,7 +44,8 @@ class ArticleCategoriesController < ApplicationController
   # DELETE /article_categories/1
   def destroy
     @article_category.destroy
-    redirect_to article_categories_url, notice: t('generic.was_successfully_destroyed', :name => ArticleCategory.model_name.human)
+    redirect_to article_categories_url, notice: t('generic.was_successfully_destroyed',
+                                                  :name => ArticleCategory.model_name.human)
   end
 
   private

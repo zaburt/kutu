@@ -30,7 +30,7 @@ class Picture < ActiveRecord::Base
                     # url: '/media/:class/:attachment/:id_partition/:style/:filename',
                     default_url: '/images/:style/missing.png'
 
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: %r{\Aimage/.*\Z}
   # validates_attachment_content_type :image, content_type: /\Aimage/
   validates_attachment_file_name :image, matches: [/png\Z/i, /jpe?g\Z/i, /gif\Z/i]
 

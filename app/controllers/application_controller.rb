@@ -37,19 +37,15 @@ class ApplicationController < ActionController::Base
   # end
 
   def not_found
-    raise ActionController::RoutingError.new('Not Found')
+    fail ActionController::RoutingError.new('Not Found')
   end
 
   def check_authorization
     return true if signed_in?
-
     Rails.logger.debug "controller:#{controller_name} action:#{action_name}"
 
-    if PUBLIC_ROUTES.include?([controller_name, action_name])
-      return true
-    else
-      not_found
-    end
+    return true if PUBLIC_ROUTES.include?([controller_name, action_name])
+    not_found
   end
 
   def set_dynamic_hosts

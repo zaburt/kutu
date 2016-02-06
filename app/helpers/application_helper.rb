@@ -22,7 +22,7 @@ module ApplicationHelper
     'box_shadow_bottom_both'
   ].freeze
 
-  QUESTION_MARK_IMAGE_URL = '/assets/question_mark.svg'
+  QUESTION_MARK_IMAGE_URL = '/assets/question_mark.svg'.freeze
 
   def fonticon(iconname, customclass = '')
     # haml_tag :i, :class => "fi-#{iconname} #{customclass} fonticon"

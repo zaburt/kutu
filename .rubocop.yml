@@ -54,3 +54,16 @@ Style/EmptyLinesAroundModuleBody:
 Style/EmptyLinesAroundBlockBody:
   Enabled: false
 
+Style/Lambda:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+
