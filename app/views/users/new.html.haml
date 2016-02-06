@@ -1,0 +1,10 @@
+%fieldset
+  %legend
+    = t('generic.new_model', :name => User.model_name.human)
+
+  = render 'form'
+
+.row
+  .small-12.columns.small-offset-1
+    = link_to t('back'), users_path, :class => 'button radius small'
+

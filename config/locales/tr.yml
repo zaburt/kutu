@@ -44,6 +44,8 @@ tr:
         file_name: Dosya Adı
         game: Oyun
         name: İsim
+      user:
+        name: İsim
     models:
       article: Yazı
       article_category: Yazı Kategorisi
@@ -53,6 +55,7 @@ tr:
       game_comment: Oyun Yorumu
       house: Ev
       picture: Görsel
+      user: Kullanıcı
   are_you_sure: Emin misiniz ?
   article_categories: Yazı Kategorileri
   articles: Yazılar
@@ -75,6 +78,7 @@ tr:
   multi_picture: Çoklu Görsel
   pictures: Görseller
   show: Göster
+  users: Kullanıcılar
   created_at: Oluşturulma Zamanı
   updated_at: Güncellenme Zamanı
   yes: Evet

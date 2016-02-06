@@ -44,6 +44,8 @@ en:
         file_name: File Name
         game: Game
         name: Name
+      user:
+        name: Name
     models:
       article: Article
       article_category: Article Category
@@ -53,6 +55,7 @@ en:
       game_comment: Game Comment
       house: House
       picture: Picture
+      user: User
   are_you_sure: Are you sure ?
   article_categories: Article Categories
   articles: Articles
@@ -74,6 +77,7 @@ en:
   new_multi_picture: Upload Multiple Pictures
   multi_picture: Multiple Pictures
   pictures: Pictures
+  users: Users
   show: Show
   created_at: Created At
   updated_at: Updated At

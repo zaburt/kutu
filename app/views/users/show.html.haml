@@ -1,0 +1,26 @@
+%fieldset
+  %legend
+    = User.model_name.human
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.user.name')
+    .small-16.columns
+      = @user.name
+  .row
+    .small-8.columns.text_bold
+      = t('created_at')
+    .small-16.columns
+      = format_time(@user.created_at)
+  .row
+    .small-8.columns.text_bold
+      = t('updated_at')
+    .small-16.columns
+      = format_time(@user.updated_at)
+
+.row
+  .small-12.columns.small-offset-1
+    - if signed_in?
+      = link_to t('edit'), edit_user_path(@user), :class => 'button radius small'
+      = link_to t('delete'), @user, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
+    = link_to t('back'), users_path, :class => 'button radius small'
+

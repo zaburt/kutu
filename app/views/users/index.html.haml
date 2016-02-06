@@ -1,0 +1,26 @@
+%fieldset
+  %legend
+    = t('users')
+
+  %table.kutu_datatables
+    %thead
+      %tr
+        %th= t('activerecord.attributes.user.name')
+        %th
+        - if signed_in?
+          %th
+          %th
+
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= link_to fonticon('eye'), user, :title => t('show')
+          - if signed_in?
+            %td= link_to fonticon('pencil'), edit_user_path(user), :title => t('edit')
+            %td= link_to fonticon('x', 'red'), user, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+
+%br
+- if signed_in?
+  = link_to t('generic.new_model', :name => User.model_name.human), new_user_path, :class => 'button small radius'
+
