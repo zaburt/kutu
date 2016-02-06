@@ -18,7 +18,7 @@ tr:
       game:
         address: Adres
         city: Şehir
-        email: Eposta
+        email: E-Posta
         facebook: Facebook
         game_category: Oyun Kategorisi
         game_times: Oyun Zamanları
@@ -46,6 +46,12 @@ tr:
         name: İsim
       user:
         name: İsim
+        email: E-Posta
+        display_name: Görünen İsim
+        current_sign_in_at: Oturum Giriş Zamanı
+        current_sign_in_ip: Oturum IP Adresi
+        last_sign_in_at: Son Oturum Giriş Zamanı
+        last_sign_in_ip: Son Oturum IP Adresi
     models:
       article: Yazı
       article_category: Yazı Kategorisi

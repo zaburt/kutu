@@ -18,7 +18,7 @@ en:
       game:
         address: Address
         city: City
-        email: email
+        email: E-Mail
         facebook: Facebook
         game_category: Game Category
         game_times: Game Times
@@ -46,6 +46,12 @@ en:
         name: Name
       user:
         name: Name
+        email: E-Mail
+        display_name: Display Name
+        current_sign_in_at: Current Sign In At
+        current_sign_in_ip: Current Sign In IP
+        last_sign_in_at: Last Sign In At
+        last_sign_in_ip: Last Sign In IP
     models:
       article: Article
       article_category: Article Category

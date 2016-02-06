@@ -6,6 +6,8 @@
     %thead
       %tr
         %th= t('activerecord.attributes.user.name')
+        %th= t('activerecord.attributes.user.display_name')
+        %th= t('activerecord.attributes.user.email')
         %th
         - if signed_in?
           %th
@@ -15,6 +17,8 @@
       - @users.each do |user|
         %tr
           %td= user.name
+          %td= user.display_name
+          %td= user.email
           %td= link_to fonticon('eye'), user, :title => t('show')
           - if signed_in?
             %td= link_to fonticon('pencil'), edit_user_path(user), :title => t('edit')

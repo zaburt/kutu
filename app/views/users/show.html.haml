@@ -8,6 +8,16 @@
       = @user.name
   .row
     .small-8.columns.text_bold
+      = t('activerecord.attributes.user.email')
+    .small-16.columns
+      = @user.email
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.user.display_name')
+    .small-16.columns
+      = @user.display_name
+  .row
+    .small-8.columns.text_bold
       = t('created_at')
     .small-16.columns
       = format_time(@user.created_at)
@@ -16,6 +26,27 @@
       = t('updated_at')
     .small-16.columns
       = format_time(@user.updated_at)
+  %br
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.user.current_sign_in_ip')
+    .small-16.columns
+      = @user.current_sign_in_ip
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.user.current_sign_in_at')
+    .small-16.columns
+      = format_time(@user.current_sign_in_at)
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.user.last_sign_in_ip')
+    .small-16.columns
+      = @user.last_sign_in_ip
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.user.last_sign_in_at')
+    .small-16.columns
+      = format_time(@user.last_sign_in_at)
 
 .row
   .small-12.columns.small-offset-1
