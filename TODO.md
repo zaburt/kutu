@@ -2,8 +2,8 @@
 TODO
 =======================
 
+i18n flash messages
 simple_form time value styling
-user management
 google analytics
 add favicon
 write README
@@ -28,6 +28,7 @@ add map
 Done
 =======================
 
+user management
 i18n home
 should we have created_by updated_by in articles
 order games by name through relation
