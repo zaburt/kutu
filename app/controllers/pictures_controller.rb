@@ -65,12 +65,7 @@ class PicturesController < ApplicationController
       render :new_multi
     end
   rescue => e
-    case e.message
-    when 'multiple_pictures_blank'
-      flash[:alert] = t('multiple_pictures_can_not_be_blank')
-    else
-      flash[:alert] = e.message
-    end
+    flash[:alert] = e.message == 'multiple_pictures_blank' ? t('multiple_pictures_can_not_be_blank') : e.message
 
     redirect_to new_multi_pictures_path
   end
