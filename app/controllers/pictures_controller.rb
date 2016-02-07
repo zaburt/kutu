@@ -49,23 +49,17 @@ class PicturesController < ApplicationController
   end
 
   def create_multi
-    params.require(:multi_pictures)
-    all_processed = true
+    # fail 'multiple_pictures_blank' if params[:multi_pictures].blank?
 
-    fail 'multiple_pictures_blank' if params[:multi_pictures].blank?
-
-    params[:multi_pictures][:images].each do |image|
+    multi_picture_params[:images].each do |image|
       Rails.logger.debug image.inspect
       Picture.create(:image => image)
     end
 
-    if all_processed
-      redirect_to pictures_path
-    else
-      render :new_multi
-    end
+    redirect_to pictures_path
   rescue => e
-    flash[:alert] = e.message == 'multiple_pictures_blank' ? t('multiple_pictures_can_not_be_blank') : e.message
+    # flash[:alert] = e.message == 'multiple_pictures_blank' ? t('multiple_pictures_can_not_be_blank') : e.message
+    flash[:alert] = e.message
 
     redirect_to new_multi_pictures_path
   end
@@ -84,5 +78,8 @@ class PicturesController < ApplicationController
     params.require(:picture).permit(:name, :game_id, :image, :caption)
   end
 
+  def multi_picture_params
+    params.require(:multi_pictures)
+  end
 end
 
