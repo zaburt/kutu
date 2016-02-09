@@ -7,6 +7,7 @@ simple_form time value styling
 google analytics
 add favicon
 write README
+secure headers
 
 
 In Progress
