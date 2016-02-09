@@ -8,5 +8,5 @@ Copyright
 =========
 
 2015, Onur Küçük <onur at delipenguen.net>
-Kutu is licensed under [GNU GENERAL PUBLIC LICENSE version 3](COPYING)
 
+Kutu is licensed under [GNU GENERAL PUBLIC LICENSE version 3](COPYING)
