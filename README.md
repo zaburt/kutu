@@ -7,6 +7,6 @@ This is a hobby project created to share our experience with real life room esca
 Copyright
 =========
 
-2015, Onur Küçük <onur at delipenguen.net>
+2015, Onur Küçük ```<onur(a)delipenguen.net>```
 
 Kutu is licensed under [GNU GENERAL PUBLIC LICENSE version 3](COPYING)
