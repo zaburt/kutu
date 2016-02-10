@@ -8,7 +8,7 @@ google analytics
 add favicon
 write README
 secure headers
-
+add weather
 
 In Progress
 =======================
