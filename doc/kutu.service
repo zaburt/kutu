@@ -1,0 +1,32 @@
+#
+# systemd unit for kutu service
+#
+# setup rvm as kutu app user to create a wrapper for unicorn
+#   rvm wrapper 2.3.0@kutu kutu unicorn
+#
+# put this file as /etc/systemd/system/kutu.service
+#   systemctl start kutu
+#   systemctl enable kutu
+
+
+[Unit]
+Description=Kutu Server
+Wants=postgresql-9.5.service
+After=postgresql-9.5.service
+
+[Service]
+Type=simple
+User=kutu
+SyslogIdentifier=kutu
+PIDFile=/path_to_kutu/tmp/pids/unicorn.pid
+Environment=RAILS_ENV=production
+WorkingDirectory=/path_to_kutu
+# TimeoutSec=30
+# Restart=always
+ExecStart=/path_to_home_of_kutu/.rvm/bin/kutu_unicorn -E production -c /path_to_kutu/config/unicorn.rb
+# ExecReload=/bin/kill -s USR2 $MAINPID
+# ExecStop=/bin/kill -s QUIT $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+
