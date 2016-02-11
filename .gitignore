@@ -15,6 +15,7 @@
 ### custom ignores
 # config
 config/database.yml
+config/unicorn.rb
 
 # Backup files
 \#*
