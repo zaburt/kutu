@@ -2,6 +2,7 @@
 TODO
 =======================
 
+show different size url for pictures at show
 multiple tags for articles
 simple_form time value styling
 google analytics
