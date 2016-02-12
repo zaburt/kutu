@@ -2,6 +2,12 @@
 TODO
 =======================
 
+* i18n routes
+* show captions on articles
+* multiple pictures for articles, show other pictures under article
+* slug support to articles
+* show better meta titles
+* allow setting an article to show on front page or not
 * show different size url for pictures at show
 * multiple tags for articles
 * simple_form time value styling
@@ -22,8 +28,6 @@ In Progress
 Needs Investigation
 =======================
 
-* multiple pictures for articles
-* slug support to articles
 * allow background change on the fly
 * add map
 
