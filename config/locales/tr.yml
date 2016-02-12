@@ -5,6 +5,7 @@ tr:
       article:
         content: İçerik
         created_by: Oluşturan
+        frontpage: Ana Sayfa
         game: Oyun
         picture: Görsel
         publish: Yayınla

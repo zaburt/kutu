@@ -27,6 +27,7 @@ class Article < ActiveRecord::Base
   belongs_to :updated_by, :foreign_key => 'updated_by_id', :class_name => 'User'
 
   scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
+  scope :frontpage, -> { where(:frontpage => true) }
 
   scope :for_game, -> (game) {
     if game.is_a?(Game)

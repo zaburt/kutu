@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228212149) do
+ActiveRecord::Schema.define(version: 20160213001542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20151228212149) do
     t.text     "content"
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "frontpage",     default: true
   end
 
   add_index "articles", ["created_by_id"], name: "index_articles_on_created_by_id", using: :btree

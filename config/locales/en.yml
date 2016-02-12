@@ -5,6 +5,7 @@ en:
       article:
         content: Content
         created_by: Created By
+        frontpage: Front Page
         game: Game
         picture: Picture
         publish: Publish

@@ -6,7 +6,6 @@ TODO
 * multiple pictures for articles, show other pictures under article
 * slug support to articles
 * show better meta titles
-* allow setting an article to show on front page or not
 * multiple tags for articles
 * simple_form time value styling
 * google analytics
@@ -33,6 +32,7 @@ Needs Investigation
 Done
 =======================
 
+* allow setting an article to show on front page or not
 * show different size url for pictures at show
 * show captions on articles
 * i18n flash messages
