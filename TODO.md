@@ -3,7 +3,6 @@ TODO
 =======================
 
 * i18n routes
-* show captions on articles
 * multiple pictures for articles, show other pictures under article
 * slug support to articles
 * show better meta titles
@@ -35,6 +34,7 @@ Needs Investigation
 Done
 =======================
 
+* show captions on articles
 * i18n flash messages
 * user management
 * i18n home
