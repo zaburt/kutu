@@ -8,6 +8,7 @@ class GamesController < ApplicationController
 
   # GET /games/1
   def show
+    @page_title = @game.name
     @articles = Article.publishable.for_game(@game)
   end
 

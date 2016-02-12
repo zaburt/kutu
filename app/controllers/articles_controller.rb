@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
+    @page_title = @article.title
   end
 
   # GET /articles/new

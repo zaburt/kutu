@@ -24,6 +24,7 @@ module ApplicationHelper
 
   QUESTION_MARK_IMAGE_URL = '/assets/question_mark.svg'.freeze
 
+
   def fonticon(iconname, customclass = '')
     # haml_tag :i, :class => "fi-#{iconname} #{customclass} fonticon"
     "<i class='fi-#{iconname} #{customclass} fonticon'></i>".html_safe
