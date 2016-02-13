@@ -2,7 +2,6 @@
 TODO
 =======================
 
-* i18n routes
 * multiple pictures for articles, show other pictures under article
 * multiple tags for articles
 * simple_form time value styling
@@ -30,6 +29,7 @@ Needs Investigation
 Done
 =======================
 
+* i18n routes
 * slug support to articles and games
 * show better meta titles
 * allow setting an article to show on front page or not
