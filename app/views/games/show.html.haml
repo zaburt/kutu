@@ -3,85 +3,85 @@
     = title_for_game(@game)
 
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.address')
-    .small-16.columns
+    .small-18.columns
       = @game.address
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.city')
-    .small-16.columns
+    .small-18.columns
       = @game.city.try(:name)
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.game_category')
-    .small-16.columns
+    .small-18.columns
       = @game.game_category.try(:name)
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.house')
-    .small-16.columns
+    .small-18.columns
       = @game.house.try(:name)
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.game_times')
-    .small-16.columns
+    .small-18.columns
       = @game.game_times
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.story')
-    .small-16.columns
+    .small-18.columns
       = @game.story
 
   %br
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       /= t('activerecord.attributes.game.phone')
       = fonticon('telephone')
-    .small-16.columns
+    .small-18.columns
       = @game.phone
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       /= t('activerecord.attributes.game.email')
       = fonticon('mail')
-    .small-16.columns
+    .small-18.columns
       - if @game.email
         = mail_to @game.email
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       /= t('activerecord.attributes.game.website')
       = fonticon('link')
-    .small-16.columns
+    .small-18.columns
       - if @game.website
         = link_to @game.website
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       /= t('activerecord.attributes.game.facebook')
       = fonticon('social-facebook', 'facebook')
-    .small-16.columns
+    .small-18.columns
       - if @game.facebook
         = link_to @game.facebook
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       /= t('activerecord.attributes.game.twitter')
       = fonticon('social-twitter', 'twitter')
-    .small-16.columns
+    .small-18.columns
       - if @game.twitter
         = link_to @game.twitter
   .row
-    .small-8.columns.text_bold
+    .small-6.columns.text_bold
       /= t('activerecord.attributes.game.instagram')
       = fonticon('social-instagram', 'instagram')
-    .small-16.columns
+    .small-18.columns
       - if @game.instagram
         = link_to @game.instagram
 
   - if @articles.present?
     %br
     .row
-      .small-8.columns.text_bold
+      .small-6.columns.text_bold
         = t('related_articles')
-      .small-16.columns
+      .small-18.columns
         - @articles.each do |article|
           .row
             .small-24.columns
