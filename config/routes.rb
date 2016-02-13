@@ -9,25 +9,20 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
-  resources :users
-
-  resources :article_categories
-
-  resources :articles
-
-  resources :cities
-
-  resources :game_categories
-
-  resources :game_comments
-
-  resources :games
+  localized do
+    resources :users
+    resources :article_categories
+    resources :articles
+    resources :cities
+    resources :game_categories
+    resources :game_comments
+    resources :games
+    resources :houses
+  end
 
   scope :path => '/home', :controller => :home, :as => :home do
     get :index
   end
-
-  resources :houses
 
   resources :pictures do
     collection do

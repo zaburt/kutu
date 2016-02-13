@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   # before_filter :authenticate_as_needed!
   before_filter :check_authorization
 
+  skip_around_filter :set_locale_from_url
+
   PUBLIC_ROUTES = [
     ['home', 'index'],
     ['articles', 'index'],

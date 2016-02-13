@@ -1,5 +1,14 @@
 ---
 tr:
+  routes:
+    users: kullanicilar
+    article_categories: yazi_kategorileri
+    articles: yazilar
+    cities: sehirler
+    game_categories: oyun_kategorileri
+    game_comments: oyun_yorumlari
+    games: oyunlar
+    houses: evler
   i18n:
     transliterate:
       rule:
@@ -109,4 +118,5 @@ tr:
   yes: Evet
   no: Hayır
   related_articles: İlgili Yazılar
+  sessions: Kayıtlı Kullanıcılar
 
