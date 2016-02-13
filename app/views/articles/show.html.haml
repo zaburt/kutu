@@ -34,5 +34,5 @@
   .small-12.columns.small-offset-1
     - if signed_in?
       = link_to t('edit'), edit_article_path(@article), :class => 'button radius small'
-    = link_to t('back'), articles_path, :class => 'button radius small'
+    = link_to t('back'), :root, :class => 'button radius small'
 
