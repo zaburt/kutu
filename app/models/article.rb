@@ -32,6 +32,9 @@ class Article < ActiveRecord::Base
   belongs_to :created_by, :foreign_key => 'created_by_id', :class_name => 'User'
   belongs_to :updated_by, :foreign_key => 'updated_by_id', :class_name => 'User'
 
+  has_many :article_categories_articles
+  has_many :article_categories, -> {order(:name)}, :through => :article_categories_articles
+
   validates_presence_of :title
 
   scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }

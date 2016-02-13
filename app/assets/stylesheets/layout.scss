@@ -4,19 +4,29 @@
  */
 
 .simple_form {
-  .field_with_hint input{
-    margin-bottom: 0;
+  .form-inputs {
+    .field_with_hint input{
+      margin-bottom: 0;
+    }
+
+    .hint {
+      display: block;
+      padding: 0.375rem 0.5625rem;
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
+      font-weight: normal;
+      font-style: italic;
+      background-color: #e3e3e3;
+      color: #5d5d5d;
+    }
   }
 
-  .hint {
-    display: block;
-    padding: 0.375rem 0.5625rem;
-    margin-bottom: 1rem;
-    font-size: 0.75rem;
-    font-weight: normal;
-    font-style: italic;
-    background-color: #e3e3e3;
-    color: #5d5d5d;
+  .check_boxes {
+    .checkbox {
+      input.check_boxes {
+        margin-right: 12px;
+      }
+    }
   }
 }
 
@@ -66,6 +76,11 @@ body {
   font-size: 1.6em;
   padding: 0 2px;
   vertical-align: middle;
+}
+
+.hashtag {
+  color: grey;
+  font-style: italic;
 }
 
 // use this where expand does not apply

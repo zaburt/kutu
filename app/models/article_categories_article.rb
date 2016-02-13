@@ -8,9 +8,9 @@
 #  updated_at :datetime         not null
 #
 
-class ArticleCategory < ActiveRecord::Base
-  has_many :article_categories_articles
-  has_many :articles, -> {order(:position)}, :through => :article_categories_articles
+class ArticleCategoriesArticle < ActiveRecord::Base
+  belongs_to :article_category
+  belongs_to :article
 
 end
 

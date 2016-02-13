@@ -2,13 +2,14 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :title
+    = f.input :title, :required => true
     = f.input :publish
     = f.input :publish_time
     = f.input :frontpage
     = f.association :game, :collection => Game.order(:name)
     =# f.association :picture
     = render :partial => 'shared/image_selector_modal', :locals => {:f => f, :form_object => @article, :form_attr => :picture}
+    = f.association :article_categories, :as => :check_boxes, :label => t('article_categories')
     = f.input :content, :input_html => {:rows => 20}
     = f.hidden_field :updated_by_id, :value => current_user.try(:id)
 

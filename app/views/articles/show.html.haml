@@ -15,7 +15,12 @@
       = format_time(@article.publish_time, :db_date_no_time)
   %br
   .row
-    .small-20.columns.small-offset-2
+    .small-21.columns.small-offset-1.hashtag
+      - @article.article_categories.each do |article_category|
+        = "##{article_category.name}"
+  %br
+  .row
+    .small-21.columns.small-offset-1
       = simple_format(@article.content)
   %br
   - if @article.game
