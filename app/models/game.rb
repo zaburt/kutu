@@ -29,9 +29,14 @@
 #
 
 class Game < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
+
   belongs_to :city
   belongs_to :game_category
   belongs_to :house
+
+  validates_presence_of :name
 
   scope :for_house, -> (house) {
     if house.is_a?(House)

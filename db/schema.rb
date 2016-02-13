@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213001542) do
+ActiveRecord::Schema.define(version: 20160213141801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,11 +34,13 @@ ActiveRecord::Schema.define(version: 20160213001542) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.boolean  "frontpage",     default: true
+    t.string   "slug"
   end
 
   add_index "articles", ["created_by_id"], name: "index_articles_on_created_by_id", using: :btree
   add_index "articles", ["game_id"], name: "index_articles_on_game_id", using: :btree
   add_index "articles", ["picture_id"], name: "index_articles_on_picture_id", using: :btree
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
   add_index "articles", ["updated_by_id"], name: "index_articles_on_updated_by_id", using: :btree
 
   create_table "cities", force: :cascade do |t|
@@ -82,11 +84,13 @@ ActiveRecord::Schema.define(version: 20160213001542) do
     t.text     "game_times"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "slug"
   end
 
   add_index "games", ["city_id"], name: "index_games_on_city_id", using: :btree
   add_index "games", ["game_category_id"], name: "index_games_on_game_category_id", using: :btree
   add_index "games", ["house_id"], name: "index_games_on_house_id", using: :btree
+  add_index "games", ["slug"], name: "index_games_on_slug", unique: true, using: :btree
 
   create_table "houses", force: :cascade do |t|
     t.string   "name"

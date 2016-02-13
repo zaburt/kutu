@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

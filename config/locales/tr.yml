@@ -1,5 +1,20 @@
 ---
 tr:
+  i18n:
+    transliterate:
+      rule:
+        ı: 'i'
+        İ: 'i'
+        ç: 'c'
+        Ç: 'C'
+        ö: 'o'
+        Ö: 'O'
+        ü: 'u'
+        Ü: 'U'
+        ş: 's'
+        Ş: 'S'
+        ğ: 'g'
+        Ğ: 'G'
   activerecord:
     attributes:
       article:

@@ -24,10 +24,15 @@
 #
 
 class Article < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
+
   belongs_to :game
   belongs_to :picture
   belongs_to :created_by, :foreign_key => 'created_by_id', :class_name => 'User'
   belongs_to :updated_by, :foreign_key => 'updated_by_id', :class_name => 'User'
+
+  validates_presence_of :title
 
   scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
   scope :frontpage, -> { where(:frontpage => true) }
