@@ -48,17 +48,15 @@ gem 'foundation-icons-sass-rails', '~> 3.0.0'
 
 gem 'haml-rails', '~> 0.9'
 
-gem 'dotenv-rails'
-
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-gem 'simple_form'
-
-gem 'paperclip', '~> 4.3'
-
+gem 'dotenv-rails'
 gem 'friendly_id'
+gem 'paperclip', '~> 4.3'
+gem 'route_translator'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
