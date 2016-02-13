@@ -34,6 +34,8 @@ class Article < ActiveRecord::Base
 
   has_many :article_categories_articles
   has_many :article_categories, -> {order(:name)}, :through => :article_categories_articles
+  has_many :articles_pictures
+  has_many :pictures, :through => :articles_pictures
 
   validates_presence_of :title
 

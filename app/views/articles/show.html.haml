@@ -4,7 +4,6 @@
   - if @article.picture
     .row
       .small-20.columns.small-centered.text-center
-        /= image_tag @article.picture.image.url
         %img.small-24.large-16.columns.small-centered.image_selector_picture{'data-interchange' => "[#{@article.picture.image.url(:small)}, (small)], [#{@article.picture.image.url(:medium)}, (medium)]"}
         - if @article.picture.caption
           .text_italic
@@ -22,6 +21,14 @@
   .row
     .small-21.columns.small-offset-1
       = simple_format(@article.content)
+  %br
+  .row
+    .small-20.columns.small-centered.text-center
+      - @article.pictures.each do |picture|
+        %img.small-24.large-16.columns.small-centered.image_selector_picture{'data-interchange' => "[#{picture.image.url(:small)}, (small)], [#{picture.image.url(:medium)}, (medium)]"}
+        - if picture.caption
+          .text_italic
+            = picture.caption
   %br
   - if @article.game
     .row
