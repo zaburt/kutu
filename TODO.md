@@ -2,7 +2,6 @@
 TODO
 =======================
 
-* multiple pictures for articles, show other pictures under article
 * simple_form time value styling
 * google analytics
 * add favicon
@@ -28,6 +27,7 @@ Needs Investigation
 Done
 =======================
 
+* multiple pictures for articles, show other pictures under article
 * multiple tags for articles
 * i18n routes
 * slug support to articles and games
