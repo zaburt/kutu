@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
-    @page_title = @article.title
+    @page_title = "#{@article.title} - #{t('articles')}"
   end
 
   # GET /articles/new
