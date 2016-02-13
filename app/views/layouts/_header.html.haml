@@ -34,6 +34,8 @@
           %li
             = link_to t('users'), users_path
       %ul.right
+        %li
+          = link_to 'Biz', '/yazilar/biz'
         - if signed_in?
           /%li
           /  = link_to current_user.email, edit_user_registration_path
