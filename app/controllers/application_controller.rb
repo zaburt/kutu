@@ -60,7 +60,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    # enable this when we want multiple locales, it will automatically
+    # change routes ui etc
+    # I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = I18n.default_locale
   end
 
   def set_time_zone
