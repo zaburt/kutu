@@ -43,6 +43,9 @@ pickle-email-*.html
 # paperclip
 /public/system
 
+# files we put manually
+/public/data
+
 # asset cache for production
 /public/assets
 
