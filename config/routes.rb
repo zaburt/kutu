@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   localized do
     resources :users
     resources :article_categories
-    resources :articles
+    resources :articles do
+      member do
+        get :additional_pictures
+        post :update_additional_pictures
+      end
+    end
     resources :cities
     resources :game_categories
     resources :game_comments

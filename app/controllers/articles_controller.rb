@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :additional_pictures, :update_additional_pictures]
 
   # GET /articles
   def index
@@ -47,6 +47,17 @@ class ArticlesController < ApplicationController
     redirect_to articles_url, notice: t('generic.was_successfully_destroyed', :name => Article.model_name.human)
   end
 
+  def additional_pictures
+  end
+
+  def update_additional_pictures
+    if @article.update(article_params)
+      redirect_to edit_article_path(@article), notice: t('generic.was_successfully_updated', :name => Article.model_name.human)
+    else
+      render :additional_pictures
+    end
+  end
+
 
   private
 
@@ -60,7 +71,7 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :publish, :publish_time, :game_id, :picture_id,
                                     :content, :created_by_id, :updated_by_id, :frontpage,
-                                    :article_category_ids => [])
+                                    :article_category_ids => [], :picture_ids => [])
   end
 
 end

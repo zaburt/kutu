@@ -9,6 +9,13 @@
     = f.association :game, :collection => Game.order(:name)
     =# f.association :picture
     = render :partial => 'shared/image_selector_modal', :locals => {:f => f, :form_object => @article, :form_attr => :picture}
+    .row
+      .small-6.columns
+        = f.label t('additional_pictures')
+      .small-18.columns
+        - @article.pictures.each do |pict|
+          = image_tag image_thumb_url_or_fallback(pict), :class => 'image_thumb_preview'
+    %br
     = f.association :article_categories, :as => :check_boxes, :label => t('article_categories')
     = f.input :content, :input_html => {:rows => 20}
     = f.hidden_field :updated_by_id, :value => current_user.try(:id)

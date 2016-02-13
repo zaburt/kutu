@@ -19,4 +19,5 @@
 //= require foundation
 //= require turbolinks
 //= require common
+//= require image-picker
 

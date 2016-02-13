@@ -87,5 +87,7 @@ $(document).on('page:change', function() {
 
   $('.dataTables_filter input').attr("placeholder", kutu_datatable_str.search);
 
+  $('select.image-picker').imagepicker({show_label: false});
+
 });
 
