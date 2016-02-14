@@ -2,6 +2,7 @@
 TODO
 =======================
 
+* share icons for social media
 * hidden user comments for games
 * front page optimize image layout
 * simple_form time value styling
