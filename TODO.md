@@ -2,7 +2,6 @@
 TODO
 =======================
 
-* share icons for social media
 * hidden user comments for games
 * front page optimize image layout
 * simple_form time value styling
@@ -23,6 +22,7 @@ Needs Investigation
 Done
 =======================
 
+* share icons for social media
 * multiple pictures for articles, show other pictures under article
 * multiple tags for articles
 * i18n routes
