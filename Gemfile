@@ -57,6 +57,7 @@ gem 'friendly_id'
 gem 'paperclip', '~> 4.3'
 gem 'route_translator'
 gem 'simple_form'
+gem 'social-share-button'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
