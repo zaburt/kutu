@@ -2,19 +2,14 @@
 TODO
 =======================
 
+* hidden user comments for games
+* front page optimize image layout
 * simple_form time value styling
 * google analytics
 * add favicon
 * write README
 * secure headers
 * add weather
-
-
-In Progress
-=======================
-
-* front page optimize image layout
-* hidden user comments for games
 
 
 Needs Investigation
