@@ -5,6 +5,7 @@
   %table.kutu_datatables
     %thead
       %tr
+        %th
         %th= t('activerecord.attributes.article.title')
         - if signed_in?
           %th= t('activerecord.attributes.article.publish')
@@ -15,7 +16,6 @@
         - if signed_in?
           %th= t('activerecord.attributes.article.created_by')
           %th= t('activerecord.attributes.article.updated_by')
-        %th
         - if signed_in?
           %th
           %th
@@ -23,6 +23,7 @@
     %tbody
       - @articles.each do |article|
         %tr
+          %td= link_to fonticon('eye'), article, :title => t('show')
           %td= article.title
           - if signed_in?
             %td= article.publish ? fonticon('check') : ''
@@ -34,7 +35,6 @@
           - if signed_in?
             %td= article.created_by.try(:display_name)
             %td= article.updated_by.try(:display_name)
-          %td= link_to fonticon('eye'), article, :title => t('show')
           - if signed_in?
             %td= link_to fonticon('pencil'), edit_article_path(article), :title => t('edit')
             %td= link_to fonticon('x', 'red'), article, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')

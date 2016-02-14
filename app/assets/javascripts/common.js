@@ -66,7 +66,7 @@ $(document).on('page:change', function() {
     lengthMenu: [[20, 50, 100, 250, -1], [20, 50, 100, 250, kutu_datatable_str.all]],
     bPaginate: true,
     bSearchable: true,
-    // order: [[2, 'asc']],
+    order: [[1, 'asc']],
     // aaSorting: [],
     language: {
       search: '',
