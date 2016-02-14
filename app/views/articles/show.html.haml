@@ -14,12 +14,12 @@
       = format_time(@article.publish_time)
   %br
   .row
-    .small-21.columns.small-offset-1.hashtag
+    .small-22.columns.small-offset-1.hashtag
       - @article.article_categories.each do |article_category|
         = "##{article_category.name}"
   %br
   .row
-    .small-21.columns.small-offset-1
+    .small-22.columns.small-offset-1
       = simple_format(@article.content, {}, :sanitize => false)
   %br
   .row
@@ -30,12 +30,12 @@
           .text_italic
             = picture.caption
   %br
-  - if @article.game
-    .row
-      /.small-8.columns
-      /  = t('activerecord.attributes.article.game')
-      .small-24.columns.right.text_right
-        = link_to title_for_game(@article.game), @article.game, :class => 'button small radius small-offset-16'
+  .row
+    .small-11.columns.small-offset-1
+      = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title))#, :popup => 'true')
+    .small-11.columns.text-center
+      - if @article.game
+        = link_to title_for_game(@article.game), @article.game, :class => 'button small radius'
 
 .row
   .small-12.columns.small-offset-1

@@ -20,4 +20,5 @@
 //= require turbolinks
 //= require common
 //= require image-picker
+//= require social-share-button
 

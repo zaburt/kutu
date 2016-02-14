@@ -81,6 +81,7 @@ en:
     was_successfully_created: "%{name} was successfully created"
     was_successfully_updated: "%{name} was successfully updated"
     was_successfully_destroyed: "%{name} was successfully destroyed"
+    social_comment_article_show: "%{name} Article - Schrödingiller"
   home: Main Page
   houses: Houses
   logout: Logout

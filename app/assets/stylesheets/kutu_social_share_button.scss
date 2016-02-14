@@ -1,0 +1,40 @@
+.social-share-button-email,
+.social-share-button-facebook,
+.social-share-button-flickr,
+.social-share-button-google_bookmark,
+.social-share-button-google_plus,
+.social-share-button-pinterest,
+.social-share-button-tumblr,
+.social-share-button-twitter {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: cover !important;
+}
+
+.social-share-button-email {
+  background: image-url('email.png') no-repeat;
+}
+.social-share-button-facebook {
+  background: image-url('facebook.png') no-repeat;
+}
+.social-share-button-flickr {
+  background: image-url('flickr.png') no-repeat;
+}
+.social-share-button-google_bookmark {
+  background: image-url('googleplus.png') no-repeat;
+}
+.social-share-button-google_plus {
+  background: image-url('googleplus.png') no-repeat;
+}
+.social-share-button-pinterest {
+  background: image-url('pinterest.png') no-repeat;
+}
+.social-share-button-tumblr {
+  background: image-url('tumblr.png') no-repeat;
+}
+.social-share-button-twitter {
+  background: image-url('twitter.png') no-repeat;
+}
+
+
