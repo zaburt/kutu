@@ -2,6 +2,11 @@
 TODO
 =======================
 
+* add meta data for description etc.
+* convert social icons of games to buttons only, no need to see links
+* allow filtering with selects on game index
+* make articles and games in show pages clickable
+* add site map
 * hidden user comments for games
 * front page optimize image layout
 * simple_form time value styling
@@ -15,6 +20,7 @@ TODO
 Needs Investigation
 =======================
 
+* should we change article titles to h1
 * allow background change on the fly
 * add map
 
