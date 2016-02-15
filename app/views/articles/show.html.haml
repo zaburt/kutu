@@ -20,7 +20,8 @@
   %br
   .row
     .small-22.columns.small-offset-1
-      = simple_format(@article.content, {}, :sanitize => false)
+      %article
+        = simple_format(@article.content, {}, :sanitize => false)
   %br
   .row
     .small-20.columns.small-centered.text-center
