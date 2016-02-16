@@ -20,12 +20,14 @@
 #  game_times       :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  slug             :string
 #
 # Indexes
 #
 #  index_games_on_city_id           (city_id)
 #  index_games_on_game_category_id  (game_category_id)
 #  index_games_on_house_id          (house_id)
+#  index_games_on_slug              (slug) UNIQUE
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

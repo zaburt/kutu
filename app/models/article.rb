@@ -14,12 +14,14 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  frontpage     :boolean          default(TRUE)
+#  slug          :string
 #
 # Indexes
 #
 #  index_articles_on_created_by_id  (created_by_id)
 #  index_articles_on_game_id        (game_id)
 #  index_articles_on_picture_id     (picture_id)
+#  index_articles_on_slug           (slug) UNIQUE
 #  index_articles_on_updated_by_id  (updated_by_id)
 #
 

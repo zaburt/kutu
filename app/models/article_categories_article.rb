@@ -1,11 +1,14 @@
 # == Schema Information
 #
-# Table name: article_categories
+# Table name: article_categories_articles
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  article_id          :integer
+#  article_category_id :integer
+#
+# Indexes
+#
+#  index_article_categories_articles_on_article_category_id  (article_category_id)
+#  index_article_categories_articles_on_article_id           (article_id)
 #
 
 class ArticleCategoriesArticle < ActiveRecord::Base
