@@ -4,14 +4,9 @@
 
   .row
     .small-6.columns.text_bold
-      = t('activerecord.attributes.game.address')
+      = t('activerecord.attributes.game.house')
     .small-18.columns
-      = @game.address
-  .row
-    .small-6.columns.text_bold
-      = t('activerecord.attributes.game.city')
-    .small-18.columns
-      = @game.city.try(:name)
+      = @game.house.try(:name)
   .row
     .small-6.columns.text_bold
       = t('activerecord.attributes.game.game_category')
@@ -19,21 +14,14 @@
       = @game.game_category.try(:name)
   .row
     .small-6.columns.text_bold
-      = t('activerecord.attributes.game.house')
+      = t('activerecord.attributes.game.city')
     .small-18.columns
-      = @game.house.try(:name)
+      = @game.city.try(:name)
   .row
     .small-6.columns.text_bold
-      = t('activerecord.attributes.game.game_times')
+      = t('activerecord.attributes.game.address')
     .small-18.columns
-      = @game.game_times
-  .row
-    .small-6.columns.text_bold
-      = t('activerecord.attributes.game.story')
-    .small-18.columns
-      = @game.story
-
-  %br
+      = @game.address
   .row
     .small-6.columns.text_bold
       /= t('activerecord.attributes.game.phone')
@@ -75,6 +63,16 @@
     .small-18.columns
       - if @game.instagram
         = link_to @game.instagram
+  .row
+    .small-6.columns.text_bold
+      = t('activerecord.attributes.game.game_times')
+    .small-18.columns
+      = @game.game_times
+  .row
+    .small-6.columns.text_bold
+      = t('activerecord.attributes.game.story')
+    .small-18.columns
+      = @game.story
 
   - if @articles.present?
     %br
