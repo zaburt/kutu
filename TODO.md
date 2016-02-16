@@ -5,7 +5,6 @@ TODO
 * add meta data for description etc.
 * convert social icons of games to buttons only, no need to see links
 * allow filtering with selects on game index
-* make articles and games in show pages clickable
 * add site map
 * hidden user comments for games
 * front page optimize image layout
@@ -28,6 +27,7 @@ Needs Investigation
 Done
 =======================
 
+* make articles and games in show pages clickable
 * share icons for social media
 * multiple pictures for articles, show other pictures under article
 * multiple tags for articles

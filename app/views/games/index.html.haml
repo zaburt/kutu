@@ -29,7 +29,7 @@
       - @games.each do |game|
         %tr
           %td= link_to fonticon('eye'), game, :title => t('show')
-          %td= title_for_game(game)
+          %td= link_to title_for_game(game), game
           /%td= game.address
           %td= game.city.try(:name)
           %td= game.game_category.try(:name)
