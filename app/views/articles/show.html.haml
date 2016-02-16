@@ -33,7 +33,8 @@
   %br
   .row
     .small-11.columns.small-offset-1
-      = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title))#, :popup => 'true')
+      = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true',
+        :image => URI.join(root_url, @article.picture.image.url(:medium)))
     .small-11.columns.text-center
       - if @article.game
         = link_to title_for_game(@article.game), @article.game, :class => 'button small radius'
