@@ -36,7 +36,7 @@
           /%td= game.house.try(:name)
           /%td= game.phone
           /%td= game.email
-          %td= game.website ? link_to(game.website) : ''
+          %td= game.website ? link_to(game.website, game.website) : ''
           /%td= game.facebook
           /%td= game.twitter
           /%td= game.instagram

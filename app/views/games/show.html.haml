@@ -41,28 +41,28 @@
       = fonticon('link')
     .small-18.columns
       - if @game.website
-        = link_to @game.website
+        = link_to @game.website, @game.website
   .row
     .small-6.columns.text_bold
       /= t('activerecord.attributes.game.facebook')
       = fonticon('social-facebook', 'facebook')
     .small-18.columns
       - if @game.facebook
-        = link_to @game.facebook
+        = link_to @game.facebook, @game.facebook
   .row
     .small-6.columns.text_bold
       /= t('activerecord.attributes.game.twitter')
       = fonticon('social-twitter', 'twitter')
     .small-18.columns
       - if @game.twitter
-        = link_to @game.twitter
+        = link_to @game.twitter, @game.twitter
   .row
     .small-6.columns.text_bold
       /= t('activerecord.attributes.game.instagram')
       = fonticon('social-instagram', 'instagram')
     .small-18.columns
       - if @game.instagram
-        = link_to @game.instagram
+        = link_to @game.instagram, @game.instagram
   .row
     .small-6.columns.text_bold
       = t('activerecord.attributes.game.game_times')
