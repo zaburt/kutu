@@ -6,7 +6,6 @@ TODO
 * convert social icons of games to buttons only, no need to see links
 * allow filtering with selects on game index
 * add site map
-* hidden user comments for games
 * front page optimize image layout
 * simple_form time value styling
 * add favicon
@@ -27,6 +26,7 @@ Needs Investigation
 Done
 =======================
 
+* hidden user comments for games
 * add bool open / closed to games
 * make articles and games in show pages clickable
 * share icons for social media
