@@ -18,8 +18,8 @@
         %tr
           %td= link_to fonticon('eye'), game_comment, :title => t('show')
           %td= game_comment.comment
-          %td= game_comment.game.try(:name)
-          %td= game_comment.user.try(:display_name)
+          %td= link_to game_comment.game.name, game_comment.game
+          %td= link_to game_comment.user.display_name, game_comment.user
           - if signed_in?
             %td= link_to fonticon('pencil'), edit_game_comment_path(game_comment), :title => t('edit')
             %td= link_to fonticon('x', 'red'), game_comment, :method => :delete, :data => { :confirm => t('are_you_sure')}, :title => t('delete')

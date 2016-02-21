@@ -5,7 +5,7 @@
     .small-8.columns.text_bold
       = t('activerecord.attributes.game_comment.game')
     .small-16.columns
-      = @game_comment.game.try(:name)
+      = link_to @game_comment.game.name, @game_comment.game
   .row
     .small-8.columns.text_bold
       = t('activerecord.attributes.game_comment.user')

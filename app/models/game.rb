@@ -38,6 +38,8 @@ class Game < ActiveRecord::Base
   belongs_to :game_category
   belongs_to :house
 
+  has_many :game_comments, -> {order(:created_at)}
+
   validates_presence_of :name
 
   scope :active, -> {where(:active => true)}

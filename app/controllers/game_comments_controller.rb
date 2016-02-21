@@ -12,7 +12,7 @@ class GameCommentsController < ApplicationController
 
   # GET /game_comments/new
   def new
-    @game_comment = GameComment.new
+    @game_comment = GameComment.new(new_game_comment_params.merge(:user_id => current_user.id))
   end
 
   # GET /game_comments/1/edit
@@ -57,6 +57,10 @@ class GameCommentsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def game_comment_params
     params.require(:game_comment).permit(:comment, :game_id, :user_id)
+  end
+
+  def new_game_comment_params
+    params.permit(:comment, :game_id)
   end
 
 end
