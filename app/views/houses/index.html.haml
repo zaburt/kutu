@@ -15,7 +15,7 @@
       - @houses.each do |house|
         %tr
           %td= link_to fonticon('eye'), house, :title => t('show')
-          %td= house.name
+          %td= link_to house.name, house
           - if signed_in?
             %td= link_to fonticon('pencil'), edit_house_path(house), :title => t('edit')
             %td= link_to fonticon('x', 'red'), house, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')

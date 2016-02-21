@@ -7,6 +7,7 @@
       %tr
         %th
         %th= t('activerecord.attributes.game.name')
+        %th= t('activerecord.attributes.game.active')
         /%th= t('activerecord.attributes.game.address')
         %th= t('activerecord.attributes.game.city')
         %th= t('activerecord.attributes.game.game_category')
@@ -30,6 +31,7 @@
         %tr
           %td= link_to fonticon('eye'), game, :title => t('show')
           %td= link_to title_for_game(game), game
+          %td= game.active ? fonticon('check', 'green') : fonticon('x', 'red')
           /%td= game.address
           %td= game.city.try(:name)
           %td= game.game_category.try(:name)

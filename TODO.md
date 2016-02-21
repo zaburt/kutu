@@ -2,7 +2,6 @@
 TODO
 =======================
 
-* add bool open / closed to games
 * add meta data for description etc.
 * convert social icons of games to buttons only, no need to see links
 * allow filtering with selects on game index
@@ -10,7 +9,6 @@ TODO
 * hidden user comments for games
 * front page optimize image layout
 * simple_form time value styling
-* google analytics
 * add favicon
 * write README
 * secure headers
@@ -20,6 +18,7 @@ TODO
 Needs Investigation
 =======================
 
+* google analytics
 * should we change article titles to h1
 * allow background change on the fly
 * add map
@@ -28,6 +27,7 @@ Needs Investigation
 Done
 =======================
 
+* add bool open / closed to games
 * make articles and games in show pages clickable
 * share icons for social media
 * multiple pictures for articles, show other pictures under article

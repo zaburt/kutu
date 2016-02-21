@@ -40,6 +40,7 @@ class Game < ActiveRecord::Base
 
   validates_presence_of :name
 
+  scope :active, -> {where(:active => true)}
   scope :for_house, -> (house) {
     if house.is_a?(House)
       where(:house_id => house.id)

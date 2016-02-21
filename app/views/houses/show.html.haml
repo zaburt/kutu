@@ -26,11 +26,13 @@
       %tr
         %th
         %th= t('activerecord.attributes.game.name')
+        %th= t('activerecord.attributes.game.active')
     %tbody
       - @games.each do |game|
         %tr
           %td= link_to fonticon('eye'), game, :title => t('show')
-          %td= game.name
+          %td= link_to title_for_game(game), game
+          %td= game.active ? fonticon('check', 'green') : fonticon('x', 'red')
 
 .row
   .small-12.columns.small-offset-1

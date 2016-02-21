@@ -9,6 +9,11 @@
       = @game.house.try(:name)
   .row
     .small-6.columns.text_bold
+      = t('activerecord.attributes.game.active')
+    .small-18.columns
+      = @game.active ? fonticon('check', 'green') : fonticon('x', 'red')
+  .row
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.game_category')
     .small-18.columns
       = @game.game_category.try(:name)

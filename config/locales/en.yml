@@ -17,6 +17,7 @@ en:
       city:
         name: Name
       game:
+        active: Open
         address: Address
         city: City
         email: E-Mail

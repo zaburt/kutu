@@ -41,6 +41,7 @@ tr:
       city:
         name: İsim
       game:
+        active: Açık
         address: Adres
         city: Şehir
         email: E-Posta

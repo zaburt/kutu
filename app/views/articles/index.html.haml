@@ -26,7 +26,7 @@
           %td= link_to fonticon('eye'), article, :title => t('show')
           %td= link_to article.title, article
           - if signed_in?
-            %td= article.publish ? fonticon('check') : ''
+            %td= article.publish ? fonticon('check', 'grey') : ''
             %td= format_time(article.publish_time)
           %td= article.game ? link_to(article.game.try(:name), article.game) : '&nbsp'
           %td= image_tag_for_picture(article.picture)

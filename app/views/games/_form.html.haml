@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :name, :required => true
+    = f.input :active
     = f.input :address
     = f.association :city, :collection => City.order(:name)
     = f.association :game_category, :collection => GameCategory.order(:name)
