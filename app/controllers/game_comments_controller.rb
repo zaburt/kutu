@@ -33,7 +33,8 @@ class GameCommentsController < ApplicationController
   # PATCH/PUT /game_comments/1
   def update
     if @game_comment.update(game_comment_params)
-      redirect_to @game_comment, notice: t('generic.was_successfully_updated', :name => GameComment.model_name.human)
+      # redirect_to @game_comment, notice: t('generic.was_successfully_updated', :name => GameComment.model_name.human)
+      redirect_to @game_comment.game, notice: t('generic.was_successfully_updated', :name => GameComment.model_name.human)
     else
       render :edit
     end

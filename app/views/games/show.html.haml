@@ -104,14 +104,15 @@
         %fieldset
           %legend
             = game_comment.user.display_name
-          - if game_comment.user_id == current_user.id
-            = link_to fonticon('pencil', 'text_normal right'), edit_game_comment_path(game_comment), :title => t('edit')
-            = link_to fonticon('x', 'red text_normal right'), game_comment, :method => :delete, :data => { :confirm => t('are_you_sure')}, :title => t('delete')
           .small-16.columns
             = simple_format(game_comment.comment, {}, :sanitize => false)
-          .small-4.columns
-          .small-4.columns
-            %i.text_small.right= format_time(game_comment.updated_at)
+          .small-8.columns
+            %i.text_small.grey.right
+              = format_time(game_comment.updated_at)
+            - if game_comment.user_id == current_user.id
+              %br
+              = link_to fonticon('x', 'red right'), game_comment, :method => :delete, :data => { :confirm => t('are_you_sure')}, :title => t('delete')
+              = link_to fonticon('pencil', 'right'), edit_game_comment_path(game_comment), :title => t('edit')
   .row
     .small-16.columns.small-offset-1
       = link_to t('generic.new_model', :name => GameComment.model_name.human), new_game_comment_path(:game_id => @game.id), :class => 'button small radius'
