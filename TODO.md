@@ -10,17 +10,17 @@ TODO
 * simple_form time value styling
 * add favicon
 * write README
-* secure headers
 * add weather
 
 
 Needs Investigation
 =======================
 
+* add map
+* allow background change on the fly
+* secure headers
 * google analytics
 * should we change article titles to h1
-* allow background change on the fly
-* add map
 
 
 Done
