@@ -2,6 +2,7 @@
 TODO
 =======================
 
+* hide datatables columns on small screens
 * add meta data for description etc.
 * convert social icons of games to buttons only, no need to see links
 * allow filtering with selects on game index
