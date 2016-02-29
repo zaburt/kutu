@@ -68,11 +68,12 @@
     .small-18.columns
       - if @game.instagram
         = link_to @game.instagram, @game.instagram
-  /.row
-  /  .small-6.columns.text_bold
-  /    = t('activerecord.attributes.game.game_times')
-  /  .small-18.columns
-  /    = @game.game_times
+  - if signed_in?
+    .row
+      .small-6.columns.text_bold
+        = t('activerecord.attributes.game.game_times')
+      .small-18.columns
+        = @game.game_times
   .row
     .small-6.columns.text_bold
       = t('activerecord.attributes.game.story')
@@ -98,7 +99,7 @@
       = link_to t('delete'), @game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
     = link_to t('back'), games_path, :class => 'button radius small'
 
--if signed_in?
+- if signed_in?
   .row
     .small-24.columns
       - @game.game_comments.each do |game_comment|
