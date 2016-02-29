@@ -2,6 +2,12 @@
 TODO
 =======================
 
+* show scoring points for games upto 10 points
+* do not show seconds on format_time
+* hide game hours
+* make game link ontop of articles a button
+* allow game story to be formatted
+* add note to article bottom if game is closed
 * hide datatables columns on small screens
 * add meta data for description etc.
 * convert social icons of games to buttons only, no need to see links
