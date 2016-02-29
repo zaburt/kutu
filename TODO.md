@@ -2,7 +2,6 @@
 TODO
 =======================
 
-* hide game hours
 * make game link ontop of articles a button
 * add note to article bottom if game is closed
 * show scoring points for games upto 10 points
@@ -32,6 +31,7 @@ Needs Investigation
 Done
 =======================
 
+* hide game hours
 * allow game story to be formatted
 * do not show seconds on format_time
 * hidden user comments for games
