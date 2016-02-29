@@ -3,7 +3,6 @@ TODO
 =======================
 
 * show scoring points for games upto 10 points
-* do not show seconds on format_time
 * hide game hours
 * make game link ontop of articles a button
 * allow game story to be formatted
@@ -34,6 +33,7 @@ Needs Investigation
 Done
 =======================
 
+* do not show seconds on format_time
 * hidden user comments for games
 * add bool open / closed to games
 * make articles and games in show pages clickable
