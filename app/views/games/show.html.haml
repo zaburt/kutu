@@ -77,7 +77,8 @@
     .small-6.columns.text_bold
       = t('activerecord.attributes.game.story')
     .small-18.columns
-      = @game.story
+      %article
+        = simple_format(@game.story, {}, :sanitize => false)
 
   - if @articles.present?
     %br
