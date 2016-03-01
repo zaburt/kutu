@@ -2,8 +2,6 @@
 TODO
 =======================
 
-* make game link ontop of articles a button
-* add note to article bottom if game is closed
 * show scoring points for games upto 10 points
 * hide datatables columns on small screens
 * add meta data for description etc.
@@ -31,6 +29,7 @@ Needs Investigation
 Done
 =======================
 
+* add note to article bottom if game is closed
 * hide game hours
 * allow game story to be formatted
 * do not show seconds on format_time
