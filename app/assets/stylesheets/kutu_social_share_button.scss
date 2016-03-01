@@ -1,19 +1,54 @@
+
+.social-share-button-blogger,
+.social-share-button-deviantart,
+.social-share-button-digg,
+.social-share-button-dribbble,
 .social-share-button-email,
+.social-share-button-email-blue,
+.social-share-button-evernote,
 .social-share-button-facebook,
 .social-share-button-flickr,
+.social-share-button-forrst,
 .social-share-button-google_bookmark,
 .social-share-button-google_plus,
+.social-share-button-instagram,
+.social-share-button-instagram,
+.social-share-button-linkedin,
 .social-share-button-pinterest,
+.social-share-button-rss,
+.social-share-button-share,
+.social-share-button-skype,
+.social-share-button-stumbleupon,
 .social-share-button-tumblr,
-.social-share-button-twitter {
+.social-share-button-twitter,
+.social-share-button-vimeo,
+.social-share-button-youtube {
   display: inline-block;
   width: 32px;
   height: 32px;
   background-size: cover !important;
 }
 
+.social-share-button-blogger {
+  background: image-url('blogger.png') no-repeat;
+}
+.social-share-button-deviantart {
+  background: image-url('deviantart.png') no-repeat;
+}
+.social-share-button-digg {
+  background: image-url('digg.png') no-repeat;
+}
+.social-share-button-dribble {
+  background: image-url('dribble.png') no-repeat;
+}
 .social-share-button-email {
   background: image-url('email.png') no-repeat;
+}
+.social-share-button-email-blue {
+  background: image-url('email-blue.png') no-repeat;
+}
+.social-share-button-evernote {
+  background: image-url('evernote.png') no-repeat;
 }
 .social-share-button-facebook {
   background: image-url('facebook.png') no-repeat;
@@ -21,20 +56,47 @@
 .social-share-button-flickr {
   background: image-url('flickr.png') no-repeat;
 }
+.social-share-button-forrst {
+  background: image-url('forrst.png') no-repeat;
+}
 .social-share-button-google_bookmark {
   background: image-url('googleplus.png') no-repeat;
 }
 .social-share-button-google_plus {
   background: image-url('googleplus.png') no-repeat;
 }
+.social-share-button-instagram {
+  background: image-url('instagram.png') no-repeat;
+}
+.social-share-button-linkedin {
+  background: image-url('linkedin.png') no-repeat;
+}
 .social-share-button-pinterest {
   background: image-url('pinterest.png') no-repeat;
+}
+.social-share-button-rss {
+  background: image-url('rss.png') no-repeat;
+}
+.social-share-button-share {
+  background: image-url('share.png') no-repeat;
+}
+.social-share-button-skype {
+  background: image-url('skype.png') no-repeat;
+}
+.social-share-button-stumbleupon {
+  background: image-url('stumbleupon.png') no-repeat;
 }
 .social-share-button-tumblr {
   background: image-url('tumblr.png') no-repeat;
 }
 .social-share-button-twitter {
   background: image-url('twitter.png') no-repeat;
+}
+.social-share-button-vimeo {
+  background: image-url('vimeo.png') no-repeat;
+}
+.social-share-button-youtube {
+  background: image-url('youtube.png') no-repeat;
 }
 
 
