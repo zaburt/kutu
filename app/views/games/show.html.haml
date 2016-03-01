@@ -34,40 +34,41 @@
     .small-18.columns
       = @game.phone
   .row
-    .small-6.columns.text_bold
+    .small-6.columns.social_button_generic.social-share-button-email-blue
       /= t('activerecord.attributes.game.email')
-      = fonticon('mail')
+      /= fonticon('mail')
     .small-18.columns
       - if @game.email
         = mail_to @game.email
   .row
-    .small-6.columns.text_bold
+    .small-6.columns.social_button_generic.social-share-button-share
       /= t('activerecord.attributes.game.website')
-      = fonticon('link')
+      /= fonticon('link')
     .small-18.columns
       - if @game.website
         = link_to @game.website, @game.website
   .row
-    .small-6.columns.text_bold
+    .small-6.columns.social_button_generic.social-share-button-facebook
       /= t('activerecord.attributes.game.facebook')
-      = fonticon('social-facebook', 'facebook')
+      /= fonticon('social-facebook', 'facebook')
     .small-18.columns
       - if @game.facebook
         = link_to @game.facebook, @game.facebook
   .row
-    .small-6.columns.text_bold
+    .small-6.columns.social_button_generic.social-share-button-twitter
       /= t('activerecord.attributes.game.twitter')
-      = fonticon('social-twitter', 'twitter')
+      /= fonticon('social-twitter', 'twitter')
     .small-18.columns
       - if @game.twitter
         = link_to @game.twitter, @game.twitter
   .row
-    .small-6.columns.text_bold
+    .small-6.columns.social_button_generic.social-share-button-instagram
       /= t('activerecord.attributes.game.instagram')
-      = fonticon('social-instagram', 'instagram')
+      /= fonticon('social-instagram', 'instagram')
     .small-18.columns
       - if @game.instagram
         = link_to @game.instagram, @game.instagram
+  %br
   - if signed_in?
     .row
       .small-6.columns.text_bold
