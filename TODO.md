@@ -6,7 +6,6 @@ TODO
 * hide datatables columns on small screens
 * add meta data for description etc.
 * convert social icons of games to buttons only, no need to see links
-* allow filtering with selects on game index
 * add site map
 * front page optimize image layout
 * simple_form time value styling
@@ -29,6 +28,7 @@ Needs Investigation
 Done
 =======================
 
+* allow filtering with selects on game index
 * add note to article bottom if game is closed
 * hide game hours
 * allow game story to be formatted

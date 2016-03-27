@@ -4,6 +4,8 @@ class GamesController < ApplicationController
   # GET /games
   def index
     @games = Game.all
+    @cities = City.order(:name).pluck(:name)
+    @game_categories = GameCategory.order(:name).pluck(:name)
   end
 
   # GET /games/1
