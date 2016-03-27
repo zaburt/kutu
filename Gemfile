@@ -71,8 +71,9 @@ group :development do
   gem 'quiet_assets'
   gem 'annotate'
   gem 'mailcatcher'
-  gem 'brakeman'
-  gem 'rubocop'
+  gem 'brakeman', :require => false
+  gem 'rubocop', :require => false
+  gem 'bundler-audit', :require => false
 
   # gem 'flog'
   # gem 'flay'
