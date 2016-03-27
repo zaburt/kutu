@@ -52,7 +52,7 @@ function filter_game_list(filter_key, filter_value) {
   var filter_value_display = '';
   datatables_filter_base[filter_key].current_value = filter_value;
 
-  if (datatables_filter_base[filter_key].is_bool) {
+  if (datatables_filter_base[filter_key].is_bool && filter_value !== datatables_filter_base[filter_key].default_value) {
     if (filter_value === '1' || filter_value === 1) {
       // filter_value_display = '<i class="fi-check green fonticon"></i>';
       filter_value_display = datatables_filter_base[filter_key].bool_true_display;
