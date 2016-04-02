@@ -113,6 +113,10 @@ $(document).on('page:change', function() {
       {
         targets: [2],
         visible: false
+      },
+      {
+        type: 'turkish',
+        targets: [1, 4]
       }
     ];
 
@@ -142,8 +146,14 @@ $(document).on('page:change', function() {
         return filter_matches;
       }
     );
-
-  } else {
+  } else if ($('table#articles_index').length > 0) {
+     datatables_default_config.columnDefs = [
+      {
+        type: 'turkish',
+        targets: [1, 3]
+      }
+    ];
+ } else {
     datatables_filter_base = {};
   }
 
