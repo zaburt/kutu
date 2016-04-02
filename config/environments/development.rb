@@ -51,5 +51,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {:address => 'localhost', :port => 1025}
 
+  # memcache
+  # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store,
+    *(ENV['MEMCACHE_SERVERS'].presence || '127.0.0.1').split(','),
+    {:namespace => 'kutu', :expires_in => 1.day}
+
 end
 
