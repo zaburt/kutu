@@ -76,6 +76,7 @@ group :development do
   gem 'brakeman', :require => false
   gem 'rubocop', :require => false
   gem 'bundler-audit', :require => false
+  gem 'rails-erd'
 
   # gem 'flog'
   # gem 'flay'
