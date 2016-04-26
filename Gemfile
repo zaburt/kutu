@@ -42,7 +42,7 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
 # foundation
-gem 'foundation-rails', '~> 5.5.3.2'
+gem 'foundation-rails', '~> 6.2'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 # gem 'will_paginate-foundation'
 
