@@ -60,7 +60,8 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+// $body-background: $white;
+$body-background: image-url("red_wood.jpg") no-repeat;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -90,8 +91,10 @@ $breakpoint-classes: (small medium large);
 // 3. The Grid
 // -----------
 
-$grid-row-width: $global-width;
-$grid-column-count: 12;
+// $grid-row-width: $global-width;
+$grid-row-width: 100%;
+// $grid-column-count: 12;
+$grid-column-count: 24;
 $grid-column-gutter: (
   small: 20px,
   medium: 30px,
@@ -266,7 +269,8 @@ $callout-border: 1px solid rgba($black, 0.25);
 $callout-margin: 0 0 1rem 0;
 $callout-padding: 1rem;
 $callout-font-color: $body-font-color;
-$callout-font-color-alt: $body-background;
+// $callout-font-color-alt: $body-background;
+$callout-font-color-alt: $white;
 $callout-radius: $global-radius;
 $callout-link-tint: 30%;
 
