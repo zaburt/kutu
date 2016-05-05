@@ -50,7 +50,9 @@ $global-font-size: 100%;
 $global-width: 100%;
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
+  // primary: #2199e8,
+  // primary: #F06B00,
+  primary: #00C0C0,
   secondary: #777,
   success: #3adb76,
   warning: #ffae00,
@@ -70,7 +72,8 @@ $global-margin: 1rem;
 $global-padding: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+// $global-radius: 0;
+$global-radius: 5px;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
