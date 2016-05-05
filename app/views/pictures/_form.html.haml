@@ -7,7 +7,7 @@
     = f.association :game, :collection => Game.order(:name)
     = f.input :image, :as => :file
 
-  .form-actions
-    = f.button :submit, :class => 'button small radius small-offset-12 large-offset-18'
+  .form-actions.small-offset-12.large-offset-18
+    = f.button :submit
 
 

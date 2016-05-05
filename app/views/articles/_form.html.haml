@@ -20,6 +20,6 @@
     = f.input :content, :input_html => {:rows => 20}
     = f.hidden_field :updated_by_id, :value => current_user.try(:id)
 
-  .form-actions
-    = f.button :submit, :class => 'button small radius small-offset-12 large-offset-18'
+  .form-actions.small-offset-12.large-offset-18
+    = f.button :submit
 

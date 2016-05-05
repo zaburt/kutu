@@ -8,6 +8,6 @@
     =# f.association :user, :collection => User.order(:display_name), :input_html => {:readonly => true}
     = f.hidden_field :user_id, :value => current_user.id
 
-  .form-actions
-    = f.button :submit, :class => 'button small radius small-offset-12 large-offset-18'
+  .form-actions.small-offset-12.large-offset-18
+    = f.button :submit
 
