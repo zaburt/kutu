@@ -1,49 +1,46 @@
 .row
-  %nav.top-bar.column{'data-topbar' => ''}
-    %ul.title-area
-      %li.name
-        %h1
-          %a{:href => '/'}
-            %i.fi-home
-            %i
-              Schrodingiller
-      %li.toggle-topbar
-        %a{:href => '#'}
-          %span
-            Menu
-
-    %section.top-bar-section
-      %ul
-        %li
-          = link_to t('articles'), articles_path
-        %li
-          = link_to t('games'), games_path
-        - if signed_in?
+  .top-bar
+    .top-bar-title
+      %span{'data-responsive-toggle' => 'responsive_menu', 'data-hide-for' => 'medium'}
+        %button.menu-icon.dark{:type => 'button', 'data-toggle' => ''}
+      %a{:href => '/'}
+        %i.fi-home
+        %i
+          Schrodingiller
+    #responsive_menu
+      .top-bar-left
+        %ul.dropdown.menu{'data-dropdown-menu' => ''}
           %li
-            = link_to t('article_categories'), article_categories_path
+            = link_to t('articles'), articles_path
           %li
-            = link_to t('cities'), cities_path
+            = link_to t('games'), games_path
+          - if signed_in?
+            %li
+              = link_to t('article_categories'), article_categories_path
+            %li
+              = link_to t('cities'), cities_path
+            %li
+              = link_to t('game_categories'), game_categories_path
+            %li
+              = link_to t('game_comments'), game_comments_path
+            %li
+              = link_to t('houses'), houses_path
+            %li
+              = link_to t('pictures'), pictures_path
+            %li
+              = link_to t('users'), users_path
+      .top-bar-right
+        %ul.menu
           %li
-            = link_to t('game_categories'), game_categories_path
-          %li
-            = link_to t('game_comments'), game_comments_path
-          %li
-            = link_to t('houses'), houses_path
-          %li
-            = link_to t('pictures'), pictures_path
-          %li
-            = link_to t('users'), users_path
-      %ul.right
-        %li
-          = link_to 'Biz', '/yazilar/biz'
-        - if signed_in?
-          /%li
-          /  = link_to current_user.email, edit_user_registration_path
-          %li
-            = link_to t('logout'), destroy_user_session_path, method: :delete
-        /- else
-        /  /%li
-        /  /  = link_to t('devise.shared.links.sign_up'), new_user_registration_path
-        /  %li
-        /    = link_to t('devise.shared.links.sign_in'), new_user_session_path
+            = link_to 'Biz', '/yazilar/biz'
+          - if signed_in?
+            /%li
+            /  = link_to current_user.email, edit_user_registration_path
+            %li
+              = link_to t('logout'), destroy_user_session_path, method: :delete
+          /- else
+          /  /%li
+          /  /  = link_to t('devise.shared.links.sign_up'), new_user_registration_path
+          /  %li
+          /    = link_to t('devise.shared.links.sign_in'), new_user_session_path
 
