@@ -4,13 +4,14 @@
   - if @article.picture
     .row
       .small-20.columns.small-centered.text-center
-        %img.small-24.large-16.columns.small-centered.image_selector_picture{'data-interchange' => "[#{@article.picture.image.url(:small)}, (small)], [#{@article.picture.image.url(:medium)}, (medium)]"}
+        = image_tag @article.picture.image.url(:medium), :class => 'image_selector_picture show-for-medium'
+        = image_tag @article.picture.image.url(:small), :class => 'image_selector_picture show-for-small-only'
         - if @article.picture.caption
           .text_italic
             = @article.picture.caption
   %br
   .row
-    .small-6.columns.small-offset-18.text_italic.grey
+    .text_italic.grey.small-8.large-6.columns.small-offset-16.large-offset-18
       = format_time(@article.publish_time)
   %br
   .row
@@ -26,28 +27,27 @@
   .row
     .small-20.columns.small-centered.text-center
       - @article.pictures.each do |picture|
-        %img.small-24.large-16.columns.small-centered.image_selector_picture{'data-interchange' => "[#{picture.image.url(:small)}, (small)], [#{picture.image.url(:medium)}, (medium)]"}
+        = image_tag picture.image.url(:medium), :class => 'image_selector_picture show-for-medium'
+        = image_tag picture.image.url(:small), :class => 'image_selector_picture show-for-small-only'
         - if picture.caption
           .text_italic
             = picture.caption
         %br
   %br
-  .row
-    .small-22.columns.small-offset-1
-      %ul.small-block-grid-1.medium-block-grid-3
-        %li
-          .text-center
-            = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true',
-              :image => URI.join(root_url, @article.picture.image.url(:medium)))
-        %li
-          - if @article.game && !@article.game.active
-            .text-center
-              %span.alert.round.label.text_normal
-                = t('note_game_is_closed')
-        %li
-          - if @article.game
-            .text-center
-              = link_to title_for_game(@article.game), @article.game, :class => 'button small radius'
+  .row.small-up-1.medium-up-3
+    .column
+      .text-center
+        = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true',
+          :image => URI.join(root_url, @article.picture.image.url(:medium)))
+    .column
+      - if @article.game
+        .text-center
+          = link_to title_for_game(@article.game), @article.game, :class => 'button'
+    .column
+      - if @article.game && !@article.game.active
+        .text-center
+          %span.alert.round.label.text_normal
+            = t('note_game_is_closed')
 
 .row
   .small-12.columns.small-offset-1
