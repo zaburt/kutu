@@ -64,7 +64,7 @@ function filter_game_list(filter_key, filter_value) {
     filter_value_display = filter_value;
   }
 
-  $('a[data-dropdown=dropdown_' + filter_key + ']').html(datatables_filter_base[filter_key].label +': ' + filter_value_display);
+  $('button[data-toggle=dropdown_' + filter_key + ']').html(datatables_filter_base[filter_key].label +': ' + filter_value_display);
   $('table.kutu_datatables').DataTable().draw();
 }
 
@@ -128,7 +128,7 @@ $(document).on('page:change', function() {
           if (filter_matches &&
             value.current_value !== value.default_value &&
             value.current_value !== data[value.data_offset]) {
-            console.log('returning false');
+            // console.log('returning false');
 
             filter_matches = false;
           }

@@ -430,11 +430,18 @@ img.image_selector_picture {
   }
 }
 
+/*
 .limited_length_column {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   max-width: 400px;
 }
+*/
+
+.background_white {
+  background-color: white;
+}
+
 
 
