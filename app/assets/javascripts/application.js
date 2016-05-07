@@ -14,11 +14,14 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require foundation
 //= require dataTables/jquery.dataTables
 //= require dataTables/dataTables.foundation
-//= require foundation
-//= require turbolinks
 //= require common
 //= require image-picker
 //= require social-share-button
+
+$(function() {
+  $(document).foundation();
+});
 

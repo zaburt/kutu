@@ -7,9 +7,11 @@
     %meta{:name => 'description', :content => "Belki de hala o evdeyiz, yoksa hala çıkamadık mı? Sonuçta Schrödingiller’iz"}
     %title
       = "#{@page_title || t(controller_name)} - Schrödingiller"
-    = stylesheet_link_tag    'application', :media => 'all', 'data-turbolinks-track' => true
+    /= stylesheet_link_tag    'application', :media => 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', :media => 'all'
     /= javascript_include_tag 'vendor/modernizr'
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    /= javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
     = render 'layouts/header'

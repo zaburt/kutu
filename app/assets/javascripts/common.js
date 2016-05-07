@@ -1,10 +1,12 @@
 // turbolinks messes up with foundation triggers, especially the image selector modal
+/*
 var foundation_ready_trigger;
 foundation_ready_trigger = function() {
     $(document).foundation();
 };
 $(document).ready(foundation_ready_trigger);
 $(document).on('page:load', foundation_ready_trigger);
+*/
 
 var current_page_datatables;
 
@@ -107,7 +109,8 @@ var datatables_default_config = {
 };
 
 // turbolinks doesnot work with ready, use page:change instead
-$(document).on('page:change', function() {
+// $(document).on('page:change', function() {
+$(function() {
   if ($('table#games_index').length > 0) {
     datatables_default_config.columnDefs = [
       {
