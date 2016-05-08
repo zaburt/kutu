@@ -12,7 +12,7 @@
           %th= t('activerecord.attributes.article.publish_time')
         %th= t('activerecord.attributes.article.game')
         %th= t('activerecord.attributes.article.picture')
-        %th= t('activerecord.attributes.article.content')
+        /%th= t('activerecord.attributes.article.content')
         - if signed_in?
           %th= t('activerecord.attributes.article.created_by')
           %th= t('activerecord.attributes.article.updated_by')
@@ -30,8 +30,8 @@
             %td= format_time(article.publish_time)
           %td= article.game ? link_to(article.game.try(:name), article.game) : ''
           %td= image_tag_for_picture(article.picture)
-          %td.limited_length_column{:title => strip_tags(article.content)}
-            = strip_tags(article.content)
+          /%td.limited_length_column{:title => strip_tags(article.content)}
+          /  = strip_tags(article.content)
           - if signed_in?
             %td= article.created_by.try(:display_name)
             %td= article.updated_by.try(:display_name)
