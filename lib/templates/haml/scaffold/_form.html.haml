@@ -6,5 +6,6 @@
     = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>
   <%- end -%>
 
-  .form-actions
-    = f.button :submit
+  .form-actions.float-right
+    = f.button :submit, :class => 'button'
+
