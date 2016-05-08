@@ -2,14 +2,15 @@
 - model_element_name = h form_object.model_name.element
 - form_attr_input_raw_name = "#{model_element_name}_#{form_attr_raw_name}"
 
-#image_selector_modal.reveal-modal.large{'data-reveal' => ''}
+#image_selector_modal.reveal.large{'data-reveal' => ''}
   %br
   - Picture.order('updated_at DESC').each do |picture|
     %a.image_selector_picture_wrapper{:href => 'javascript:void(0);', 'data-image-id' => picture.id, 'data-thumb-url' => picture.image.url(:thumb)}
       = image_tag picture.image.url(:small), :title => picture.image_file_name, :class => 'image_selector_picture'
 
-  %a.close-reveal-modal
-    &times;
+  %button.close-button{'data-close' => '', 'aria-label' => 'Close modal'}
+    %span{'aria-hidden' => 'true'}
+      &times;
 
 = f.input form_attr_raw_name, :as => :hidden
 
@@ -17,7 +18,7 @@
   .small-6.columns
     = f.label form_attr
   .small-18.columns
-    %a{'data-reveal-id' => 'image_selector_modal'}
+    %a{'data-open' => 'image_selector_modal'}
       - picture_obj = form_object.try(form_attr)
       = image_tag image_thumb_url_or_fallback(picture_obj), :id => :form_image_preview, :class => 'image_thumb_preview'
 
@@ -32,6 +33,6 @@
     $('##{form_attr_input_raw_name}').val(selected_image_id);
     $('#form_image_preview').attr('src', selected_image_thumb);
 
-    $('#image_selector_modal').foundation('reveal', 'close');
+    $('#image_selector_modal').foundation('close');
   });
 
