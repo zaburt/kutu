@@ -1,8 +1,18 @@
-- if notice.present? || alert.present?
+- if notice.present?
   .row
-    - is_alert = alert.present? ? 'alert' : ''
-    .alert-box{'data-alert' => '', :class => is_alert}
-      = notice || alert
-      %a.close{:href => '#'}
-        &times;
+    .callout.warning{'data-closable' => ''}
+      %i.fi-alert
+        = notice
+      %button.close-button{'aria-label' => 'Dismiss alert', 'data-close' => ''}
+        %span{'aria-hidden' => 'true'}
+          &times;
+
+- if alert.present?
+  .row
+    .callout.alert{'data-closable' => ''}
+      %i.fi-x.red
+        = alert
+      %button.close-button{'aria-label' => 'Dismiss alert', 'data-close' => ''}
+        %span{'aria-hidden' => 'true'}
+          &times;
 
