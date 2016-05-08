@@ -50,9 +50,9 @@ $global-font-size: 100%;
 $global-width: 100%;
 $global-lineheight: 1.5;
 $foundation-palette: (
-  // primary: #2199e8,
+  primary: #2199e8,
   // primary: #F06B00,
-  primary: #00C0C0,
+  // primary: #00C0C0,
   secondary: #777,
   success: #3adb76,
   warning: #ffae00,
@@ -569,7 +569,8 @@ $tooltip-radius: $global-radius;
 
 $topbar-padding: 0.5rem;
 // $topbar-background: $light-gray;
-$topbar-background: #333333;
+// $topbar-background: #333333;
+$topbar-background: none;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
