@@ -30,6 +30,6 @@
 
 %br
 - if signed_in?
-  = link_to t('generic.new_model', :name => Picture.model_name.human), new_picture_path, :class => 'button small radius'
-  = link_to t('new_multi_picture'), new_multi_pictures_path, :class => 'button small radius'
+  = link_to t('generic.new_model', :name => Picture.model_name.human), new_picture_path, :class => 'button'
+  = link_to t('new_multi_picture'), new_multi_pictures_path, :class => 'button'
 

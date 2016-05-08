@@ -31,7 +31,7 @@
 .row
   .small-12.columns.small-offset-1
     - if signed_in?
-      = link_to t('edit'), edit_game_comment_path(@game_comment), :class => 'button radius small'
-      = link_to t('delete'), @game_comment, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
-    = link_to t('back'), game_comments_path, :class => 'button radius small'
+      = link_to t('edit'), edit_game_comment_path(@game_comment), :class => 'button'
+      = link_to t('delete'), @game_comment, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'
+    = link_to t('back'), game_comments_path, :class => 'button'
 

@@ -60,7 +60,7 @@
 .row
   .small-12.columns.small-offset-1
     - if signed_in?
-      = link_to t('edit'), edit_picture_path(@picture), :class => 'button radius small'
-      = link_to t('delete'), @picture, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button radius small'
-    = link_to t('back'), pictures_path, :class => 'button radius small'
+      = link_to t('edit'), edit_picture_path(@picture), :class => 'button'
+      = link_to t('delete'), @picture, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'
+    = link_to t('back'), pictures_path, :class => 'button'
 

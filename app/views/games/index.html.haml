@@ -87,7 +87,7 @@
 
 %br
 - if signed_in?
-  = link_to t('generic.new_model', :name => Game.model_name.human), new_game_path, :class => 'button small radius'
+  = link_to t('generic.new_model', :name => Game.model_name.human), new_game_path, :class => 'button'
 
 :javascript
   var datatables_filter_base = {

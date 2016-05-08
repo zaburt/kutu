@@ -14,11 +14,11 @@
           {}, {:multiple => true, :class => 'image-picker show-html'}
 
     .form-actions
-      = f.button :submit, :class => 'button small radius small-offset-12 large-offset-18'
+      = f.button :submit, :class => 'button small-offset-12 large-offset-18'
 
 .row
   .small-12.columns.small-offset-1
-    = link_to t('show'), @article, :class => 'button radius small'
-    = link_to t('edit'), edit_article_path(@article), :class => 'button radius small'
-    = link_to t('back'), articles_path, :class => 'button radius small'
+    = link_to t('show'), @article, :class => 'button'
+    = link_to t('edit'), edit_article_path(@article), :class => 'button'
+    = link_to t('back'), articles_path, :class => 'button'
 
