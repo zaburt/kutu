@@ -28,8 +28,8 @@
             %td= link_to fonticon('pencil'), edit_picture_path(picture), :title => 'Edit'
             %td= link_to fonticon('x', 'red'), picture, :method => :delete, :data => { :confirm => 'Are you sure?' }, :title => 'Delete'
 
-%br
-- if signed_in?
-  = link_to t('generic.new_model', :name => Picture.model_name.human), new_picture_path, :class => 'button'
-  = link_to t('new_multi_picture'), new_multi_pictures_path, :class => 'button'
+  %br
+  - if signed_in?
+    = link_to t('generic.new_model', :name => Picture.model_name.human), new_picture_path, :class => 'button'
+    = link_to t('new_multi_picture'), new_multi_pictures_path, :class => 'button'
 

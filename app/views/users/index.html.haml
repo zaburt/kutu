@@ -24,7 +24,7 @@
             %td= link_to fonticon('pencil'), edit_user_path(user), :title => t('edit')
             %td= link_to fonticon('x', 'red'), user, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
-%br
-- if signed_in?
-  = link_to t('generic.new_model', :name => User.model_name.human), new_user_path, :class => 'button'
+  %br
+  - if signed_in?
+    = link_to t('generic.new_model', :name => User.model_name.human), new_user_path, :class => 'button'
 

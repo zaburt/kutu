@@ -39,7 +39,7 @@
             %td= link_to fonticon('pencil'), edit_article_path(article), :title => t('edit')
             %td= link_to fonticon('x', 'red'), article, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
-%br
-- if signed_in?
-  = link_to t('generic.new_model', :name => Article.model_name.human), new_article_path, :class => 'button'
+  %br
+  - if signed_in?
+    = link_to t('generic.new_model', :name => Article.model_name.human), new_article_path, :class => 'button'
 

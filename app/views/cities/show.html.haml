@@ -17,10 +17,11 @@
     .small-16.columns
       = format_time(@city.updated_at)
 
-.row
-  .small-12.columns.small-offset-1
-    - if signed_in?
-      = link_to t('edit'), edit_city_path(@city), :class => 'button'
-      = link_to t('delete'), @city, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'
-    = link_to t('back'), cities_path, :class => 'button'
+  %br
+  .row
+    .small-12.columns.small-offset-1
+      - if signed_in?
+        = link_to t('edit'), edit_city_path(@city), :class => 'button'
+        = link_to t('delete'), @city, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'
+      = link_to t('back'), cities_path, :class => 'button'
 

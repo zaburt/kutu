@@ -6,9 +6,9 @@
 
   = render 'form'
 
-.row
-  .small-12.columns.small-offset-1
-    = link_to t('show'), @article, :class => 'button'
-    = link_to t('additional_pictures'), additional_pictures_article_path(@article), :class => 'button'
-    = link_to t('back'), articles_path, :class => 'button'
+  .row
+    .small-12.columns.small-offset-1
+      = link_to t('show'), @article, :class => 'button'
+      = link_to t('additional_pictures'), additional_pictures_article_path(@article), :class => 'button'
+      = link_to t('back'), articles_path, :class => 'button'
 

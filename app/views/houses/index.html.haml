@@ -20,7 +20,7 @@
             %td= link_to fonticon('pencil'), edit_house_path(house), :title => t('edit')
             %td= link_to fonticon('x', 'red'), house, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
-%br
-- if signed_in?
-  = link_to t('generic.new_model', :name => House.model_name.human), new_house_path, :class => 'button'
+  %br
+  - if signed_in?
+    = link_to t('generic.new_model', :name => House.model_name.human), new_house_path, :class => 'button'
 

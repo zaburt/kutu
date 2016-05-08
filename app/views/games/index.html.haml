@@ -85,9 +85,9 @@
             %td= link_to fonticon('pencil'), edit_game_path(game), :title => t('edit')
             %td= link_to fonticon('x', 'red'), game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
-%br
-- if signed_in?
-  = link_to t('generic.new_model', :name => Game.model_name.human), new_game_path, :class => 'button'
+  %br
+  - if signed_in?
+    = link_to t('generic.new_model', :name => Game.model_name.human), new_game_path, :class => 'button'
 
 :javascript
   var datatables_filter_base = {

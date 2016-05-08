@@ -20,7 +20,7 @@
             %td= link_to fonticon('pencil'), edit_game_category_path(game_category), :title => t('edit')
             %td= link_to fonticon('x', 'red'), game_category, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
-%br
-- if signed_in?
-  = link_to t('generic.new_model', :name => GameCategory.model_name.human), new_game_category_path, :class => 'button'
+  %br
+  - if signed_in?
+    = link_to t('generic.new_model', :name => GameCategory.model_name.human), new_game_category_path, :class => 'button'
 

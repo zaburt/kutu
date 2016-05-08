@@ -49,9 +49,10 @@
           %span.alert.round.label.text_normal
             = t('note_game_is_closed')
 
-.row
-  .small-12.columns.small-offset-1
-    - if signed_in?
-      = link_to t('edit'), edit_article_path(@article), :class => 'button'
-    = link_to t('back'), :root, :class => 'button'
+  %br
+  .row
+    .small-12.columns.small-offset-1
+      - if signed_in?
+        = link_to t('edit'), edit_article_path(@article), :class => 'button'
+      = link_to t('back'), :root, :class => 'button'
 
