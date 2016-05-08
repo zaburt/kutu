@@ -3,13 +3,16 @@
     = t('.sign_in', :default => 'Sign in')
 
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    = f.input :email
-    = f.input :password
-    - if devise_mapping.rememberable?
-      = f.input :remember_me, :as => :boolean, :checked_value => true, :unchecked_value => false
-    = f.submit t('.sign_in', :default => 'Sign in'), :class => 'button small-offset-18'
+    .form-inputs
+      = f.input :email
+      = f.input :password
+      - if devise_mapping.rememberable?
+        = f.input :remember_me, :as => :boolean, :checked_value => true, :unchecked_value => false
 
-.row
-  .small-12.columns.small-offset-1
-    = render 'devise/shared/links'
+    .form-actions.float-right
+      = f.submit t('.sign_in', :default => 'Sign in'), :class => 'button'
+
+  .row
+    .small-12.columns.small-offset-1
+      = render 'devise/shared/links'
 

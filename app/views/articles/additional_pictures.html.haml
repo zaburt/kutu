@@ -13,8 +13,8 @@
         Picture.order('updated_at DESC').map{|k| [k.id, {'data-img-src' => k.image.url(:thumb)}]},
           {}, {:multiple => true, :class => 'image-picker show-html'}
 
-    .form-actions
-      = f.button :submit, :class => 'button small-offset-12 large-offset-18'
+    .form-actions.float-right
+      = f.button :submit, :class => 'button'
 
 .row
   .small-12.columns.small-offset-1

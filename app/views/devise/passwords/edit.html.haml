@@ -4,12 +4,16 @@
 
   = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
     = devise_error_messages!
-    = f.hidden_field :reset_password_token
-    = f.input :password, :label => t('.new_password', :default => 'New password')
-    = f.input :password_confirmation, :label => t('.confirm_new_password', :default => 'Confirm new password')
-    = f.submit t('.change_my_password', :default => 'Change my password'), :class => 'button small-offset-18'
 
-.row
-  .small-12.columns.small-offset-1
-    = render 'devise/shared/links'
+    .form-inputs
+      = f.hidden_field :reset_password_token
+      = f.input :password, :label => t('.new_password', :default => 'New password')
+      = f.input :password_confirmation, :label => t('.confirm_new_password', :default => 'Confirm new password')
+
+    .form-actions.float-right
+      = f.submit t('.change_my_password', :default => 'Change my password'), :class => 'button'
+
+  .row
+    .small-12.columns.small-offset-1
+      = render 'devise/shared/links'
 
