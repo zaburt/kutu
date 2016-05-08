@@ -5,7 +5,7 @@
     .small-centered.text-center
       %button.dropdown.button{'data-toggle' => 'dropdown_cities'}
         = "#{t('activerecord.attributes.game.city')}: #{t('all')}"
-      #dropdown_cities.dropdown-pane.background_white{'data-dropdown' => '', 'data-auto-focus' => true, 'data-close-on-click' => true}
+      #dropdown_cities.dropdown-pane.background_white{'data-dropdown' => '', 'data-auto-focus' => true, 'data-close-on-click' => 'true'}
         %ul.no-bullet.text-left
           - ([t('all')] + @cities).each do |city|
             %li
@@ -14,7 +14,7 @@
 
       %button.dropdown.button{'data-toggle' => 'dropdown_game_categories'}
         = "#{t('activerecord.attributes.game.game_category')}: #{t('all')}"
-      #dropdown_game_categories.dropdown-pane.background_white{'data-dropdown' => '', 'data-auto-focus' => true, 'data-close-on-click' => true}
+      #dropdown_game_categories.dropdown-pane.background_white{'data-dropdown' => '', 'data-auto-focus' => true, 'data-close-on-click' => 'true'}
         %ul.no-bullet.text-left
           - ([t('all')] + @game_categories).each do |game_category|
             %li
@@ -23,7 +23,7 @@
 
       %button.dropdown.button{'data-toggle' => 'dropdown_active'}
         = "#{t('activerecord.attributes.game.active')}: #{t('all')}"
-      #dropdown_active.dropdown-pane.background_white{'data-dropdown' => '', 'data-auto-focus' => true, 'data-close-on-click' => true}
+      #dropdown_active.dropdown-pane.background_white{'data-dropdown' => '', 'data-auto-focus' => true, 'data-close-on-click' => 'true'}
         %ul.no-bullet.text-left
           %li
             %a{:href => "javascript:filter_game_list('active', '#{t('all')}');"}

@@ -67,6 +67,7 @@ function filter_game_list(filter_key, filter_value) {
   }
 
   $('button[data-toggle=dropdown_' + filter_key + ']').html(datatables_filter_base[filter_key].label +': ' + filter_value_display);
+  $('#dropdown_' + filter_key).foundation('close');
   $('table.kutu_datatables').DataTable().draw();
 }
 
