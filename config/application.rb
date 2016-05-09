@@ -53,7 +53,7 @@ module Kutu
     config.assets.paths << Rails.root.join('app', 'assets', 'images')
     config.assets.paths << Rails.root.join('vendor', 'assets', 'images', 'dataTables')
     config.assets.paths << Rails.root.join('vendor', 'assets', 'images', 'social_media_icons')
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'images', 'leaflet')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'images', 'leaflet', 'images')
 
     # see Paperclip::Attachment.default_options
     #
