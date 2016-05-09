@@ -20,7 +20,13 @@ $.each(games, function(slug, attrs) {
   }).addTo(map).bindPopup('<b>' + attrs.name + '</b><br>' + attrs.phone + '<br>' + attrs.address);
 
   markers[slug].on('click', function(mark) {
-    map.flyTo(markers[slug].getLatLng(), 14);
+    var zoom_target = 14;
+
+    if (map.getZoom() > zoom_target) {
+      zoom_target = map.getZoom();
+    }
+
+    map.flyTo(markers[slug].getLatLng(), zoom_target);
   });
 
 });
