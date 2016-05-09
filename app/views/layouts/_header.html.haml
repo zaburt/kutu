@@ -16,6 +16,8 @@
             = link_to t('games'), games_path
           - if signed_in?
             %li
+              = link_to t('map'), map_path
+            %li
               = link_to t('article_categories'), article_categories_path
             %li
               = link_to t('cities'), cities_path

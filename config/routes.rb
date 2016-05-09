@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     resources :game_comments
     resources :games
     resources :houses
+
+    get 'map', to: 'map#index', as: :map
   end
 
   scope :path => '/home', :controller => :home, :as => :home do

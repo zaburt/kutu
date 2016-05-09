@@ -9,6 +9,7 @@ tr:
     game_comments: oyun_yorumlari
     games: oyunlar
     houses: evler
+    map: harita
   i18n:
     transliterate:
       rule:
@@ -110,6 +111,7 @@ tr:
   home: Ana Sayfa
   houses: Evler
   logout: Çıkış
+  map: Harita
   new_multi_picture: Çoklu Görsel Yükle
   multi_picture: Çoklu Görsel
   pictures: Görseller
