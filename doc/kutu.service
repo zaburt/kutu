@@ -2,7 +2,7 @@
 # systemd unit for kutu service
 #
 # setup rvm as kutu app user to create a wrapper for unicorn
-#   rvm wrapper 2.3.0@kutu kutu unicorn
+#   rvm wrapper 2.3.1@kutu kutu unicorn
 #
 # put this file as /etc/systemd/system/kutu.service
 #   systemctl start kutu
