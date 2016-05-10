@@ -6,8 +6,14 @@ L.Icon.Default.imagePath = '/leaflet';
 
 map = L.map('map_canvas', {
   center: [38.96, 35.22],
-  zoom: 7
+  zoom: 6
 });
+
+function onMapClick(e) {
+  console.log("You clicked the map at: " + e.latlng.toString());
+}
+
+map.on('click', onMapClick);
 
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
@@ -32,4 +38,5 @@ $.each(games, function(slug, attrs) {
   });
 
 });
+
 
