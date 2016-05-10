@@ -2,6 +2,8 @@
 var map;
 var markers = {};
 
+L.Icon.Default.imagePath = '/leaflet';
+
 map = L.map('map_canvas', {
   center: [38.96, 35.22],
   zoom: 7
