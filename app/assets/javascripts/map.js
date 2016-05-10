@@ -52,9 +52,10 @@ function init_tiles() {
 
 function init_games() {
   $.each(games, function(slug, attrs) {
+    popup_content = '<b>' + attrs.game_link + '</b><br>' + attrs.phone + '<br>' + attrs.address + ' / ' + attrs.city;
     markers[slug] = L.marker([attrs.lat, attrs.lng], {
       title: attrs.name
-    }).addTo(map).bindPopup('<b>' + attrs.name + '</b>' + attrs.game_link + '<br>' + attrs.phone + '<br>' + attrs.address);
+    }).addTo(map).bindPopup(popup_content);
 
     if (popup_focus_game && slug === focus_on) {
       markers[slug].openPopup();
