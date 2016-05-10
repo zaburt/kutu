@@ -6,7 +6,7 @@
     #map_canvas
 
 :javascript
-  var games = #{raw @game_hash.to_json};
+  var games = #{raw prepare_games_for_map.to_json};
   var focus_on = '#{@focus_on}' || null;
 
 = stylesheet_link_tag 'application_map'
