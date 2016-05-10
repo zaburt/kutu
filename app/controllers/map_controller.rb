@@ -2,6 +2,7 @@ class MapController < ApplicationController
 
   def index
     @fullwidth = true
+    @focus_on = params[:focus_on]
     games_for_map
   end
 

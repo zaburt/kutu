@@ -9,6 +9,14 @@ map = L.map('map_canvas', {
   zoom: 6
 });
 
+function zoom_to_marker(mark, zoom_target) {
+  if (map.getZoom() > zoom_target) {
+    zoom_target = map.getZoom();
+  }
+
+  map.flyTo(mark.getLatLng(), zoom_target);
+}
+
 function onMapClick(e) {
   console.log("You clicked the map at: " + e.latlng.toString());
 }
@@ -24,19 +32,16 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 $.each(games, function(slug, attrs) {
   markers[slug] = L.marker([attrs.lat, attrs.lng], {
     title: attrs.name
-  // }).addTo(map).bindPopup('<b>' + attrs.name + '</b><p>' + attrs.phone + '</p><p>' + attrs.address + '</p>');
   }).addTo(map).bindPopup('<b>' + attrs.name + '</b><br>' + attrs.phone + '<br>' + attrs.address);
 
   markers[slug].on('click', function(mark) {
-    var zoom_target = 14;
-
-    if (map.getZoom() > zoom_target) {
-      zoom_target = map.getZoom();
-    }
-
-    map.flyTo(markers[slug].getLatLng(), zoom_target);
+    zoom_to_marker(markers[slug], 16);
   });
 
 });
 
+if (focus_on && markers[focus_on]) {
+  zoom_to_marker(markers[focus_on], 16);
+  markers[focus_on].openPopup();
+}
 

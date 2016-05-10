@@ -87,6 +87,7 @@ en:
   houses: Houses
   logout: Logout
   map: Map
+  show_on_map: Show on Map
   new_multi_picture: Upload Multiple Pictures
   multi_picture: Multiple Pictures
   pictures: Pictures

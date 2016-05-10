@@ -112,6 +112,7 @@ tr:
   houses: Evler
   logout: Çıkış
   map: Harita
+  show_on_map: Haritada Göster
   new_multi_picture: Çoklu Görsel Yükle
   multi_picture: Çoklu Görsel
   pictures: Görseller

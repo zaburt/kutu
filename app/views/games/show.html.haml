@@ -101,6 +101,7 @@
         = link_to t('edit'), edit_game_path(@game), :class => 'button'
         = link_to t('delete'), @game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'
         = link_to t('generic.new_model', :name => GameComment.model_name.human), new_game_comment_path(:game_id => @game.id), :class => 'button'
+        = link_to t('show_on_map'), map_path(:focus_on => @game.slug), :class => 'button'
       = link_to t('back'), games_path, :class => 'button'
 
 - if signed_in?
