@@ -7,6 +7,7 @@ var default_lng = 35.22;
 var default_lat = 38.96;
 var default_zoom = 6;
 var popup_focus_game = false;
+var marker_cluster = L.markerClusterGroup();
 
 
 function init_map() {
@@ -55,7 +56,10 @@ function init_games() {
     popup_content = '<b>' + attrs.game_link + '</b><br>' + attrs.phone + '<br>' + attrs.address + ' / ' + attrs.city;
     markers[slug] = L.marker([attrs.lat, attrs.lng], {
       title: attrs.name
-    }).addTo(map).bindPopup(popup_content);
+    }).bindPopup(popup_content);
+
+    // markers[slug].addTo(map);
+    marker_cluster.addLayer(markers[slug]);
 
     if (popup_focus_game && slug === focus_on) {
       markers[slug].openPopup();
@@ -64,8 +68,9 @@ function init_games() {
     markers[slug].on('click', function(mark) {
       zoom_to_marker(markers[slug], 16);
     });
-
   });
+
+  map.addLayer(marker_cluster);
 }
 
 function init_events() {
