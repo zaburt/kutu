@@ -58,8 +58,8 @@ function init_games() {
       title: attrs.name
     }).bindPopup(popup_content);
 
-    // markers[slug].addTo(map);
-    marker_cluster.addLayer(markers[slug]);
+    markers[slug].addTo(map);
+    // marker_cluster.addLayer(markers[slug]);
 
     if (popup_focus_game && slug === focus_on) {
       markers[slug].openPopup();
@@ -70,7 +70,7 @@ function init_games() {
     });
   });
 
-  map.addLayer(marker_cluster);
+  // map.addLayer(marker_cluster);
 }
 
 function init_events() {
