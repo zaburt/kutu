@@ -48,6 +48,21 @@ $.extend(true, $.fn.dataTable.defaults, {
   renderer: 'foundation'
 });
 
+function str_includes(full_str, search_str) {
+  var matches = false;
+
+  if (typeof search_str !== 'undefined' && search_str !== null &&
+    typeof full_str !== 'undefined' && full_str !== null) {
+
+    var search_str_lower = search_str.toLowerCase();
+    var full_str_lower = full_str.toLowerCase();
+
+    matches = full_str_lower.indexOf(search_str_lower) !== -1;
+  }
+
+  return matches;
+}
+
 function filter_game_list(filter_key, filter_value) {
   console.log('filter_game_list called with key: ' + filter_key + ' value: ' + filter_value);
 
