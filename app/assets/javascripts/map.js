@@ -8,6 +8,7 @@ var default_lat = 38.96;
 var default_zoom = 6;
 var popup_focus_game = false;
 var marker_cluster = L.markerClusterGroup();
+var feature_layers = {};
 
 
 function init_map() {
@@ -40,8 +41,19 @@ function zoom_to_marker(mark, zoom_target) {
   map.flyTo(mark.getLatLng(), zoom_target);
 }
 
-function onMapClick(e) {
+function on_map_click(e) {
   console.log("You clicked the map at: " + e.latlng.toString());
+}
+
+function on_game_click(e) {
+  var data = e.layer.feature.properties;
+  console.log(data);
+}
+
+function on_game_add(feature, layer) {
+  var attrs = layer.feature.properties;
+  var popup_content = '<b>' + attrs.game_link + '</b><br>' + attrs.phone + '<br>' + attrs.address + ' / ' + attrs.city;
+  layer.bindPopup(popup_content);
 }
 
 function init_tiles() {
@@ -52,6 +64,7 @@ function init_tiles() {
 }
 
 function init_games() {
+  /*
   $.each(games, function(slug, attrs) {
     popup_content = '<b>' + attrs.game_link + '</b><br>' + attrs.phone + '<br>' + attrs.address + ' / ' + attrs.city;
     markers[slug] = L.marker([attrs.lat, attrs.lng], {
@@ -69,12 +82,25 @@ function init_games() {
       zoom_to_marker(markers[slug], 16);
     });
   });
+  */
 
-  // map.addLayer(marker_cluster);
+  feature_layers.games = L.geoJson(games_geojson, {
+    // pointToLayer: function (feature, latlng) {
+    //   return L.marker(latlng, {icon: baseballIcon});
+    // },
+    onEachFeature: on_game_add
+  });
+
+  feature_layers.games.on('click', function(e) {
+    on_game_click(e);
+  });
+
+  marker_cluster.addLayer(feature_layers.games);
+  map.addLayer(marker_cluster);
 }
 
 function init_events() {
-  map.on('click', onMapClick);
+  map.on('click', on_map_click);
 }
 
 function init_all() {
