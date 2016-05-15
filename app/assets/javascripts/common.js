@@ -130,14 +130,16 @@ $(function() {
   if ($('table#games_index').length > 0) {
     datatables_default_config.columnDefs = [
       {
-        targets: [2],
+        targets: [3],
         visible: false
       },
       {
         type: 'turkish',
-        targets: [1, 4]
+        targets: [2, 5]
       }
     ];
+
+    datatables_default_config.order = [[2, 'asc']];
 
     $.fn.dataTable.ext.search.push(
       function(settings, data, dataIndex) {

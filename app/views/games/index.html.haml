@@ -39,6 +39,7 @@
     %thead
       %tr
         %th
+        %th
         %th= t('activerecord.attributes.game.name')
         %th
         %th= t('activerecord.attributes.game.active')
@@ -64,6 +65,9 @@
       - @games.each do |game|
         %tr
           %td= link_to fonticon('eye'), game, :title => t('show')
+          %td
+            - if signed_in?
+              = link_to fonticon('map'), map_path(:focus_on => game.slug), :title => t('show_on_map')
           %td= link_to title_for_game(game), game
           %td= game.active ? '1' : '0'
           %td= game.active ? fonticon('check', 'green') : fonticon('x', 'red')
