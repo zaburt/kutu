@@ -7,6 +7,7 @@ var default_lng = 35.22;
 var default_lat = 38.96;
 var default_zoom = 6;
 var popup_focus_game = false;
+var initial_focused_layer = null;
 var marker_cluster = L.markerClusterGroup();
 var feature_layers = {};
 var game_filter_search = '';
@@ -18,18 +19,26 @@ var game_filter = {
 };
 
 
+function find_game_from_geojson(key, value) {
+  return games_geojson.find(function(k) {
+    return k.properties[key] == value;
+  });
+}
+
 function init_map() {
   var map_lng = default_lng;
   var map_lat = default_lat;
   var map_zoom = default_zoom;
 
-  if (focus_on && games[focus_on]) {
-    // zoom_to_marker(markers[focus_on], 16);
-    // markers[focus_on].openPopup();
-    map_lng = games[focus_on].lng;
-    map_lat = games[focus_on].lat;
-    map_zoom = 16;
-    popup_focus_game = true;
+  if (focus_on) {
+    var game_to_find = find_game_from_geojson('slug', focus_on);
+
+    if (game_to_find) {
+      map_lng = game_to_find.geometry.coordinates[0];
+      map_lat = game_to_find.geometry.coordinates[1];
+      map_zoom = 16;
+      popup_focus_game = true;
+    }
   }
 
   // console.log('map_lng: ' + map_lng + ' map_lat: ' + map_lat + ' zoom: ' + map_zoom);
@@ -38,6 +47,7 @@ function init_map() {
     center: [map_lat, map_lng],
     zoom: map_zoom
   });
+
   L.control.scale({imperial: false}).addTo(map);
 }
 
@@ -64,6 +74,10 @@ function on_game_add(feature, layer) {
 
   layer.options.title = attrs.title;
   layer.bindPopup(popup_content);
+
+  if (popup_focus_game && focus_on === attrs.slug) {
+    initial_focused_layer = layer;
+  }
 }
 
 function game_filter_callback(feature, layer) {
@@ -142,13 +156,22 @@ function init_games() {
 
   marker_cluster.addLayer(feature_layers.games);
   map.addLayer(marker_cluster);
-  map.fitBounds(marker_cluster.getBounds(), {
-    padding: [15, 15]
-  });
+
+  if (!popup_focus_game) {
+    map.fitBounds(marker_cluster.getBounds(), {
+      padding: [15, 15]
+    });
+  }
 }
 
 function init_events() {
   map.on('click', on_map_click);
+}
+
+function init_popups() {
+  if (initial_focused_layer) {
+    initial_focused_layer.openPopup();
+  }
 }
 
 function init_all() {
@@ -156,6 +179,7 @@ function init_all() {
   init_tiles();
   init_games();
   init_events();
+  init_popups();
 }
 
 init_all();
