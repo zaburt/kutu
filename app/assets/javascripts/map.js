@@ -38,6 +38,7 @@ function init_map() {
     center: [map_lat, map_lng],
     zoom: map_zoom
   });
+  L.control.scale({imperial: false}).addTo(map);
 }
 
 function zoom_to_marker(mark, zoom_target) {
