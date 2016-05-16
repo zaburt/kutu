@@ -48,7 +48,9 @@ function init_map() {
     zoom: map_zoom,
     fullscreenControl: true,
       fullscreenControlOptions: {
-      position: 'topleft'
+      position: 'topleft',
+      title: 'Tam Ekran',
+      titleCancel: 'Normal Görünüm'
     }
   });
 
