@@ -219,6 +219,19 @@ function build_custom_toolbar(name, iterator, filter_key) {
     sub_actions.push(iter_action);
   });
 
+  var close_subtoolbar = ImmediateSubAction.extend({
+    options: {
+      toolbarIcon: {
+        html: '<i class="fi-x"></i>',
+        tooltip: 'Kapat'
+      }
+    }
+  });
+
+  sub_actions.push(close_subtoolbar);
+
+  var extended_toolbar = L.Toolbar.extend({});
+
   return L.ToolbarAction.extend({
     options: {
       toolbarIcon: {
@@ -231,7 +244,10 @@ function build_custom_toolbar(name, iterator, filter_key) {
        * doesn't need the additional styling and behavior of a
        * L.Toolbar.Control or L.Toolbar.Popup.
        */
-      subToolbar: new L.Toolbar({
+      //subToolbar: new L.Toolbar({
+      //  actions: sub_actions
+      //})
+      subToolbar: new extended_toolbar({
         actions: sub_actions
       })
     }
