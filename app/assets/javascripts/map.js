@@ -45,7 +45,11 @@ function init_map() {
 
   map = L.map('map_canvas', {
     center: [map_lat, map_lng],
-    zoom: map_zoom
+    zoom: map_zoom,
+    fullscreenControl: true,
+      fullscreenControlOptions: {
+      position: 'topleft'
+    }
   });
 
   L.control.scale({imperial: false}).addTo(map);
