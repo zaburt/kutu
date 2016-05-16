@@ -17,7 +17,14 @@ var game_filter = {
   city_id: null,
   game_category_id: null
 };
-
+var toolbar = {
+  container: null,
+  actions: {
+    active: null,
+    city: null,
+    game_category: null
+  }
+};
 
 function find_game_from_geojson(key, value) {
   return games_geojson.find(function(k) {
@@ -170,6 +177,82 @@ function init_games() {
   }
 }
 
+function build_custom_toolbar(name, iterator, filter_key) {
+  /* A sub-action which completes as soon as it is activated.
+   * Sub-actions receive their parent action as an argument to
+   * their `initialize` function. We save a reference to this
+   * parent action so we can disable it as soon as the sub-action
+   * completes.
+   */
+  var ImmediateSubAction = L.ToolbarAction.extend({
+    initialize: function(map, myAction) {
+      this.map = map;
+      this.myAction = myAction;
+      L.ToolbarAction.prototype.initialize.call(this);
+    },
+    addHooks: function() {
+      this.myAction.disable();
+    }
+  });
+
+  var sub_actions = [];
+
+  $.each(iterator, function(ix, c) {
+    var k = c[0];
+    var v = c[1];
+
+    var iter_action = ImmediateSubAction.extend({
+      options: {
+        toolbarIcon: {
+          html: k,
+          tooltip: k
+        }
+      },
+      addHooks: function () {
+        // this.map.setView([0, 0], 0);
+        game_filter[filter_key] = v;
+        refresh_games();
+        ImmediateSubAction.prototype.addHooks.call(this);
+      }
+    });
+
+    sub_actions.push(iter_action);
+  });
+
+  return L.ToolbarAction.extend({
+    options: {
+      toolbarIcon: {
+        // className: 'fa fa-eye',
+        tooltip: name,
+        html: name
+      },
+      /* Use L.Toolbar for sub-toolbars. A sub-toolbar is,
+       * by definition, contained inside another toolbar, so it
+       * doesn't need the additional styling and behavior of a
+       * L.Toolbar.Control or L.Toolbar.Popup.
+       */
+      subToolbar: new L.Toolbar({
+        actions: sub_actions
+      })
+    }
+  });
+}
+
+function init_toolbars() {
+  toolbar.actions.city = build_custom_toolbar('Şehir', cities, 'city_id');
+  toolbar.actions.active = build_custom_toolbar('Açık', actives, 'active');
+  toolbar.actions.game_category = build_custom_toolbar('Kategori', game_categories, 'game_category_id');
+
+  toolbar.container = new L.Toolbar.Control({
+    position: 'topleft',
+    actions: [
+      toolbar.actions.city,
+      toolbar.actions.game_category,
+      toolbar.actions.active
+    ]
+  }).addTo(map);
+}
+
 function init_events() {
   map.on('click', on_map_click);
 }
@@ -186,6 +269,7 @@ function init_all() {
   init_games();
   init_events();
   init_popups();
+  init_toolbars();
 }
 
 init_all();
