@@ -8,8 +8,9 @@
 :javascript
   var games_geojson = #{raw prepare_games_for_map.to_json};
   var focus_on = '#{@focus_on}' || null;
-  var cities = #{raw @city_hash.to_json};
-  var game_categories = #{raw @game_category_hash.to_json};
+  var cities = #{raw city_map.to_json};
+  var game_categories = #{raw game_category_map.to_json};
+  var actives = #{raw active_map.to_json};
 
 = stylesheet_link_tag 'application_map'
 = javascript_include_tag 'application_map'

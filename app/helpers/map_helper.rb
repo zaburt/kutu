@@ -37,5 +37,28 @@ module MapHelper
     data
   end
 
+  def city_map
+    [
+      [t('all'), nil]
+    ] + City.order(:name).map do |k|
+      [k.name, k.id]
+    end
+  end
+
+  def game_category_map
+    [
+      [t('all'), nil]
+    ] + GameCategory.order(:name).map do |k|
+      [k.name, k.id]
+    end
+  end
+
+  def active_map
+    [
+      [t('all'), nil],
+      [fonticon('check', 'green'), true],
+      [fonticon('x', 'red'), false]
+    ]
+  end
 end
 
