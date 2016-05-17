@@ -83,7 +83,9 @@ function on_game_click(e) {
 
 function on_game_add(feature, layer) {
   var attrs = layer.feature.properties;
-  var popup_content = '<b>' + attrs.game_link + '</b><br>' + attrs.phone + '<br>' + attrs.address + ' / ' + attrs.city;
+  var active_status = attrs.active ? '<i class="fi-check green"></i>' : '<i class="fi-x red"></i>';
+  var popup_content = '<b>' + attrs.game_link + '</b> ' + active_status + '<br>' +
+    attrs.phone + '<br>' + attrs.address + ' / ' + attrs.city;
 
   layer.options.title = attrs.title;
   layer.bindPopup(popup_content);
