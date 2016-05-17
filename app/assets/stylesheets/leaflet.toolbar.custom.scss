@@ -14,7 +14,8 @@
 
     > .leaflet-toolbar-icon {
       display: block;
-      width: 26px;
+      // width: 26px;
+      width: 52px;
       height: 26px;
       line-height: 26px;
       margin-right: 0;
@@ -23,6 +24,7 @@
       text-align: center;
       text-decoration: none;
       background-color: #ffffff;
+      color: #000;
     }
 
     > .leaflet-toolbar-icon:hover {
@@ -50,6 +52,8 @@
 }
 
 .leaflet-control-toolbar {
+  margin: 0;
+
   > li {
 
     > .leaflet-toolbar-icon {
@@ -76,26 +80,29 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    left: 26px;
+    // left: 26px;
+    left: 52px;
     /* leaflet-draw-toolbar.left + leaflet-draw-toolbar.width */
     top: 0;
     white-space: nowrap;
     height: 26px;
 
     > li {
-      display: inline-block;
+      // display: inline-block;
 
       > .leaflet-toolbar-icon {
         display: block;
         background-color: #919187;
         border-left: 1px solid #aaa;
         color: #fff;
-        font: 11px/19px "Helvetica Neue", Arial, Helvetica, sans-serif;
-        line-height: 26px;
+        // font: 11px/19px "Helvetica Neue", Arial, Helvetica, sans-serif;
+        // line-height: 26px;
+        line-height: 20px;
         text-decoration: none;
-        padding-left: 10px;
-        padding-right: 10px;
-        height: 26px;
+        // padding-left: 10px;
+        // padding-right: 10px;
+        padding: 10px 20px;
+        // height: 26px;
       }
 
       > .leaflet-toolbar-icon:hover {
