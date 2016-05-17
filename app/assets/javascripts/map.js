@@ -228,7 +228,7 @@ function build_custom_toolbar(name, iterator, filter_key) {
     }
   });
 
-  sub_actions.push(close_subtoolbar);
+  // sub_actions.push(close_subtoolbar);
 
   var extended_toolbar = L.Toolbar.extend({});
 
@@ -256,7 +256,7 @@ function build_custom_toolbar(name, iterator, filter_key) {
 
 function init_toolbars() {
   toolbar.actions.city = build_custom_toolbar('Şehir', cities, 'city_id');
-  toolbar.actions.active = build_custom_toolbar('Açık', actives, 'active');
+  toolbar.actions.active = build_custom_toolbar('Durum', actives, 'active');
   toolbar.actions.game_category = build_custom_toolbar('Kategori', game_categories, 'game_category_id');
 
   toolbar.container = new L.Toolbar.Control({
