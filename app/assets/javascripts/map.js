@@ -172,7 +172,7 @@ function init_games() {
 
   if (!popup_focus_game) {
     map.fitBounds(marker_cluster.getBounds(), {
-      padding: [15, 15]
+      // padding: [15, 15]
     });
   }
 }
