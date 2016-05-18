@@ -4,6 +4,6 @@
 //= require leaflet/Control.FullScreen
 //= require leaflet/leaflet.toolbar-src
 //= require leaflet/fuse
-//= require leaflet/leaflet.fusesearch
+//= require leaflet.fusesearch.custom
 //= require map
 
