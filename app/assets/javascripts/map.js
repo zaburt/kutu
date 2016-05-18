@@ -25,6 +25,7 @@ var toolbar = {
     game_category: null
   }
 };
+var search_control;
 
 function find_game_from_geojson(key, value) {
   return games_geojson.find(function(k) {
@@ -73,7 +74,9 @@ function zoom_to_marker(mark, zoom_target) {
 }
 
 function on_map_click(e) {
-  console.log("You clicked the map at: " + e.latlng.toString());
+  if (e.latlng) {
+    console.log("You clicked the map at: " + e.latlng.toString());
+  }
 }
 
 function on_game_click(e) {
@@ -89,6 +92,9 @@ function on_game_add(feature, layer) {
 
   layer.options.title = attrs.title;
   layer.bindPopup(popup_content);
+
+  // for fuse search
+  feature.layer = layer;
 
   if (popup_focus_game && focus_on === attrs.slug) {
     initial_focused_layer = layer;
@@ -271,6 +277,27 @@ function init_toolbars() {
   }).addTo(map);
 }
 
+function init_search() {
+  search_control = L.control.fuseSearch({
+    title: 'Arama',
+    placeholder: 'Oyun adı, şehri vs.',
+    // showInvisibleFeatures: false,
+    showResultFct: function(feature, container) {
+      props = feature.properties;
+      var name = L.DomUtil.create('b', null, container);
+      name.innerHTML = props.name + ' (' + props.house + ')';
+      container.appendChild(L.DomUtil.create('br', null, container));
+      container.appendChild(document.createTextNode(props.game_category));
+      container.appendChild(L.DomUtil.create('br', null, container));
+      container.appendChild(document.createTextNode(props.phone));
+      container.appendChild(L.DomUtil.create('br', null, container));
+      container.appendChild(document.createTextNode(props.address + ' ' + props.city));
+    }
+  });
+  search_control.addTo(map);
+  search_control.indexFeatures(games_geojson, ['name', 'house', 'address', 'city', 'phone', 'game_category']);
+}
+
 function init_events() {
   map.on('click', on_map_click);
 }
@@ -288,6 +315,7 @@ function init_all() {
   init_events();
   init_popups();
   init_toolbars();
+  init_search();
 }
 
 init_all();

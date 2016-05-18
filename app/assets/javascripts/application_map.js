@@ -3,5 +3,7 @@
 //= require leaflet/L.VisualClick
 //= require leaflet/Control.FullScreen
 //= require leaflet/leaflet.toolbar-src
+//= require leaflet/fuse
+//= require leaflet/leaflet.fusesearch
 //= require map
 
