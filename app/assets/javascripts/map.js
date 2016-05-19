@@ -281,6 +281,7 @@ function init_search() {
   search_control = L.control.fuseSearch({
     title: 'Arama',
     placeholder: 'Oyun adı, şehri vs.',
+    threshold: 0.2,
     // showInvisibleFeatures: false,
     showResultFct: function(feature, container) {
       props = feature.properties;
