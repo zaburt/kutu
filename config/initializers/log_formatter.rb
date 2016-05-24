@@ -38,7 +38,6 @@ class ActiveSupport::Logger::SimpleFormatter
         location,
         msg2str(msg)
       )
-
     end
   end
 end
