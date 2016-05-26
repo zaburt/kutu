@@ -41,7 +41,7 @@
           = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true',
             :image => URI.join(root_url, @article.picture.image.url(:medium)))
         - else
-          = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true'
+          = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true')
     .column
       - if @article.game
         .text-center
