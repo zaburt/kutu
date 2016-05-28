@@ -278,7 +278,7 @@ function init_toolbars() {
 }
 
 function init_search() {
-  search_control = L.control.fuseSearch({
+  search_control = L.control.kutu_filter({
     title: 'Arama',
     placeholder: 'Oyun adı, şehri vs.',
     threshold: 0.2,

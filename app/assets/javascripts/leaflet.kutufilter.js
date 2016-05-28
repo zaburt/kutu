@@ -62,11 +62,11 @@ L.Control.KutuFilter = L.Control.extend({
   },
 
   _createControl: function() {
-    var className = 'leaflet-fusesearch-control',
+    var className = 'leaflet-kutufilter-control',
         container = L.DomUtil.create('div', className);
 
     // Control to open the search panel
-    var butt = this._openButton = L.DomUtil.create('a', 'button', container);
+    var butt = this._openButton = L.DomUtil.create('a', 'magnify_glass', container);
 
     butt.href = '#';
     butt.title = this.options.title;
@@ -102,7 +102,7 @@ L.Control.KutuFilter = L.Control.extend({
 
     // Create the search panel
     var mapContainer = map.getContainer();
-    var className = 'leaflet-fusesearch-panel',
+    var className = 'leaflet-kutufilter-panel',
         pane = this._panel = L.DomUtil.create('div', className, mapContainer);
 
     // Make sure we don't drag the map when we interact with the content
