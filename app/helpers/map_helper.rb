@@ -56,8 +56,10 @@ module MapHelper
   def active_map
     [
       [t('all'), nil],
-      [fonticon('check', 'green'), true],
-      [fonticon('x', 'red'), false]
+      # [fonticon('check', 'green'), true],
+      # [fonticon('x', 'red'), false]
+      ['&#10004;', true],
+      ['X', false]
     ]
   end
 end

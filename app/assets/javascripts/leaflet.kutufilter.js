@@ -97,6 +97,21 @@ L.Control.KutuFilter = L.Control.extend({
     L.DomEvent.off(butt, 'click', this.showPanel);
   },
 
+  _createPanelSelect: function(key, data, label) {
+    var ret = '<div id="filter_' + key + '_container" class="filter_select_container">';
+
+    ret += '<label class="filter_label">' + label + '</label>';
+    ret += '<select id="filter_' + key + '" class="filter_select">';
+
+    for (var k = 0; k < data.length; k++) {
+      ret += '<option value="' + data[k][1] + '">' + data[k][0] + '</option>';
+    };
+
+    ret += '</select></div>';
+
+    return ret;
+  },
+
   _createPanel: function(map) {
     var _this = this;
 
@@ -146,6 +161,13 @@ L.Control.KutuFilter = L.Control.extend({
     var close = this._closeButton = L.DomUtil.create('a', 'close', header);
     close.innerHTML = '&times;';
     L.DomEvent.on(close, 'click', this.hidePanel, this);
+
+    var select_container = L.DomUtil.create('div', 'filter', container);
+    select_container.innerHTML = this._createPanelSelect('cities', cities, 'Şehir') +
+                                 this._createPanelSelect('game_categories', game_categories, 'Kategori') +
+                                 this._createPanelSelect('actives', actives, 'Durum');
+
+    L.DomUtil.create('hr', '', container);
 
     // Where the result will be listed
     this._resultList = L.DomUtil.create('div', 'result-list', container);
