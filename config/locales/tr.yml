@@ -7,6 +7,7 @@ tr:
     cities: sehirler
     game_categories: oyun_kategorileri
     game_comments: oyun_yorumlari
+    game_labels: oyun_etiketleri
     games: oyunlar
     houses: evler
     map: harita
@@ -64,6 +65,9 @@ tr:
         comment: Yorum
         game: Oyun
         user: Kullanıcı
+      game_label:
+        name: İsim
+        description: Açıklama
       house:
         name: İsim
       picture:
@@ -86,6 +90,7 @@ tr:
       game: Oyun
       game_category: Oyun Kategorisi
       game_comment: Oyun Yorumu
+      game_label: Oyun Etiketi
       house: Ev
       picture: Görsel
       user: Kullanıcı
@@ -94,6 +99,7 @@ tr:
   articles: Yazılar
   back: Geri
   cities: Şehirler
+  game_labels: Oyun Etiketleri
   delete: Sil
   edit: Düzenle
   game_categories: Oyun Kategorileri

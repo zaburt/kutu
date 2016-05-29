@@ -28,5 +28,5 @@
       - if signed_in?
         = link_to t('edit'), edit_game_label_path(@game_label), :class => 'button'
         = link_to t('delete'), @game_label, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'
-      = link_to t('back'), cities_path, :class => 'button'
+      = link_to t('back'), game_labels_path, :class => 'button'
 
