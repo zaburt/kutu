@@ -20,6 +20,11 @@
       = @game.game_category.try(:name)
   .row
     .small-6.columns.text_bold
+      = t('game_labels')
+    .small-18.columns.hashtag
+      = format_hashtag(@game.game_labels.pluck(:name))
+  .row
+    .small-6.columns.text_bold
       = t('activerecord.attributes.game.city')
     .small-18.columns
       = @game.city.try(:name)

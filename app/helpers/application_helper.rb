@@ -68,5 +68,9 @@ module ApplicationHelper
     end
   end
 
+  def format_hashtag(tags)
+    return '' if tags.blank?
+    tags.map{|k| "##{k}"}.join(' ')
+  end
 end
 

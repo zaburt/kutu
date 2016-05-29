@@ -16,6 +16,7 @@
     = f.input :instagram
     = f.input :lat
     = f.input :lng
+    = f.association :game_labels, :as => :check_boxes, :label => t('game_labels')
     = f.input :story, :input_html => {:rows => 10}
     = f.input :game_times
 

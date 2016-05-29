@@ -62,7 +62,7 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:name, :address, :city_id, :game_category_id, :house_id, :phone, :email,
                                  :website, :facebook, :twitter, :instagram, :lat, :lng, :story, :game_times,
-                                 :active)
+                                 :active, :game_label_ids => [])
   end
 
 end

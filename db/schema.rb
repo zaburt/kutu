@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529150431) do
+ActiveRecord::Schema.define(version: 20160529152412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(version: 20160529150431) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "game_labels_games", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "game_label_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "game_labels_games", ["game_id"], name: "index_game_labels_games_on_game_id", using: :btree
+  add_index "game_labels_games", ["game_label_id"], name: "index_game_labels_games_on_game_label_id", using: :btree
+
   create_table "games", force: :cascade do |t|
     t.string   "name"
     t.text     "address"
@@ -160,6 +170,8 @@ ActiveRecord::Schema.define(version: 20160529150431) do
   add_foreign_key "articles", "pictures"
   add_foreign_key "game_comments", "games"
   add_foreign_key "game_comments", "users"
+  add_foreign_key "game_labels_games", "game_labels"
+  add_foreign_key "game_labels_games", "games"
   add_foreign_key "games", "cities"
   add_foreign_key "games", "game_categories"
   add_foreign_key "games", "houses"

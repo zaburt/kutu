@@ -40,6 +40,8 @@ class Game < ActiveRecord::Base
   belongs_to :house
 
   has_many :game_comments, -> {order(:created_at)}
+  has_many :game_labels_games
+  has_many :game_labels, -> {order(:name)}, :through => :game_labels_games
 
   validates_presence_of :name
 
