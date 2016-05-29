@@ -1,7 +1,11 @@
-%h1 Editing game_label
+%fieldset
+  %legend
+    = t('generic.edit_model', :name => GameLabel.model_name.human)
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @game_label
-\|
-= link_to 'Back', game_labels_path
+  .row
+    .small-12.columns.small-offset-1
+      = link_to t('show'), @game_label, :class => 'button'
+      = link_to t('back'), game_labels_path, :class => 'button'
+

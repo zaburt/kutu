@@ -1,23 +1,28 @@
-%h1 Listing game_labels
+%fieldset
+  %legend
+    = t('game_labels')
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th
-      %th
-      %th
-
-  %tbody
-    - @game_labels.each do |game_label|
+  %table.kutu_datatables
+    %thead
       %tr
-        %td= game_label.name
-        %td= game_label.description
-        %td= link_to 'Show', game_label
-        %td= link_to 'Edit', edit_game_label_path(game_label)
-        %td= link_to 'Destroy', game_label, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th
+        %th= t('activerecord.attributes.game_label.name')
+        %th= t('activerecord.attributes.game_label.description')
+        - if signed_in?
+          %th
+          %th
 
-%br
+    %tbody
+      - @game_labels.each do |game_label|
+        %tr
+          %td= link_to fonticon('eye'), game_label, :title => t('show')
+          %td= game_label.name
+          %td= game_label.description
+          - if signed_in?
+            %td= link_to fonticon('pencil'), edit_game_label_path(game_label), :title => t('edit')
+            %td= link_to fonticon('x', 'red'), game_label, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
-= link_to 'New Game label', new_game_label_path
+  %br
+  - if signed_in?
+    = link_to t('generic.new_model', :name => GameLabel.model_name.human), new_game_label_path, :class => 'button'
+

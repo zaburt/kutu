@@ -1,12 +1,32 @@
-%p#notice= notice
+%fieldset
+  %legend
+    = GameLabel.model_name.human
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game_label.name')
+    .small-16.columns
+      = @game_label.name
+  .row
+    .small-8.columns.text_bold
+      = t('activerecord.attributes.game_label.description')
+    .small-16.columns
+      = @game_label.description
+  .row
+    .small-8.columns.text_bold
+      = t('created_at')
+    .small-16.columns
+      = format_time(@game_label.created_at)
+  .row
+    .small-8.columns.text_bold
+      = t('updated_at')
+    .small-16.columns
+      = format_time(@game_label.updated_at)
 
-%p
-  %b Name:
-  = @game_label.name
-%p
-  %b Description:
-  = @game_label.description
+  %br
+  .row
+    .small-12.columns.small-offset-1
+      - if signed_in?
+        = link_to t('edit'), edit_game_label_path(@game_label), :class => 'button'
+        = link_to t('delete'), @game_label, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'
+      = link_to t('back'), cities_path, :class => 'button'
 
-= link_to 'Edit', edit_game_label_path(@game_label)
-\|
-= link_to 'Back', game_labels_path
