@@ -9,6 +9,7 @@
         %th= t('activerecord.attributes.game_comment.comment')
         %th= t('activerecord.attributes.game_comment.game')
         %th= t('activerecord.attributes.game_comment.user')
+        %th= t('created_at')
         - if signed_in?
           %th
           %th
@@ -20,6 +21,7 @@
           %td= game_comment.comment
           %td= link_to game_comment.game.name, game_comment.game
           %td= link_to game_comment.user.display_name, game_comment.user
+          %td= format_time(game_comment.created_at)
           - if signed_in?
             %td= link_to fonticon('pencil'), edit_game_comment_path(game_comment), :title => t('edit')
             %td= link_to fonticon('x', 'red'), game_comment, :method => :delete, :data => { :confirm => t('are_you_sure')}, :title => t('delete')
