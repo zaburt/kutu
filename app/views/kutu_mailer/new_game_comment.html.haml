@@ -3,5 +3,7 @@
 %br
   #{@game_comment.user.try(:display_name)} #{title_for_game(@game_comment.game)} oyunu için #{format_time(@game_comment.created_at)} zamanında yorum ekledi
 %br
-  #{game_comment_url(@game_comment)}
-
+  #{link_to t('activerecord.attributes.game_comment.comment'), game_comment_url(@game_comment)}
+%br
+%p
+  #{@game_comment.comment}
