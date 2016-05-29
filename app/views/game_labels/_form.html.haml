@@ -1,0 +1,10 @@
+= simple_form_for(@game_label) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+
+  .form-actions.float-right
+    = f.button :submit, :class => 'button'
+

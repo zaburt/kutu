@@ -1,0 +1,23 @@
+%h1 Listing game_labels
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @game_labels.each do |game_label|
+      %tr
+        %td= game_label.name
+        %td= game_label.description
+        %td= link_to 'Show', game_label
+        %td= link_to 'Edit', edit_game_label_path(game_label)
+        %td= link_to 'Destroy', game_label, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Game label', new_game_label_path

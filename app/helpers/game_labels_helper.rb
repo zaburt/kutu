@@ -1,0 +1,2 @@
+module GameLabelsHelper
+end

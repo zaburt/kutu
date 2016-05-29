@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @game_label.name
+%p
+  %b Description:
+  = @game_label.description
+
+= link_to 'Edit', edit_game_label_path(@game_label)
+\|
+= link_to 'Back', game_labels_path

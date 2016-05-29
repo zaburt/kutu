@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :cities
     resources :game_categories
     resources :game_comments
+    resources :game_labels
     resources :games
     resources :houses
 
