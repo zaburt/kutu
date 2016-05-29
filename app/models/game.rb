@@ -45,6 +45,8 @@ class Game < ActiveRecord::Base
 
   validates_presence_of :name
 
+  after_create :notify_new
+
   scope :active, -> {where(:active => true)}
   scope :for_house, -> (house) {
     if house.is_a?(House)
@@ -59,5 +61,10 @@ class Game < ActiveRecord::Base
     slug.blank? || name_changed?
   end
 
+  private
+
+  def notify_new
+    KutuMailer.new_game(self).deliver
+  end
 end
 

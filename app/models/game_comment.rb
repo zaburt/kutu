@@ -21,4 +21,11 @@ class GameComment < ActiveRecord::Base
 
   validates_presence_of :user_id, :game_id
 
+  after_create :notify_new
+
+  private
+
+  def notify_new
+    KutuMailer.new_game_comment(self).deliver
+  end
 end

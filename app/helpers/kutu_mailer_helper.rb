@@ -1,0 +1,2 @@
+module KutuMailerHelper
+end

@@ -1,0 +1,7 @@
+:plain
+  Merhaba,
+    
+  #{@article.title} yazısı #{@article.created_by.try(:display_name)} tarafından #{format_time(@article.created_at)} zamanında eklendi
+    
+  #{article_url(@article)}
+

@@ -41,6 +41,8 @@ class Article < ActiveRecord::Base
 
   validates_presence_of :title
 
+  after_create :notify_new
+
   scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
   scope :frontpage, -> { where(:frontpage => true) }
 
@@ -57,5 +59,10 @@ class Article < ActiveRecord::Base
     slug.blank? || title_changed?
   end
 
+  private
+
+  def notify_new
+    KutuMailer.new_article(self).deliver
+  end
 end
 
