@@ -97,6 +97,28 @@ L.Control.KutuFilter = L.Control.extend({
     L.DomEvent.off(butt, 'click', this.showPanel);
   },
 
+  _bindPanelSelectEvent: function(elem_id, filter_key) {
+    var elem = L.DomUtil.get('filter_' + elem_id);
+    var that = this;
+
+    L.DomEvent.on(elem, 'change', function(k) {
+      // console.log('select ' + elem.id + ' changed to ' + elem.value);
+      var new_value = elem.value;
+
+      if (new_value === 'null') {
+        new_value = null;
+      } else {
+        if (elem_id !== 'actives') {
+          new_value = Number(elem.value);
+        }
+      }
+
+      game_filter[filter_key] = new_value;
+      refresh_games();
+      that.refresh();
+    });
+  },
+
   _createPanelSelect: function(key, data, label) {
     var ret = '<div id="filter_' + key + '_container" class="filter_select_container">';
 
@@ -154,7 +176,10 @@ L.Control.KutuFilter = L.Control.extend({
     this._input.placeholder = this.options.placeholder;
     this._input.onkeyup = function(evt) {
       var searchString = evt.currentTarget.value;
-      _this.searchFeatures(searchString);
+      // _this.searchFeatures(searchString);
+      game_filter_search = searchString;
+      refresh_games();
+      _this.refresh();
     };
 
     // Close button
@@ -166,6 +191,10 @@ L.Control.KutuFilter = L.Control.extend({
     select_container.innerHTML = this._createPanelSelect('cities', cities, 'Şehir') +
                                  this._createPanelSelect('game_categories', game_categories, 'Kategori') +
                                  this._createPanelSelect('actives', actives, 'Durum');
+
+    this._bindPanelSelectEvent('cities', 'city_id');
+    this._bindPanelSelectEvent('game_categories', 'game_category_id');
+    this._bindPanelSelectEvent('actives', 'actives');
 
     L.DomUtil.create('hr', '', container);
 
@@ -199,11 +228,13 @@ L.Control.KutuFilter = L.Control.extend({
     var input = this._input;
 
     this._map.addEventListener('overlayadd', function() {
-      that.searchFeatures(input.value);
+      // that.searchFeatures(input.value);
+      that.updateSearchResults();
     });
 
     this._map.addEventListener('overlayremove', function() {
-      that.searchFeatures(input.value);
+      // that.searchFeatures(input.value);
+      that.updateSearchResults();
     });
   },
 
@@ -225,7 +256,8 @@ L.Control.KutuFilter = L.Control.extend({
       this.fire('show');
       this._input.select();
       // Search again as visibility of features might have changed
-      this.searchFeatures(this._input.value);
+      // this.searchFeatures(this._input.value);
+      this.updateSearchResults();
     }
   },
 
@@ -254,6 +286,7 @@ L.Control.KutuFilter = L.Control.extend({
     }
   },
 
+  /*
   indexFeatures: function(data, keys) {
     var jsonFeatures = data.features || data;
 
@@ -301,11 +334,45 @@ L.Control.KutuFilter = L.Control.extend({
       }
     }
   },
+  */
+
+  updateSearchResults: function() {
+    // var result = this._fuseIndex.search(string);
+    var result = marker_cluster.getLayers();
+
+    // Empty result list
+    var listItems = document.querySelectorAll(".result-item");
+    for (var i = 0 ; i < listItems.length ; i++) {
+        listItems[i].remove();
+    }
+
+    var resultList = document.querySelector('.result-list');
+    var num = 0;
+    var max = this.options.maxResultLength;
+
+    for (var i in result) {
+      // console.log(result[i].feature);
+      var feature = result[i].feature;
+      // console.log(feature);
+      // var props = feature.properties;
+      var popup = this._getFeaturePopupIfVisible(feature);
+
+      if (undefined !== popup || this.options.showInvisibleFeatures) {
+          // this.createResultItem(props, resultList, popup);
+          this.createResultItem(feature, resultList, popup);
+
+          if (undefined !== max && ++num === max) {
+              break;
+          }
+      }
+    }
+  },
 
   refresh: function() {
     // Reapply the search on the indexed features - useful if features have been filtered out
     if (this.isPanelVisible()) {
-        this.searchFeatures(this._input.value);
+        // this.searchFeatures(this._input.value);
+        this.updateSearchResults();
     }
   },
 
@@ -317,9 +384,11 @@ L.Control.KutuFilter = L.Control.extend({
     }
   },
 
-  createResultItem: function(props, container, popup) {
+  // createResultItem: function(props, container, popup) {
+  createResultItem: function(feature, container, popup) {
     var _this = this;
-    var feature = props._feature;
+    // var feature = props._feature;
+    var props = feature.properties;
 
     // Create a container and open the associated popup on click
     var resultItem = L.DomUtil.create('p', 'result-item', container);

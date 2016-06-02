@@ -2,7 +2,7 @@
 L.Icon.Default.imagePath = '/leaflet';
 
 var map;
-var markers = {};
+// var markers = {};
 var default_lng = 35.22;
 var default_lat = 38.96;
 var default_zoom = 6;
@@ -296,7 +296,7 @@ function init_search() {
     }
   });
   search_control.addTo(map);
-  search_control.indexFeatures(games_geojson, ['name', 'house', 'address', 'city', 'phone', 'game_category']);
+  // search_control.indexFeatures(games_geojson, ['name', 'house', 'address', 'city', 'phone', 'game_category']);
 }
 
 function init_events() {
@@ -315,7 +315,7 @@ function init_all() {
   init_games();
   init_events();
   init_popups();
-  init_toolbars();
+  // init_toolbars();
   init_search();
 }
 
