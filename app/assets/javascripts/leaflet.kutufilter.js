@@ -1,4 +1,3 @@
-
 // From http://www.tutorialspoint.com/javascript/array_map.htm
 if (!Array.prototype.map) {
   Array.prototype.map = function(fun /*, thisp*/) {
@@ -395,18 +394,39 @@ L.Control.KutuFilter = L.Control.extend({
     // Create a container and open the associated popup on click
     var resultItem = L.DomUtil.create('p', 'result-item', container);
 
-    if (undefined !== popup) {
+    //if (undefined !== popup) {
         L.DomUtil.addClass(resultItem, 'clickable');
 
         resultItem.onclick = function() {
+          console.log(feature);
+          /*
           if (window.matchMedia("(max-width:480px)").matches) {
             _this.hidePanel();
             feature.layer.openPopup();
           } else {
             _this._panAndPopup(feature, popup);
           }
+          */
+
+          if (window.matchMedia("(max-width:480px)").matches) {
+            _this.hidePanel();
+          }
+
+          var zoom_factor = map.getZoom();
+          if (zoom_factor < 17) {
+            zoom_factor = 17;
+          }
+
+          // var current_parent = marker_cluster.getVisibleParent(feature.layer);
+          // current_parent.spiderfy();
+
+          // map.setView(feature.layer.getLatLng(), zoom_factor);
+          // feature.layer.openPopup();
+          marker_cluster.zoomToShowLayer(feature.layer, function(e) {
+            feature.layer.openPopup();
+          });
         };
-    }
+    //}
 
     // Fill in the container with the user-supplied function if any,
     // otherwise display the feature properties used for the search.

@@ -144,6 +144,11 @@
     width: 160px;
     float: right;
   }
+
+  .result-list {
+    // overflow-y: scroll;
+    // height: auto;
+  }
 }
 
 @media (max-width:320px) {
