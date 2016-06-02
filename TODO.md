@@ -2,7 +2,16 @@
 TODO
 =======================
 
-* show scoring points for games upto 10 points
+* build path on map
+* show you are here on map
+* create custom controls for map
+* fix mobile integration of datatables on articles and games, rest is merging fine
+* minimize top menu
+* add list-id to emails delivered
+* handle articles and game labels during deleting games
+* show game scores as equalizer
+* shows game scores on articles
+* add game scores upto 10 points
 * hide datatables columns on small screens
 * add meta data for description etc.
 * convert social icons of games to buttons only, no need to see links
@@ -17,7 +26,6 @@ TODO
 Needs Investigation
 =======================
 
-* add map
 * allow background change on the fly
 * secure headers
 * google analytics
@@ -28,6 +36,7 @@ Needs Investigation
 Done
 =======================
 
+* add map
 * allow filtering with selects on game index
 * add note to article bottom if game is closed
 * hide game hours
