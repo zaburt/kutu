@@ -26,6 +26,7 @@ var toolbar = {
   }
 };
 var search_control;
+var locate_control;
 
 function find_game_from_geojson(key, value) {
   return games_geojson.find(function(k) {
@@ -309,6 +310,22 @@ function init_popups() {
   }
 }
 
+function init_locate() {
+  locate_control = L.control.locate({
+    position: 'topleft',
+    strings: {
+      title: 'Neredeyim',
+      metersUnit: 'metre',
+      feetUnit: 'feet',
+      popup: 'Bu noktanın {distance} {unit} yakınındasınız',
+      outsideMapBoundsMsg: 'Bulunan konum haritanın sınırları dışında'
+    },
+    iconElementTag: 'i',
+    icon: 'fi-torso fonticon',
+    iconLoading: 'fi-compass fonticon'
+  }).addTo(map);
+}
+
 function init_all() {
   init_map();
   init_tiles();
@@ -316,6 +333,7 @@ function init_all() {
   init_events();
   init_popups();
   // init_toolbars();
+  init_locate();
   init_search();
 }
 
