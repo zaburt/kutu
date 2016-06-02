@@ -108,7 +108,9 @@ L.Control.KutuFilter = L.Control.extend({
       if (new_value === 'null') {
         new_value = null;
       } else {
-        if (elem_id !== 'actives') {
+        if (elem_id === 'actives') {
+          new_value = new_value === 'true';
+        } else {
           new_value = Number(elem.value);
         }
       }
@@ -194,7 +196,7 @@ L.Control.KutuFilter = L.Control.extend({
 
     this._bindPanelSelectEvent('cities', 'city_id');
     this._bindPanelSelectEvent('game_categories', 'game_category_id');
-    this._bindPanelSelectEvent('actives', 'actives');
+    this._bindPanelSelectEvent('actives', 'active');
 
     L.DomUtil.create('hr', '', container);
 
