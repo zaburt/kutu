@@ -322,7 +322,10 @@ function init_locate() {
     },
     iconElementTag: 'i',
     icon: 'fi-torso fonticon',
-    iconLoading: 'fi-compass fonticon'
+    iconLoading: 'fi-compass fonticon',
+    locateOptions: {
+      enableHighAccuracy: true
+    }
   }).addTo(map);
 }
 
