@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529152412) do
+ActiveRecord::Schema.define(version: 20160604140022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,17 @@ ActiveRecord::Schema.define(version: 20160529152412) do
     t.text     "content"
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "frontpage",     default: true
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "frontpage",         default: true
     t.string   "slug"
+    t.integer  "rating_puzzle",     default: 0
+    t.integer  "rating_fun",        default: 0
+    t.integer  "rating_fluency",    default: 0
+    t.integer  "rating_ambience",   default: 0
+    t.integer  "rating_management", default: 0
+    t.integer  "rating_service",    default: 0
+    t.float    "rating_average",    default: 0.0
   end
 
   add_index "articles", ["created_by_id"], name: "index_articles_on_created_by_id", using: :btree

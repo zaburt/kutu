@@ -12,6 +12,13 @@ en:
         publish_time: Publish Time
         title: Title
         updated_by: Updated By
+        rating_puzzle: Puzzle
+        rating_fun: Fun
+        rating_fluency: Fluency
+        rating_ambience: Ambience
+        rating_management: Game Management
+        rating_service: Service
+        rating_average: Average
       article_category:
         name: Name
       city:
@@ -111,4 +118,5 @@ en:
   sessions: Registered Users
   additional_pictures: Additional Pictures
   note_game_is_closed: 'Game is Closed'
+  rating: Rating
 

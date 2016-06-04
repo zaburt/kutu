@@ -38,6 +38,13 @@ tr:
         publish_time: Yayın Zamanı
         title: Başlık
         updated_by: Güncelleyen
+        rating_puzzle: Bulmaca
+        rating_fun: Eğlence
+        rating_fluency: Akıcılık
+        rating_ambience: Atmosfer
+        rating_management: Oyun Yönetimi
+        rating_service: Hizmet
+        rating_average: Ortalama
       article_category:
         name: İsim
       city:
@@ -137,4 +144,5 @@ tr:
   sessions: Kayıtlı Kullanıcılar
   additional_pictures: Diğer Görseller
   note_game_is_closed: 'Oyun Kapanmış'
+  rating: Puanlama
 

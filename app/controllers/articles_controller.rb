@@ -71,6 +71,8 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :publish, :publish_time, :game_id, :picture_id,
                                     :content, :created_by_id, :updated_by_id, :frontpage,
+                                    :rating_puzzle, :rating_fun, :rating_fluency, :rating_ambience,
+                                    :rating_management, :rating_service,
                                     :article_category_ids => [], :picture_ids => [])
   end
 
