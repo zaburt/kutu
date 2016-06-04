@@ -9,8 +9,8 @@
     = f.association :game, :collection => Game.order(:name)
     = f.input :rating_puzzle, :collection => (0..10), :include_blank => false
     = f.input :rating_fun, :collection => (0..10), :include_blank => false
-    = f.input :rating_fluency, :collection => (0..10), :include_blank => false
     = f.input :rating_ambience, :collection => (0..10), :include_blank => false
+    = f.input :rating_fluency, :collection => (0..10), :include_blank => false
     = f.input :rating_management, :collection => (0..10), :include_blank => false
     = f.input :rating_service, :collection => (0..10), :include_blank => false
     =# f.association :picture

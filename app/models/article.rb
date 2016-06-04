@@ -42,6 +42,7 @@ class Article < ActiveRecord::Base
   validates_presence_of :title
 
   after_create :notify_new
+  before_validation :calculate_average
 
   scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
   scope :frontpage, -> { where(:frontpage => true) }
@@ -63,6 +64,14 @@ class Article < ActiveRecord::Base
 
   def notify_new
     KutuMailer.new_article(self).deliver
+  end
+
+  def calculate_average
+    self.rating_average = (
+      rating_puzzle + rating_fun + rating_ambience + rating_fluency + rating_management + rating_service
+    ) / 6.0
+
+    true
   end
 end
 
