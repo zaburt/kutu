@@ -2,12 +2,13 @@
 TODO
 =======================
 
-* build path on map
-* show you are here on map
-* create custom controls for map
+* add logo somewhere
+* notify on destroy
+* notify on edit, show diff
+* add list-id to emails delivered
+* build route on map
 * fix mobile integration of datatables on articles and games, rest is merging fine
 * minimize top menu
-* add list-id to emails delivered
 * handle articles and game labels during deleting games
 * show game scores as equalizer
 * shows game scores on articles
@@ -29,13 +30,15 @@ Needs Investigation
 * allow background change on the fly
 * secure headers
 * google analytics
-* update foundation to 6
-* should we change article titles to h1
 
 
 Done
 =======================
 
+* show you are here on map
+* should we change article titles to h1
+* update foundation to 6
+* create custom controls for map
 * add map
 * allow filtering with selects on game index
 * add note to article bottom if game is closed
