@@ -13,9 +13,7 @@ TODO
 * hide datatables columns on small screens
 * add meta data for description etc.
 * add site map
-* front page optimize image layout
 * simple_form time value styling
-* add favicon
 * write README
 * add weather
 
@@ -33,6 +31,8 @@ Needs Investigation
 Done
 =======================
 
+* add favicon
+* front page optimize image layout
 * allow hiding games
 * make map full width
 * add logo somewhere
