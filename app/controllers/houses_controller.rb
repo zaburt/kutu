@@ -8,7 +8,7 @@ class HousesController < ApplicationController
 
   # GET /houses/1
   def show
-    @games = Game.for_house(@house)
+    @games = Game.for_house(@house).include_unpublished(signed_in?)
   end
 
   # GET /houses/new

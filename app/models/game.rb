@@ -48,6 +48,8 @@ class Game < ActiveRecord::Base
   after_create :notify_new
 
   scope :active, -> {where(:active => true)}
+  scope :publishable, -> { where(:publish => true) }
+  scope :include_unpublished, ->(should_include) { publishable unless should_include}
   scope :for_house, -> (house) {
     if house.is_a?(House)
       where(:house_id => house.id)

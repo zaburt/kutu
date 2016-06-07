@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
   # GET /games
   def index
-    @games = Game.all
+    @games = Game.include_unpublished(signed_in?)
     @cities = City.order(:name).pluck(:name)
     @game_categories = GameCategory.order(:name).pluck(:name)
   end
@@ -62,7 +62,7 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:name, :address, :city_id, :game_category_id, :house_id, :phone, :email,
                                  :website, :facebook, :twitter, :instagram, :lat, :lng, :story, :game_times,
-                                 :active, :game_label_ids => [])
+                                 :active, :publish, :game_label_ids => [])
   end
 
 end

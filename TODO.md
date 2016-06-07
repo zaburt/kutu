@@ -33,6 +33,7 @@ Needs Investigation
 Done
 =======================
 
+* allow hiding games
 * make map full width
 * add logo somewhere
 * add game scores upto 10 points

@@ -37,6 +37,7 @@ en:
         lng: Longitude
         name: Name
         phone: Phone
+        publish: Publish
         story: Story
         twitter: Twitter
         website: Website

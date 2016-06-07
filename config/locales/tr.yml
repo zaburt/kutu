@@ -63,6 +63,7 @@ tr:
         lng: Longitude
         name: İsim
         phone: Telefon
+        publish: Yayınla
         story: Hikaye
         twitter: Twitter
         website: Web Sitesi
