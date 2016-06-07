@@ -3,11 +3,10 @@
     .top-bar-title
       %span{'data-responsive-toggle' => 'responsive_menu', 'data-hide-for' => 'medium'}
         %button.menu-icon{:type => 'button', 'data-toggle' => ''}
-      .logo_wrapper
+      %span.logo_wrapper
         = image_tag 'schrodingiller_small'
-        %span
-          %i
-            Schrodingiller
+        %i
+          Schrodingiller
     #responsive_menu
       .top-bar-left
         %ul.dropdown.menu{'data-dropdown-menu' => ''}
