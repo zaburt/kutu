@@ -44,7 +44,8 @@ class Article < ActiveRecord::Base
   after_create :notify_new
   before_validation :calculate_average
 
-  scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
+  # scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
+  scope :publishable, -> { where(:publish => true) }
   scope :frontpage, -> { where(:frontpage => true) }
 
   scope :for_game, -> (game) {
