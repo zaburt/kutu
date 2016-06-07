@@ -61,6 +61,10 @@ class Article < ActiveRecord::Base
     slug.blank? || title_changed?
   end
 
+  def has_rating
+    rating_average != 0.0
+  end
+
   private
 
   def notify_new

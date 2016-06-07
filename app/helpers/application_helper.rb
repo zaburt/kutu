@@ -22,7 +22,7 @@ module ApplicationHelper
     'box_shadow_bottom_both'
   ].freeze
 
-  QUESTION_MARK_IMAGE_URL = '/assets/question_mark.svg'.freeze
+  # QUESTION_MARK_IMAGE_URL = '/assets/question_mark.svg'.freeze
 
 
   def fonticon(iconname, customclass = '')
@@ -44,7 +44,8 @@ module ApplicationHelper
   end
 
   def image_thumb_url_or_fallback(picture)
-    return QUESTION_MARK_IMAGE_URL if picture.blank?
+    # return QUESTION_MARK_IMAGE_URL if picture.blank?
+    return asset_path('question_mark.svg') if picture.blank?
     picture.image.url(:thumb)
   end
 
