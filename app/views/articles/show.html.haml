@@ -21,7 +21,8 @@
   %br
   .row
     .text_italic.grey.small-8.large-6.columns.small-offset-16.large-offset-18
-      = format_time(@article.publish_time)
+      /= format_time(@article.publish_time)
+      = time_tag @article.publish_time
   %br
   .row
     .small-22.columns.small-offset-1.hashtag

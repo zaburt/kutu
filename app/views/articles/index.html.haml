@@ -27,7 +27,8 @@
           %td= link_to article.title, article
           - if signed_in?
             %td= article.publish ? fonticon('check', 'grey') : ''
-            %td= format_time(article.publish_time)
+            / %td= format_time(article.publish_time)
+            %td= time_tag article.publish_time
           %td= article.game ? link_to(article.game.try(:name), article.game) : ''
           %td= image_tag_for_picture(article.picture)
           /%td.limited_length_column{:title => strip_tags(article.content)}
