@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     ['articles', 'show'],
     ['games', 'index'],
     ['games', 'show'],
+    ['map', 'index'],
     ['sessions', 'new'],
     ['sessions', 'create']
   ].freeze
