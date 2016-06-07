@@ -74,6 +74,14 @@ fieldset {
 
   .top-bar-title {
     margin-top: 5px;
+
+    .logo_wrapper {
+      // background-color: orange;
+      padding: 5px;
+      // color: black;
+      color: orange;
+      border-radius: 5px;
+    }
   }
 }
 
@@ -137,6 +145,10 @@ body {
 
 .yellow {
   color: yellow;
+}
+
+.white {
+  color: white;
 }
 
 .facebook {

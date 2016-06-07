@@ -3,13 +3,14 @@
     .top-bar-title
       %span{'data-responsive-toggle' => 'responsive_menu', 'data-hide-for' => 'medium'}
         %button.menu-icon{:type => 'button', 'data-toggle' => ''}
-      %a{:href => '/'}
-        %i.fi-home
+      %span.logo_wrapper
         %i
           Schrodingiller
     #responsive_menu
       .top-bar-left
         %ul.dropdown.menu{'data-dropdown-menu' => ''}
+          %li
+            = link_to t('home'), root_path
           %li
             = link_to t('articles'), articles_path
           %li
