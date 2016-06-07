@@ -12,7 +12,6 @@ TODO
 * handle articles and game labels during deleting games
 * hide datatables columns on small screens
 * add meta data for description etc.
-* convert social icons of games to buttons only, no need to see links
 * add site map
 * front page optimize image layout
 * simple_form time value styling
@@ -25,6 +24,7 @@ Needs Investigation
 =======================
 
 * contact form ?
+* convert social icons of games to buttons only, no need to see links
 * allow background change on the fly
 * secure headers
 * google analytics
