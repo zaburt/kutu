@@ -16,14 +16,14 @@
   %body
     = render 'layouts/header'
     = render 'layouts/alerts'
-    %br
     #main.row.full-min-height
       - if @fullwidth
         .small-24.columns.small-centered
           = yield
       - else
+        %br
         .small-24.large-16.columns.small-centered
           = yield
-    %br
+        %br
     =# render 'layouts/footer'
 

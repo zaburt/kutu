@@ -1,8 +1,18 @@
 
 #map_wrapper {
+  // height: 100%;
+  // min-height: 100vh;
+  // display: table;
+
   #map_canvas {
     // margin: auto;
-    height: 720px;
+    // height: 720px;
+    // display: table-cell;
+    margin: 0;
+    // bottom: 0;
+    // height: 100%;
+    // height: auto;
+    min-height: 94vh;
   }
 }
 

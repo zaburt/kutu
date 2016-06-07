@@ -35,6 +35,9 @@ function find_game_from_geojson(key, value) {
 }
 
 function init_map() {
+  // parent minus topbar height
+  // $('#map_canvas').height($('body').height() - 52);
+
   var map_lng = default_lng;
   var map_lat = default_lat;
   var map_zoom = default_zoom;
