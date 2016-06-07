@@ -10,13 +10,14 @@
           .text_italic
             = @article.picture.caption
   %br
-  .row
-    .small-24.columns.small-centered
-      - rating_keys.each do |rk|
-        .small-9.medium-12.columns.text-right
-          = rating_name(rk)
-        .small-15.medium-12.columns
-          = render :partial => 'rating_display', :locals => {:rating => @article[rk]}
+  - if @article.has_rating
+    .row
+      .small-24.columns.small-centered
+        - rating_keys.each do |rk|
+          .small-9.medium-12.columns.text-right
+            = rating_name(rk)
+          .small-15.medium-12.columns
+            = render :partial => 'rating_display', :locals => {:rating => @article[rk]}
   %br
   .row
     .text_italic.grey.small-8.large-6.columns.small-offset-16.large-offset-18
