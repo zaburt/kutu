@@ -7,12 +7,11 @@ TODO
 * notify on edit, show diff
 * add list-id to emails delivered
 * build route on map
+* make map full width
+* show game score table, with filtering
 * fix mobile integration of datatables on articles and games, rest is merging fine
 * minimize top menu
 * handle articles and game labels during deleting games
-* show game scores as equalizer
-* shows game scores on articles
-* add game scores upto 10 points
 * hide datatables columns on small screens
 * add meta data for description etc.
 * convert social icons of games to buttons only, no need to see links
@@ -27,6 +26,7 @@ TODO
 Needs Investigation
 =======================
 
+* contact form ?
 * allow background change on the fly
 * secure headers
 * google analytics
@@ -35,6 +35,9 @@ Needs Investigation
 Done
 =======================
 
+* add game scores upto 10 points
+* show game scores as equalizer
+* shows game scores on articles
 * show you are here on map
 * should we change article titles to h1
 * update foundation to 6
