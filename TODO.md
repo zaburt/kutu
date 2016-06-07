@@ -2,12 +2,10 @@
 TODO
 =======================
 
-* add logo somewhere
 * notify on destroy
 * notify on edit, show diff
 * add list-id to emails delivered
 * build route on map
-* make map full width
 * show game score table, with filtering
 * fix mobile integration of datatables on articles and games, rest is merging fine
 * minimize top menu
@@ -35,6 +33,8 @@ Needs Investigation
 Done
 =======================
 
+* make map full width
+* add logo somewhere
 * add game scores upto 10 points
 * show game scores as equalizer
 * shows game scores on articles
