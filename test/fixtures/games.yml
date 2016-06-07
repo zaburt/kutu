@@ -22,6 +22,7 @@
 #  updated_at       :datetime         not null
 #  slug             :string
 #  active           :boolean          default(TRUE)
+#  publish          :boolean          default(FALSE)
 #
 # Indexes
 #

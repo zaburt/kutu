@@ -2,19 +2,26 @@
 #
 # Table name: articles
 #
-#  id            :integer          not null, primary key
-#  title         :string
-#  publish       :boolean
-#  publish_time  :datetime
-#  game_id       :integer
-#  picture_id    :integer
-#  content       :text
-#  created_by_id :integer
-#  updated_by_id :integer
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  frontpage     :boolean          default(TRUE)
-#  slug          :string
+#  id                :integer          not null, primary key
+#  title             :string
+#  publish           :boolean
+#  publish_time      :datetime
+#  game_id           :integer
+#  picture_id        :integer
+#  content           :text
+#  created_by_id     :integer
+#  updated_by_id     :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  frontpage         :boolean          default(TRUE)
+#  slug              :string
+#  rating_puzzle     :integer          default(0)
+#  rating_fun        :integer          default(0)
+#  rating_fluency    :integer          default(0)
+#  rating_ambience   :integer          default(0)
+#  rating_management :integer          default(0)
+#  rating_service    :integer          default(0)
+#  rating_average    :float            default(0.0)
 #
 # Indexes
 #
