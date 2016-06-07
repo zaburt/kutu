@@ -77,10 +77,17 @@ fieldset {
 
     .logo_wrapper {
       // background-color: orange;
-      padding: 5px;
+      padding: 0;
+      margin: 0;
       // color: black;
       color: orange;
       border-radius: 5px;
+
+      img {
+        height: 32px;
+        padding: 0;
+        margin: 0;
+      }
     }
   }
 }
