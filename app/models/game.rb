@@ -47,7 +47,7 @@ class Game < ActiveRecord::Base
 
   has_many :game_comments, -> {order(:created_at)}
   has_many :game_labels_games
-  has_many :game_labels, -> {order(:name)}, :through => :game_labels_games
+  has_many :game_labels, -> {order(:name)}, :through => :game_labels_games, :dependent => :destroy
 
   validates_presence_of :name
 

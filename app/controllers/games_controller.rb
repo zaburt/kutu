@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_articles_with_games, only: [:index, :show]
 
   # GET /games
   def index
@@ -56,6 +57,10 @@ class GamesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_game
     @game = Game.friendly.find(params[:id])
+  end
+
+  def set_articles_with_games
+    @articles_with_games = Article.pluck(:game_id)
   end
 
   # Only allow a trusted parameter "white list" through.

@@ -6,7 +6,6 @@ TODO
 * show game score table, with filtering
 * fix mobile integration of datatables on articles and games, rest is merging fine
 * minimize top menu
-* handle articles and game labels during deleting games
 * hide datatables columns on small screens
 * add meta data for description etc.
 * add site map
@@ -28,6 +27,7 @@ Needs Investigation
 Done
 =======================
 
+* handle articles and game labels during deleting games
 * notify on destroy
 * notify on edit, show diff
 * add list-id to emails delivered

@@ -65,7 +65,10 @@
           %td= game.website ? link_to(game.website, game.website) : ''
           - if signed_in?
             %td= link_to fonticon('pencil'), edit_game_path(game), :title => t('edit')
-            %td= link_to fonticon('x', 'red'), game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
+            - if @articles_with_games.include?(game.id)
+              %td
+            - else
+              %td= link_to fonticon('x', 'red'), game, :method => :delete, :data => {:confirm => t('are_you_sure')}, :title => t('delete')
 
   %br
   - if signed_in?
