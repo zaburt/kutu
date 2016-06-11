@@ -1,4 +1,5 @@
 - display_class = "rating_value_#{rating}"
+- show_number ||= false
 
 - rating.times do
   .rating_bar{:class => display_class}
@@ -6,6 +7,7 @@
 - (10 - rating).times do
   .rating_bar.rating_empty
 
-.rating_number
-  = rating
+- if show_number
+  .rating_number
+    = rating
 
