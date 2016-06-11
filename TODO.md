@@ -2,8 +2,6 @@
 TODO
 =======================
 
-* notify on destroy
-* notify on edit, show diff
 * build route on map
 * show game score table, with filtering
 * fix mobile integration of datatables on articles and games, rest is merging fine
@@ -30,6 +28,8 @@ Needs Investigation
 Done
 =======================
 
+* notify on destroy
+* notify on edit, show diff
 * add list-id to emails delivered
 * add favicon
 * front page optimize image layout
