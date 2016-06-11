@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     ['articles', 'show'],
     ['games', 'index'],
     ['games', 'show'],
+    ['game_ratings', 'index'],
     ['map', 'index'],
     ['sessions', 'new'],
     ['sessions', 'create']

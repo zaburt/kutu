@@ -153,15 +153,37 @@ $(function() {
 
             filter_matches = false;
           }
+        });
 
-          /*
-          if (key === 'active' && !filter_matches) {
-            console.log('value.current_value: ' + value.current_value);
-            console.log('value.default_value: ' + value.default_value);
-            console.log('value.data_offset: ' + value.data_offset);
-            console.log('data[value.data_offset]: ' + data[value.data_offset]);
+        return filter_matches;
+      }
+    );
+  } else if ($('table#game_ratings_index').length > 0) {
+    datatables_default_config.columnDefs = [
+      {
+        targets: [0, 1, 2],
+        visible: false
+      },
+      {
+        type: 'turkish',
+        targets: [3]
+      }
+    ];
+
+    datatables_default_config.order = [[2, 'asc']];
+
+    $.fn.dataTable.ext.search.push(
+      function(settings, data, dataIndex) {
+        var filter_matches = true;
+
+        $.each(datatables_filter_base, function(key, value) {
+          if (filter_matches &&
+            value.current_value !== value.default_value &&
+            value.current_value !== data[value.data_offset]) {
+            // console.log('returning false');
+
+            filter_matches = false;
           }
-          */
         });
 
         return filter_matches;

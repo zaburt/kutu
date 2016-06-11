@@ -16,7 +16,7 @@ en:
         rating_fun: Fun
         rating_fluency: Fluency
         rating_ambience: Ambience
-        rating_management: Game Management
+        rating_management: Management
         rating_service: Service
         rating_average: Average
       article_category:
@@ -86,6 +86,7 @@ en:
   game_categories: Game Categories
   game_comments: Game Comments
   game_labels: Game Labels
+  game_ratings: Game Ratings
   games: Games
   generic:
     delete_model: "Delete %{name}"

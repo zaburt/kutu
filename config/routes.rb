@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :houses
 
     get 'map', to: 'map#index', as: :map
+    get 'game_ratings', to: 'game_ratings#index', as: :game_ratings
   end
 
   scope :path => '/home', :controller => :home, :as => :home do

@@ -56,6 +56,8 @@ class Article < ActiveRecord::Base
   # scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
   scope :publishable, -> { where(:publish => true) }
   scope :frontpage, -> { where(:frontpage => true) }
+  scope :has_game, -> { where('game_id IS NOT NULL') }
+  scope :has_rating, -> { where('rating_average <> 0.0') }
 
   scope :for_game, -> (game) {
     if game.is_a?(Game)

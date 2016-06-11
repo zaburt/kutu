@@ -1,0 +1,66 @@
+%fieldset
+  %legend
+    = t('game_ratings')
+  .row
+    = render :partial => 'shared/game_filter', :locals => {:cities => @cities, :game_categories => @game_categories}
+
+  %table#game_ratings_index.kutu_datatables
+    %thead
+      %tr
+        %th
+        %th
+        %th
+        %th= Game.model_name.human
+        %th= t('activerecord.attributes.article.rating_puzzle')
+        %th= t('activerecord.attributes.article.rating_fun')
+        %th= t('activerecord.attributes.article.rating_fluency')
+        %th= t('activerecord.attributes.article.rating_ambience')
+        %th= t('activerecord.attributes.article.rating_management')
+        %th= t('activerecord.attributes.article.rating_service')
+
+    %tbody
+      - @articles.each do |article|
+        %tr
+          %td= article.game.active ? '1' : '0'
+          %td= article.game.city.try(:name)
+          %td= article.game.game_category.try(:name)
+          %td= link_to title_for_game(article.game), article.game
+          %td
+            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_puzzle}
+          %td
+            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_fun}
+          %td
+            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_fluency}
+          %td
+            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_ambience}
+          %td
+            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_management}
+          %td
+            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_service}
+
+:javascript
+  var datatables_filter_base = {
+    active: {
+      label: '#{t('activerecord.attributes.game.active')}',
+      default_value: '#{t('all')}',
+      current_value: '#{t('all')}',
+      data_offset: 0,
+      is_bool: true,
+      bool_true_display: "#{fonticon('check', 'green text_normal')}",
+      bool_false_display: "#{fonticon('x', 'red text_normal')}"
+    },
+    cities: {
+      label: '#{t('activerecord.attributes.game.city')}',
+      default_value: '#{t('all')}',
+      current_value: '#{t('all')}',
+      data_offset: 1
+    },
+    game_categories: {
+      label: '#{t('activerecord.attributes.game.game_category')}',
+      default_value: '#{t('all')}',
+      current_value: '#{t('all')}',
+      data_offset: 2
+    }
+  };
+
+
