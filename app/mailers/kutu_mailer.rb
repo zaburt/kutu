@@ -3,7 +3,8 @@ class KutuMailer < ActionMailer::Base
   helper ApplicationHelper
 
   default :from => 'bilgi@fakatiyioynadik.com',
-    :to => Proc.new { User.pluck(:email) }
+    :to => Proc.new { User.pluck(:email) },
+    'List-Id' => 'kutu_notification'
 
   def new_article(article)
     @article = article
