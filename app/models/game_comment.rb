@@ -16,12 +16,13 @@
 #
 
 class GameComment < ActiveRecord::Base
+
+  after_create :notify_new
+
   belongs_to :game
   belongs_to :user
 
   validates_presence_of :user_id, :game_id
-
-  after_create :notify_new
 
   private
 

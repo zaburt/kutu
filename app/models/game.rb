@@ -36,6 +36,8 @@ class Game < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
+  after_create :notify_new
+
   belongs_to :city
   belongs_to :game_category
   belongs_to :house
@@ -45,8 +47,6 @@ class Game < ActiveRecord::Base
   has_many :game_labels, -> {order(:name)}, :through => :game_labels_games
 
   validates_presence_of :name
-
-  after_create :notify_new
 
   scope :active, -> {where(:active => true)}
   scope :publishable, -> { where(:publish => true) }

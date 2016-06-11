@@ -36,6 +36,9 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, :use => :slugged
 
+  after_create :notify_new
+  before_validation :calculate_average
+
   belongs_to :game
   belongs_to :picture
   belongs_to :created_by, :foreign_key => 'created_by_id', :class_name => 'User'
@@ -47,9 +50,6 @@ class Article < ActiveRecord::Base
   has_many :pictures, :through => :articles_pictures
 
   validates_presence_of :title
-
-  after_create :notify_new
-  before_validation :calculate_average
 
   # scope :publishable, -> { where(:publish => true).where('publish_time <= ?', Time.zone.now) }
   scope :publishable, -> { where(:publish => true) }
