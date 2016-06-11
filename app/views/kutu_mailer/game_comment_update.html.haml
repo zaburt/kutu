@@ -1,0 +1,18 @@
+%p
+  Merhaba,
+%br
+  #{title_for_game(@game_comment.game)} oyunu için #{@game_comment.user.display_name} tarafından yapılan bir yorum #{format_time(Time.zone.now)} zamanında güncellendi
+%br
+  #{link_to t('activerecord.attributes.game_comment.comment'), game_comment_url(@game_comment)}
+%br
+%br
+- @game_comment.changes.except(:updated_at).each do |k, v|
+  - changing_attr, old_value, new_value = humanize_game_comment_update(k, v)
+  = "#{changing_attr} eski değeri:"
+  = old_value
+  %br
+  = "#{changing_attr} yeni değeri:"
+  = new_value
+  %br
+  %br
+

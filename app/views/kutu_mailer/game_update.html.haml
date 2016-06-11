@@ -1,0 +1,18 @@
+%p
+  Merhaba,
+%br
+  #{title_for_game(@game)} oyunu ##{format_time(@game.updated_at)} zamanında güncellendi
+%br
+  #{link_to title_for_game(@game), game_url(@game)}
+%br
+%br
+- @game.changes.except(:updated_at).each do |k, v|
+  - changing_attr, old_value, new_value = humanize_game_update(k, v)
+  = "#{changing_attr} eski değeri:"
+  = old_value
+  %br
+  = "#{changing_attr} yeni değeri:"
+  = new_value
+  %br
+  %br
+

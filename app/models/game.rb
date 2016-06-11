@@ -37,6 +37,9 @@ class Game < ActiveRecord::Base
   friendly_id :name, :use => :slugged
 
   after_create :notify_new
+  after_destroy :notify_destroy
+  after_update :notify_update
+
 
   belongs_to :city
   belongs_to :game_category
@@ -68,6 +71,14 @@ class Game < ActiveRecord::Base
 
   def notify_new
     KutuMailer.game_new(self).deliver
+  end
+
+  def notify_destroy
+    KutuMailer.game_destroy(self).deliver
+  end
+
+  def notify_update
+    KutuMailer.game_update(self).deliver if self.changes.present?
   end
 end
 

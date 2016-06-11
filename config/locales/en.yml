@@ -97,9 +97,15 @@ en:
     was_successfully_destroyed: "%{name} was successfully destroyed"
     social_comment_article_show: "%{name} Article - Schrödingiller"
   notification:
-    article_new: New article added
-    game_new: New game added
-    game_comment_new: New game comment added
+    article_new: "New article %{name} added"
+    article_destroy: "%{name} article deleted"
+    article_update: "%{name} article updated"
+    game_new: "New game %{name} added"
+    game_destroy: "%{name} game deleted"
+    game_update: "%{name} game updated"
+    game_comment_new: "New comment for game %{name} added"
+    game_comment_destroy: "Comment for game %{name} deleted"
+    game_comment_update: "Comment for game %{name} deleted"
   home: Main Page
   houses: Houses
   logout: Logout

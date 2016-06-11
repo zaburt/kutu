@@ -18,6 +18,8 @@
 class GameComment < ActiveRecord::Base
 
   after_create :notify_new
+  after_destroy :notify_destroy
+  after_update :notify_update
 
   belongs_to :game
   belongs_to :user
@@ -28,5 +30,13 @@ class GameComment < ActiveRecord::Base
 
   def notify_new
     KutuMailer.game_comment_new(self).deliver
+  end
+
+  def notify_destroy
+    KutuMailer.game_comment_destroy(self).deliver
+  end
+
+  def notify_update
+    KutuMailer.game_comment_update(self).deliver if self.changes.present?
   end
 end

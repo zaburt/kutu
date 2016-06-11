@@ -37,6 +37,8 @@ class Article < ActiveRecord::Base
   friendly_id :title, :use => :slugged
 
   after_create :notify_new
+  after_destroy :notify_destroy
+  after_update :notify_update
   before_validation :calculate_average
 
   belongs_to :game
@@ -76,6 +78,14 @@ class Article < ActiveRecord::Base
 
   def notify_new
     KutuMailer.article_new(self).deliver
+  end
+
+  def notify_destroy
+    KutuMailer.article_destroy(self).deliver
+  end
+
+  def notify_update
+    KutuMailer.article_update(self).deliver if self.changes.present?
   end
 
   def calculate_average

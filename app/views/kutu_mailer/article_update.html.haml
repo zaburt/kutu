@@ -1,0 +1,18 @@
+%p
+  Merhaba,
+%br
+  #{@article.title} yazısı ##{format_time(@article.updated_at)} zamanında güncellendi
+%br
+  #{link_to @article.title, article_url(@article)}
+%br
+%br
+- @article.changes.except(:updated_at).each do |k, v|
+  - changing_attr, old_value, new_value = humanize_article_update(k, v)
+  = "#{changing_attr} eski değeri:"
+  = old_value
+  %br
+  = "#{changing_attr} yeni değeri:"
+  = new_value
+  %br
+  %br
+
