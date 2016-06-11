@@ -6,19 +6,19 @@ class KutuMailer < ActionMailer::Base
     :to => Proc.new { User.pluck(:email) },
     'List-Id' => 'kutu_notification'
 
-  def new_article(article)
+  def article_new(article)
     @article = article
-    mail(:subject => I18n.t('notification.new_article'))
+    mail(:subject => I18n.t('notification.article_new'))
   end
 
-  def new_game_comment(game_comment)
+  def game_comment_new(game_comment)
     @game_comment = game_comment
-    mail(:subject => I18n.t('notification.new_game_comment'))
+    mail(:subject => I18n.t('notification.game_comment_new'))
   end
 
-  def new_game(game)
+  def game_new(game)
     @game = game
-    mail(:subject => I18n.t('notification.new_game'))
+    mail(:subject => I18n.t('notification.game_new'))
   end
 
 end

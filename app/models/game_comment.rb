@@ -27,6 +27,6 @@ class GameComment < ActiveRecord::Base
   private
 
   def notify_new
-    KutuMailer.new_game_comment(self).deliver
+    KutuMailer.game_comment_new(self).deliver
   end
 end

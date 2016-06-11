@@ -75,7 +75,7 @@ class Article < ActiveRecord::Base
   private
 
   def notify_new
-    KutuMailer.new_article(self).deliver
+    KutuMailer.article_new(self).deliver
   end
 
   def calculate_average

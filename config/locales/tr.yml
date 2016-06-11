@@ -123,9 +123,9 @@ tr:
     was_successfully_destroyed: "%{name} silindi"
     social_comment_article_show: "%{name} Yazısı - Schrödingiller"
   notification:
-    new_article: Yeni yazı eklendi
-    new_game: Yeni oyun eklendi
-    new_game_comment: Yeni oyun yorumu eklendi
+    article_new: Yeni yazı eklendi
+    game_new: Yeni oyun eklendi
+    game_comment_new: Yeni oyun yorumu eklendi
   home: Ana Sayfa
   houses: Evler
   logout: Çıkış

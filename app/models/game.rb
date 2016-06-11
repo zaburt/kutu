@@ -67,7 +67,7 @@ class Game < ActiveRecord::Base
   private
 
   def notify_new
-    KutuMailer.new_game(self).deliver
+    KutuMailer.game_new(self).deliver
   end
 end
 
