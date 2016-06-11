@@ -107,11 +107,11 @@ tr:
   articles: Yazılar
   back: Geri
   cities: Şehirler
-  game_labels: Oyun Etiketleri
   delete: Sil
   edit: Düzenle
   game_categories: Oyun Kategorileri
   game_comments: Oyun Yorumları
+  game_labels: Oyun Etiketleri
   games: Oyunlar
   generic:
     delete_model: "%{name} Sil"

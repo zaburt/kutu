@@ -72,6 +72,7 @@ en:
       game: Game
       game_category: Game Category
       game_comment: Game Comment
+      game_label: Game Label
       house: House
       picture: Picture
       user: User
@@ -84,8 +85,7 @@ en:
   edit: Edit
   game_categories: Game Categories
   game_comments: Game Comments
-  games: Games
-  game_comments: Game Comments
+  game_labels: Game Labels
   games: Games
   generic:
     delete_model: "Delete %{name}"
