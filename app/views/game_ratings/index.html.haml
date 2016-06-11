@@ -26,17 +26,17 @@
           %td= article.game.game_category.try(:name)
           %td= link_to title_for_game(article.game), article.game
           %td
-            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_puzzle}
+            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_puzzle, :show_number => false}
           %td
-            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_fun}
+            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_fun, :show_number => false}
           %td
-            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_fluency}
+            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_fluency, :show_number => false}
           %td
-            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_ambience}
+            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_ambience, :show_number => false}
           %td
-            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_management}
+            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_management, :show_number => false}
           %td
-            = render :partial => 'articles/rating_display', :locals => {:rating => article.rating_service}
+            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_service, :show_number => false}
 
 :javascript
   var datatables_filter_base = {
