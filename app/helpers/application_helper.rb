@@ -73,5 +73,21 @@ module ApplicationHelper
     return '' if tags.blank?
     tags.map{|k| "##{k}"}.join(' ')
   end
+
+  def rating_name(attr_key)
+    t("activerecord.attributes.article.#{attr_key}")
+  end
+
+  def rating_keys
+    [
+      :rating_puzzle,
+      :rating_fun,
+      :rating_fluency,
+      :rating_ambience,
+      :rating_management,
+      :rating_service
+    ]
+  end
+
 end
 

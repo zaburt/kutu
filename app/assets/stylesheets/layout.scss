@@ -440,32 +440,52 @@ img.image_selector_picture {
 }
 
 .rating_empty {
-  // background-color: grey;
-  background-color: #fbedd9;
+  &.rating_size_normal {
+    background-color: #FBEDD9;
+  }
+
+  &.rating_size_small {
+    background-color: #D7CBBA;
+  }
 }
 
-.rating_bar {
-  // margin: 2px;
-  // border: 2px solid;
-
-  display: block;
-  width: 12px;
-  padding: 5px 0;
-  height: 28px;
-  float: left;
-  // background-color: #fbedd9;
-  margin: 1px;
-  text-align: center;
+.rating_bar_wrapper {
   white-space: nowrap;
-}
+  display: flex;
 
-.rating_number {
-  // font-size: 20px;
-  line-height: 2;
-  float: left;
-  padding: 0 20px 0 20px;
-  // color: #edb867;
-  color: #CE5700;
-  font-weight: 400;
+  .rating_bar {
+    display: block;
+    float: left;
+    text-align: center;
+    white-space: nowrap;
+    margin: 1px;
+
+    &.rating_size_normal {
+      width: 12px;
+      padding: 5px 0;
+      height: 28px;
+    }
+
+    &.rating_size_small {
+      width: 6px;
+      padding: 5px 0;
+      height: 28px;
+    }
+  }
+
+  .rating_number {
+    float: left;
+    color: #CE5700;
+    line-height: 2rem;
+    // font-weight: 400;
+
+    &.rating_size_normal {
+      padding: 0 20px;
+    }
+
+    &.rating_size_small {
+      padding: 0 5px;
+    }
+  }
 }
 

@@ -11,12 +11,8 @@
         %th
         %th
         %th= Game.model_name.human
-        %th= t('activerecord.attributes.article.rating_puzzle')
-        %th= t('activerecord.attributes.article.rating_fun')
-        %th= t('activerecord.attributes.article.rating_fluency')
-        %th= t('activerecord.attributes.article.rating_ambience')
-        %th= t('activerecord.attributes.article.rating_management')
-        %th= t('activerecord.attributes.article.rating_service')
+        - rating_keys.each do |rk|
+          %th= rating_name(rk)
 
     %tbody
       - @articles.each do |article|
@@ -25,18 +21,9 @@
           %td= article.game.city.try(:name)
           %td= article.game.game_category.try(:name)
           %td= link_to title_for_game(article.game), article.game
-          %td
-            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_puzzle, :show_number => false}
-          %td
-            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_fun, :show_number => false}
-          %td
-            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_fluency, :show_number => false}
-          %td
-            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_ambience, :show_number => false}
-          %td
-            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_management, :show_number => false}
-          %td
-            = render :partial => 'shared/rating_display', :locals => {:rating => article.rating_service, :show_number => false}
+          - rating_keys.each do |rk|
+            %td
+              = render :partial => 'shared/rating_display', :locals => {:rating => article[rk], :show_number => true, :small_display => true}
 
 :javascript
   var datatables_filter_base = {

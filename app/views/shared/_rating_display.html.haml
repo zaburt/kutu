@@ -1,13 +1,16 @@
-- display_class = "rating_value_#{rating}"
+- value_class = "rating_value_#{rating}"
 - show_number ||= false
+- small_display ||= false
+- rating_size = small_display ? 'rating_size_small' : 'rating_size_normal'
 
-- rating.times do
-  .rating_bar{:class => display_class}
+.rating_bar_wrapper
+  - rating.times do
+    .rating_bar{:class => "#{rating_size} #{value_class}"}
 
-- (10 - rating).times do
-  .rating_bar.rating_empty
+  - (10 - rating).times do
+    .rating_bar.rating_empty{:class => rating_size}
 
-- if show_number
-  .rating_number
-    = rating
+  - if show_number
+    .rating_number{:class => rating_size}
+      = rating
 
