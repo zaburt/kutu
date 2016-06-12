@@ -8,7 +8,6 @@ TODO
 * hide datatables columns on small screens
 * add meta data for description etc.
 * add site map
-* simple_form time value styling
 * write README
 * add weather
 
@@ -26,6 +25,7 @@ Needs Investigation
 Done
 =======================
 
+* simple_form time value styling
 * show game score table, with filtering
 * handle articles and game labels during deleting games
 * notify on destroy

@@ -3,9 +3,9 @@
 
   .form-inputs
     = f.input :title, :required => true
+    = f.input :frontpage
     = f.input :publish
     = f.input :publish_time
-    = f.input :frontpage
     = f.association :game, :collection => Game.order(:name)
     = f.input :rating_puzzle, :collection => (0..10), :include_blank => false
     = f.input :rating_fun, :collection => (0..10), :include_blank => false
