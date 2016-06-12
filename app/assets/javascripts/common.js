@@ -170,7 +170,7 @@ $(function() {
       }
     ];
 
-    datatables_default_config.order = [[2, 'asc']];
+    datatables_default_config.order = [[3, 'asc']];
 
     $.fn.dataTable.ext.search.push(
       function(settings, data, dataIndex) {
