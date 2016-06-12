@@ -48,7 +48,7 @@ function init_map() {
     if (game_to_find) {
       map_lng = game_to_find.geometry.coordinates[0];
       map_lat = game_to_find.geometry.coordinates[1];
-      map_zoom = 16;
+      // map_zoom = 16;
       popup_focus_game = true;
     }
   }
