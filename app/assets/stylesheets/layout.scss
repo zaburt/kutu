@@ -450,12 +450,12 @@ img.image_selector_picture {
 }
 
 .rating_bar_wrapper {
-  white-space: nowrap;
   display: flex;
 
   .rating_bar {
     display: block;
-    float: left;
+    // float: left;
+    // vertical-align: baseline;
     text-align: center;
     white-space: nowrap;
     margin: 1px;
@@ -485,7 +485,13 @@ img.image_selector_picture {
 
     &.rating_size_small {
       padding: 0 5px;
+
+      @media screen and (max-width: 950px) {
+        display: none;
+      }
     }
   }
 }
+
+
 

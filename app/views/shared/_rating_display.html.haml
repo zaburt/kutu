@@ -3,7 +3,7 @@
 - small_display ||= false
 - rating_size = small_display ? 'rating_size_small' : 'rating_size_normal'
 
-.rating_bar_wrapper
+.rating_bar_wrapper{:class => rating_size}
   - rating.times do
     .rating_bar{:class => "#{rating_size} #{value_class}"}
 
