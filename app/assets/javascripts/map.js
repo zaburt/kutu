@@ -97,9 +97,6 @@ function on_game_add(feature, layer) {
   layer.options.title = attrs.title;
   layer.bindPopup(popup_content);
 
-  // for fuse search
-  feature.layer = layer;
-
   if (popup_focus_game && focus_on === attrs.slug) {
     initial_focused_layer = layer;
   }
@@ -143,26 +140,6 @@ function refresh_games() {
 }
 
 function init_games() {
-  /*
-  $.each(games, function(slug, attrs) {
-    popup_content = '<b>' + attrs.game_link + '</b><br>' + attrs.phone + '<br>' + attrs.address + ' / ' + attrs.city;
-    markers[slug] = L.marker([attrs.lat, attrs.lng], {
-      title: attrs.name
-    }).bindPopup(popup_content);
-
-    markers[slug].addTo(map);
-    // marker_cluster.addLayer(markers[slug]);
-
-    if (popup_focus_game && slug === focus_on) {
-      markers[slug].openPopup();
-    }
-
-    markers[slug].on('click', function(mark) {
-      zoom_to_marker(markers[slug], 16);
-    });
-  });
-  */
-
   feature_layers.games = L.geoJson(games_geojson, {
     // pointToLayer: function (feature, latlng) {
     //   return L.marker(latlng, {icon: baseballIcon});
@@ -266,6 +243,7 @@ function build_custom_toolbar(name, iterator, filter_key) {
   });
 }
 
+// TODO: not used anymore but we may use it again
 function init_toolbars() {
   toolbar.actions.city = build_custom_toolbar('Şehir', cities, 'city_id');
   toolbar.actions.active = build_custom_toolbar('Durum', actives, 'active');
@@ -309,7 +287,6 @@ function init_events() {
 
 function init_popups() {
   if (initial_focused_layer) {
-    // initial_focused_layer.openPopup();
     marker_cluster.zoomToShowLayer(initial_focused_layer, function(e) {
       initial_focused_layer.openPopup();
     });
