@@ -324,6 +324,15 @@ L.Control.KutuFilter = L.Control.extend({
     }
   },
 
+  findLayer: function(slug) {
+    var layers = marker_cluster.getLayers();
+    var found_layer = layers.find(function(k) {
+      return k.feature.properties.slug == slug;
+    });
+
+    return found_layer;
+  },
+
   createResultItem: function(feature, container, popup) {
     var _this = this;
     var props = feature.properties;
@@ -335,6 +344,7 @@ L.Control.KutuFilter = L.Control.extend({
 
     resultItem.onclick = function() {
       // console.log(feature);
+      var layer;
 
       if (window.matchMedia("(max-width:480px)").matches) {
         _this.hidePanel();
@@ -345,9 +355,13 @@ L.Control.KutuFilter = L.Control.extend({
         zoom_factor = 17;
       }
 
-      marker_cluster.zoomToShowLayer(feature.layer, function(e) {
-        feature.layer.openPopup();
-      });
+      layer = _this.findLayer(props.slug);
+
+      if (layer) {
+        marker_cluster.zoomToShowLayer(layer, function(e) {
+          layer.openPopup();
+        });
+      }
     };
 
     // Fill in the container with the user-supplied function if any,
