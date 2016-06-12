@@ -106,12 +106,10 @@ L.Control.KutuFilter = L.Control.extend({
 
       if (new_value === 'null') {
         new_value = null;
-      } else {
-        if (elem_id === 'actives') {
+      } else if (elem_id === 'actives') {
           new_value = new_value === 'true';
-        } else {
+      } else {
           new_value = Number(elem.value);
-        }
       }
 
       game_filter[filter_key] = new_value;
@@ -177,7 +175,6 @@ L.Control.KutuFilter = L.Control.extend({
     this._input.placeholder = this.options.placeholder;
     this._input.onkeyup = function(evt) {
       var searchString = evt.currentTarget.value;
-      // _this.searchFeatures(searchString);
       game_filter_search = searchString;
       refresh_games();
       _this.refresh();
@@ -229,12 +226,10 @@ L.Control.KutuFilter = L.Control.extend({
     var input = this._input;
 
     this._map.addEventListener('overlayadd', function() {
-      // that.searchFeatures(input.value);
       that.updateSearchResults();
     });
 
     this._map.addEventListener('overlayremove', function() {
-      // that.searchFeatures(input.value);
       that.updateSearchResults();
     });
   },
@@ -256,8 +251,6 @@ L.Control.KutuFilter = L.Control.extend({
       this._map.panBy([this.getOffset() * 0.5, 0], {duration: 0.5});
       this.fire('show');
       this._input.select();
-      // Search again as visibility of features might have changed
-      // this.searchFeatures(this._input.value);
       this.updateSearchResults();
     }
   },
@@ -266,7 +259,7 @@ L.Control.KutuFilter = L.Control.extend({
     if (this.isPanelVisible()) {
       L.DomUtil.removeClass(this._panel, 'visible');
 
-      // Move back the map centre - only if we still hold this._map
+      // Move back the map center only if we still hold this._map
       // as this might already have been cleared up by removeFrom()
       if (null !== this._map) {
           this._map.panBy([this.getOffset() * -0.5, 0], {duration: 0.5});
@@ -287,64 +280,14 @@ L.Control.KutuFilter = L.Control.extend({
     }
   },
 
-  /*
-  indexFeatures: function(data, keys) {
-    var jsonFeatures = data.features || data;
-
-    this._keys = keys;
-
-    var properties = jsonFeatures.map(function(feature) {
-      // Keep track of the original feature
-      feature.properties._feature = feature;
-      return feature.properties;
-    });
-
-    var options = {
-      keys: keys,
-      caseSensitive: this.options.caseSensitive,
-      threshold : this.options.threshold
-    };
-
-    this._fuseIndex = new Fuse(properties, options);
-  },
-
-  searchFeatures: function(string) {
-    var result = this._fuseIndex.search(string);
-
-    // Empty result list
-    var listItems = document.querySelectorAll(".result-item");
-    for (var i = 0 ; i < listItems.length ; i++) {
-        listItems[i].remove();
-    }
-
-    var resultList = document.querySelector('.result-list');
-    var num = 0;
-    var max = this.options.maxResultLength;
-
-    for (var i in result) {
-      var props = result[i];
-      var feature = props._feature;
-      var popup = this._getFeaturePopupIfVisible(feature);
-
-      if (undefined !== popup || this.options.showInvisibleFeatures) {
-          this.createResultItem(props, resultList, popup);
-
-          if (undefined !== max && ++num === max) {
-              break;
-          }
-      }
-    }
-  },
-  */
-
   updateSearchResults: function() {
-    // var result = this._fuseIndex.search(string);
     var result = marker_cluster.getLayers();
 
     // Empty result list
     var listItems = document.querySelectorAll(".result-item");
+
     for (var i = 0 ; i < listItems.length ; i++) {
-        listItems[i].remove();
+      listItems[i].remove();
     }
 
     var resultList = document.querySelector('.result-list');
@@ -352,19 +295,16 @@ L.Control.KutuFilter = L.Control.extend({
     var max = this.options.maxResultLength;
 
     for (var i in result) {
-      // console.log(result[i].feature);
       var feature = result[i].feature;
       // console.log(feature);
-      // var props = feature.properties;
       var popup = this._getFeaturePopupIfVisible(feature);
 
       if (undefined !== popup || this.options.showInvisibleFeatures) {
-          // this.createResultItem(props, resultList, popup);
-          this.createResultItem(feature, resultList, popup);
+        this.createResultItem(feature, resultList, popup);
 
-          if (undefined !== max && ++num === max) {
-              break;
-          }
+        if (undefined !== max && ++num === max) {
+          break;
+        }
       }
     }
   },
@@ -372,8 +312,7 @@ L.Control.KutuFilter = L.Control.extend({
   refresh: function() {
     // Reapply the search on the indexed features - useful if features have been filtered out
     if (this.isPanelVisible()) {
-        // this.searchFeatures(this._input.value);
-        this.updateSearchResults();
+      this.updateSearchResults();
     }
   },
 
@@ -381,52 +320,35 @@ L.Control.KutuFilter = L.Control.extend({
     var layer = feature.layer;
 
     if (undefined !== layer && this._map.hasLayer(layer)) {
-        return layer.getPopup();
+      return layer.getPopup();
     }
   },
 
-  // createResultItem: function(props, container, popup) {
   createResultItem: function(feature, container, popup) {
     var _this = this;
-    // var feature = props._feature;
     var props = feature.properties;
 
     // Create a container and open the associated popup on click
     var resultItem = L.DomUtil.create('p', 'result-item', container);
 
-    //if (undefined !== popup) {
-        L.DomUtil.addClass(resultItem, 'clickable');
+    L.DomUtil.addClass(resultItem, 'clickable');
 
-        resultItem.onclick = function() {
-          console.log(feature);
-          /*
-          if (window.matchMedia("(max-width:480px)").matches) {
-            _this.hidePanel();
-            feature.layer.openPopup();
-          } else {
-            _this._panAndPopup(feature, popup);
-          }
-          */
+    resultItem.onclick = function() {
+      // console.log(feature);
 
-          if (window.matchMedia("(max-width:480px)").matches) {
-            _this.hidePanel();
-          }
+      if (window.matchMedia("(max-width:480px)").matches) {
+        _this.hidePanel();
+      }
 
-          var zoom_factor = map.getZoom();
-          if (zoom_factor < 17) {
-            zoom_factor = 17;
-          }
+      var zoom_factor = map.getZoom();
+      if (zoom_factor < 17) {
+        zoom_factor = 17;
+      }
 
-          // var current_parent = marker_cluster.getVisibleParent(feature.layer);
-          // current_parent.spiderfy();
-
-          // map.setView(feature.layer.getLatLng(), zoom_factor);
-          // feature.layer.openPopup();
-          marker_cluster.zoomToShowLayer(feature.layer, function(e) {
-            feature.layer.openPopup();
-          });
-        };
-    //}
+      marker_cluster.zoomToShowLayer(feature.layer, function(e) {
+        feature.layer.openPopup();
+      });
+    };
 
     // Fill in the container with the user-supplied function if any,
     // otherwise display the feature properties used for the search.
