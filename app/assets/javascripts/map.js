@@ -309,7 +309,10 @@ function init_events() {
 
 function init_popups() {
   if (initial_focused_layer) {
-    initial_focused_layer.openPopup();
+    // initial_focused_layer.openPopup();
+    marker_cluster.zoomToShowLayer(initial_focused_layer, function(e) {
+      initial_focused_layer.openPopup();
+    });
   }
 }
 
