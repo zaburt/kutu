@@ -9,7 +9,7 @@
           Schrodingiller
     #responsive_menu
       .top-bar-left
-        %ul.dropdown.menu{'data-dropdown-menu' => ''}
+        %ul.dropdown.menu.vertical.medium-horizontal{'data-dropdown-menu' => ''}
           %li
             = link_to t('home'), root_path
           %li
@@ -38,7 +38,7 @@
             %li
               = link_to t('users'), users_path
       .top-bar-right
-        %ul.menu
+        %ul.menu.vertical.medium-horizontal
           %li
             = link_to 'Biz', '/yazilar/biz'
           - if signed_in?
