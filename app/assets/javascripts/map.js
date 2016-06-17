@@ -29,9 +29,17 @@ var search_control;
 var locate_control;
 
 function find_game_from_geojson(key, value) {
+  /* does not work for IE, bleh
   return games_geojson.find(function(k) {
     return k.properties[key] == value;
   });
+  */
+
+  var found = $.grep(games_geojson, function(k) {
+    return k.properties[key] == value;
+  });
+
+  return found[0];
 }
 
 function init_map() {
