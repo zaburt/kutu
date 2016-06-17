@@ -282,15 +282,17 @@ L.Control.KutuFilter = L.Control.extend({
 
   updateSearchResults: function() {
     var result = marker_cluster.getLayers();
+    var resultList = document.querySelector('.result-list');
 
     // Empty result list
     var listItems = document.querySelectorAll(".result-item");
 
     for (var i = 0 ; i < listItems.length ; i++) {
-      listItems[i].remove();
+      // yet another IE incompatibility
+      // listItems[i].remove();
+      resultList.removeChild(listItems[i]);
     }
 
-    var resultList = document.querySelector('.result-list');
     var num = 0;
     var max = this.options.maxResultLength;
 
