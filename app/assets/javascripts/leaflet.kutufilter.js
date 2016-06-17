@@ -328,11 +328,11 @@ L.Control.KutuFilter = L.Control.extend({
 
   findLayer: function(slug) {
     var layers = marker_cluster.getLayers();
-    var found_layer = layers.find(function(k) {
+    var found_layer = layers.filter(function(k) {
       return k.feature.properties.slug == slug;
     });
 
-    return found_layer;
+    return found_layer[0];
   },
 
   createResultItem: function(feature, container, popup) {
