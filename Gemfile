@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.7'
+gem 'rails', '~> 4.2.10'
 gem 'rails-i18n'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
+gem 'pg', '~> 0.21'
 # gem 'mysql2', '>= 0.3.13', '< 0.5'
 
 # Use SCSS for stylesheets
@@ -42,11 +42,11 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 
 # foundation
-gem 'foundation-rails', '~> 6.2'
+gem 'foundation-rails', '~> 6.2.4'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 # gem 'will_paginate-foundation'
 
-gem 'haml-rails', '~> 0.9'
+gem 'haml-rails'
 
 gem 'devise'
 gem 'devise-i18n'
@@ -54,7 +54,7 @@ gem 'devise-i18n-views'
 
 gem 'dotenv-rails'
 gem 'friendly_id'
-gem 'paperclip', '~> 4.3'
+gem 'paperclip'
 gem 'route_translator'
 gem 'simple_form'
 gem 'social-share-button'
@@ -81,6 +81,6 @@ group :development do
   # gem 'flog'
   # gem 'flay'
 
-  gem 'i18n-tasks', '~> 0.9.2'
+  gem 'i18n-tasks'
 end
 
