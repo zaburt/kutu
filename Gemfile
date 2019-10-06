@@ -1,19 +1,25 @@
 source 'https://rubygems.org'
 
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+  "https://github.com/#{repo_name}.git"
+end
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.10'
+gem 'rails', '~> 6.0.0'
 gem 'rails-i18n'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.21'
+gem 'pg'
 # gem 'mysql2', '>= 0.3.13', '< 0.5'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+# gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -36,7 +42,7 @@ gem 'jquery-ui-rails'
 
 # Use Unicorn as the app server
 gem 'unicorn'
-# gem 'puma'
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,11 +74,11 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
+  # config/environments/development.rb file_watcher method requires this to decide how and when reload a file
+  gem 'listen'
 
-  gem 'quiet_assets'
   gem 'annotate'
-  gem 'mailcatcher'
   gem 'brakeman', :require => false
   gem 'rubocop', :require => false
   gem 'bundler-audit', :require => false

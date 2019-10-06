@@ -10,22 +10,43 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/tmp/*
 !/log/.keep
-/tmp
+!/tmp/.keep
 
-### custom ignores
-# config
-config/database.yml
-config/unicorn.rb
+/node_modules
+/public/assets
+/public/packs
+/public/system
+/yarn-error.log
 
-# Backup files
-\#*
+/config/database.yml
+/config/unicorn.rb
+/config/storage.yml
+# we may keep this in scm
+/config/cable.yml
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+/config/secrets.yml.key
+
+# seeds
+/db/base/*.json
+/db/seeds/*.json
+
+.byebug_history
+
+# temporary editor files
+*.swp
 *~
+\#*
 .#*
 .DS_Store
-*.swp
+.idea/
+.env
 .directory
 .project
+**.orig
+dump.rdb
 
 # https://raw.github.com/github/gitignore/master/Rails.gitignore
 *.rbc
@@ -36,11 +57,8 @@ capybara-*.html
 
 /coverage/
 /spec/tmp/*
-**.orig
 rerun.txt
 pickle-email-*.html
-
-
 # if using bower-rails ignore default bower_components path bower.json files
 /vendor/assets/bower_components
 *.bowerrc
@@ -49,23 +67,17 @@ bower.json
 # Ignore pow environment settings
 .powenv
 
-# paperclip
-/public/system
-
 # files we put manually
 /public/data
-
-# asset cache for production
-/public/assets
-
-# seeds
-/db/seeds/*.json
-
-# secrets
-/.env
 
 # erd
 /erd.pdf
 /kutu_schema.pdf
+
+/brakeman.html
+/rubocop.log
+/flay.log
+/flog.log
+/scss-lint.log
 
 

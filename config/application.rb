@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -19,9 +19,6 @@ module Kutu
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
 
     ### custom settings
 
@@ -61,6 +58,11 @@ module Kutu
     #   :url => '/system/:hash.:extension',
     #   :hash_secret => '7112897296c6733b3e80cd621b6331031555d12b'
     # }
+
+    #### after rails app:update
+    #
+    # Initialize configuration defaults for originally generated Rails version.
+    # config.load_defaults 5.0
   end
 
 end

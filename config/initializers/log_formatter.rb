@@ -25,7 +25,7 @@ class ActiveSupport::Logger::SimpleFormatter
       formatted_time = time.strftime('%Y-%m-%d %H:%M:%S.%L %z')
       color = SEVERITY_TO_COLOR_MAP[severity]
 
-      "\033[0;37m#{formatted_time}\033[0m [\033[#{color}m#{formatted_severity}\033[0m] #{msg.strip} (pid:#{$PID})\n"
+      "\033[0;37m#{formatted_time}\033[0m [\033[#{color}m#{formatted_severity}\033[0m] #{msg.strip} (pid:#{Process.pid})\n"
     else
       pattern = Regexp.new("^#{Rails.root rescue Dir.pwd}")
       location = (Kernel.caller.detect{|c| c.match(pattern)} || '').split('/')[-1]
@@ -33,7 +33,7 @@ class ActiveSupport::Logger::SimpleFormatter
       format(
         "[%s] (%d) %5s %s %s\n",
         time.strftime('%Y-%m-%d %H:%M:%S.%L %z'),
-        $PID,
+        Process.pid,
         severity,
         location,
         msg2str(msg)
