@@ -59,7 +59,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  config.cache_store = :dalli_store,
+  config.cache_store = :mem_cache_store,
     *(ENV['MEMCACHE_SERVERS'].presence || '127.0.0.1').split(','),
     {:namespace => 'kutu', :expires_in => 1.day}
 
