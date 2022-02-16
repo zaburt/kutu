@@ -11,7 +11,7 @@ gem 'rails', '~> 6.0.0'
 gem 'rails-i18n'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.2.3'
+gem 'pg'
 # gem 'mysql2', '>= 0.3.13', '< 0.5'
 
 # Use SCSS for stylesheets
