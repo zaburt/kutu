@@ -487,6 +487,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   listen
+  ostruct
   paperclip
   pg
   puma
