@@ -1,65 +1,65 @@
 %fieldset
   %legend
     = Picture.model_name.human
-  .row
-    .small-24.columns.small-centered.text-center
-      = image_tag @picture.image.url, :class => 'image_selector_picture small-24 large-16 columns small-centered'
+  .grid-x.align-center
+    .small-24.cell.text-center
+      = image_tag @picture.image.url, :class => 'image_selector_picture small-24 large-16 cell'
   %br
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.picture.name')
-    .small-16.columns
+    .small-16.cell
       = @picture.name
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.picture.file_name')
-    .small-16.columns
+    .small-16.cell
       = @picture.image_file_name
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.picture.caption')
-    .small-16.columns
+    .small-16.cell
       = @picture.caption
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.picture.game')
-    .small-16.columns
+    .small-16.cell
       = @picture.game.try(:name)
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('created_at')
-    .small-16.columns
+    .small-16.cell
       = format_time(@picture.created_at)
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('updated_at')
-    .small-16.columns
+    .small-16.cell
       = format_time(@picture.updated_at)
   %br
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = fonticon('link')
-    .small-16.columns
+    .small-16.cell
       = link_to @picture.image.url
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = fonticon('link')
-    .small-16.columns
+    .small-16.cell
       = link_to @picture.image.url(:medium)
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = fonticon('link')
-    .small-16.columns
+    .small-16.cell
       = link_to @picture.image.url(:small)
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = fonticon('link')
-    .small-16.columns
+    .small-16.cell
       = link_to @picture.image.url(:thumb)
 
   %br
-  .row
-    .small-12.columns.small-offset-1
+  .grid-x
+    .small-12.cell.small-offset-1
       - if signed_in?
         = link_to t('edit'), edit_picture_path(@picture), :class => 'button'
         = link_to t('delete'), @picture, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'

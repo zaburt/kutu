@@ -2,8 +2,8 @@
   %legend
     = @article.title
   - if @article.picture
-    .row
-      .small-20.columns.small-centered.text-center
+    .grid-x.align-center
+      .small-20.cell.text-center
         = image_tag @article.picture.image.url(:medium), :class => 'image_selector_picture show-for-medium'
         = image_tag @article.picture.image.url(:small), :class => 'image_selector_picture show-for-small-only'
         - if @article.picture.caption
@@ -11,31 +11,32 @@
             = @article.picture.caption
   %br
   - if @article.has_rating
-    .row
-      .small-24.columns.small-centered
+    .grid-x.align-center
+      .small-24.large-16.cell
         - rating_keys.each do |rk|
-          .small-9.medium-12.columns.text-right
-            = rating_name(rk)
-          .small-15.medium-12.columns
-            = render :partial => 'shared/rating_display', :locals => {:rating => @article[rk], :show_number => true}
+          .grid-x.grid-margin-x.align-middle
+            .small-9.medium-12.cell.text-right
+              = rating_name(rk)
+            .small-15.medium-12.cell
+              = render :partial => 'shared/rating_display', :locals => {:rating => @article[rk], :show_number => true}
   %br
-  .row
-    .text_italic.grey.small-8.large-6.columns.small-offset-16.large-offset-18
+  .grid-x
+    .text_italic.grey.small-8.large-6.cell.small-offset-16.large-offset-18
       /= format_time(@article.publish_time)
       = time_tag @article.publish_time
   %br
-  .row
-    .small-22.columns.small-offset-1.hashtag
+  .grid-x
+    .small-22.cell.small-offset-1.hashtag
       - @article.article_categories.each do |article_category|
         = "##{article_category.name}"
   %br
-  .row
-    .small-22.columns.small-offset-1
+  .grid-x
+    .small-22.cell.small-offset-1
       %article
         = simple_format(@article.content, {}, :sanitize => false)
   %br
-  .row
-    .small-20.columns.small-centered.text-center
+  .grid-x.align-center
+    .small-20.cell.text-center
       - @article.pictures.each do |picture|
         = image_tag picture.image.url(:medium), :class => 'image_selector_picture show-for-medium'
         = image_tag picture.image.url(:small), :class => 'image_selector_picture show-for-small-only'
@@ -44,27 +45,27 @@
             = picture.caption
         %br
   %br
-  .row.small-up-1.medium-up-3
-    .column
+  .grid-x.small-up-1.medium-up-3
+    .cell
       .text-center
         - if @article.picture
           = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true',
             :image => URI.join(root_url, @article.picture.image.url(:medium)))
         - else
           = social_share_button_tag(t('generic.social_comment_article_show', :name => @article.title), :popup => 'true')
-    .column
+    .cell
       - if @article.game
         .text-center
           = link_to title_for_game(@article.game), @article.game, :class => 'button'
-    .column
+    .cell
       - if @article.game && !@article.game.active
         .text-center
           %span.alert.round.label.text_normal
             = t('note_game_is_closed')
 
   %br
-  .row
-    .small-12.columns.small-offset-1
+  .grid-x
+    .small-12.cell.small-offset-1
       - if signed_in?
         = link_to t('edit'), edit_article_path(@article), :class => 'button'
       = link_to t('back'), :root, :class => 'button'

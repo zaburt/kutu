@@ -41,9 +41,9 @@ class Game < ActiveRecord::Base
   after_update :notify_update
 
 
-  belongs_to :city
-  belongs_to :game_category
-  belongs_to :house
+  belongs_to :city, optional: true
+  belongs_to :game_category, optional: true
+  belongs_to :house, optional: true
 
   has_many :game_comments, -> {order(:created_at)}
   has_many :game_labels_games

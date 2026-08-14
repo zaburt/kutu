@@ -66,6 +66,7 @@ fieldset {
 .top-bar {
   // margin-bottom: 20px;
   background: linear-gradient(#000, #444);
+  width: 100%;
 
   &:not(.expanded) {
     box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.5);
@@ -91,6 +92,30 @@ fieldset {
         height: 32px;
         padding: 0;
         margin: 0;
+      }
+    }
+  }
+
+  // #responsive_menu wraps .top-bar-left/.top-bar-right, but Foundation's
+  // top-bar-unstack/top-bar-stacked mixins only style those classes when
+  // they are direct children of .top-bar, so they never get their flex
+  // rules applied here and the bar collapses to content width instead of
+  // spanning the full .top-bar. Re-apply the same behavior to this wrapper.
+  #responsive_menu {
+    flex: 1 1 auto;
+
+    @include breakpoint($topbar-unstack-breakpoint) {
+      display: flex;
+      align-items: center;
+
+      .top-bar-left {
+        flex: 1 1 auto;
+        margin-right: auto;
+      }
+
+      .top-bar-right {
+        flex: 0 1 auto;
+        margin-left: auto;
       }
     }
   }

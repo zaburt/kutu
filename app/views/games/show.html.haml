@@ -2,112 +2,97 @@
   %legend
     = title_for_game(@game)
 
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       = t('activerecord.attributes.game.house')
-    .small-18.columns
+    .small-18.cell
       - if @game.house
         = link_to @game.house.name, @game.house
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       = t('activerecord.attributes.game.active')
-    .small-18.columns
+    .small-18.cell
       = @game.active ? fonticon('check', 'green') : fonticon('x', 'red')
   - if signed_in?
-    .row
-      .small-6.columns.text_bold
+    .grid-x
+      .small-6.cell.text_bold
         = t('activerecord.attributes.game.publish')
-      .small-18.columns
+      .small-18.cell
         = @game.publish ? fonticon('check', 'green') : fonticon('x', 'red')
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       = t('activerecord.attributes.game.game_category')
-    .small-18.columns
+    .small-18.cell
       = @game.game_category.try(:name)
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       = t('game_labels')
-    .small-18.columns.hashtag
+    .small-18.cell.hashtag
       = format_hashtag(@game.game_labels.pluck(:name))
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       = t('activerecord.attributes.game.city')
-    .small-18.columns
+    .small-18.cell
       = @game.city.try(:name)
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       = t('activerecord.attributes.game.address')
-    .small-18.columns
+    .small-18.cell
       = @game.address
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       /= t('activerecord.attributes.game.phone')
       = fonticon('telephone')
-    .small-18.columns
+    .small-18.cell
       = @game.phone
-  .row
-    .small-6.columns.social_button_generic.social-share-button-email-blue
-      /= t('activerecord.attributes.game.email')
-      /= fonticon('mail')
-    .small-18.columns
+  .grid-x.align-center
+    .small-20.cell.text-center
       - if @game.email
         = mail_to @game.email
-  .row
-    .small-6.columns.social_button_generic.social-share-button-share
-      /= t('activerecord.attributes.game.website')
-      /= fonticon('link')
-    .small-18.columns
+  .grid-x.align-center
+    .small-20.cell.text-center
       - if @game.website
         = link_to @game.website, @game.website
-  .row
-    .small-6.columns.social_button_generic.social-share-button-facebook
-      /= t('activerecord.attributes.game.facebook')
-      /= fonticon('social-facebook', 'facebook')
-    .small-18.columns
+  .grid-x.align-center
+    .small-20.cell.text-center
       - if @game.facebook
         = link_to @game.facebook, @game.facebook
-  .row
-    .small-6.columns.social_button_generic.social-share-button-twitter
-      /= t('activerecord.attributes.game.twitter')
-      /= fonticon('social-twitter', 'twitter')
-    .small-18.columns
+  .grid-x.align-center
+    .small-20.cell.text-center
       - if @game.twitter
         = link_to @game.twitter, @game.twitter
-  .row
-    .small-6.columns.social_button_generic.social-share-button-instagram
-      /= t('activerecord.attributes.game.instagram')
-      /= fonticon('social-instagram', 'instagram')
-    .small-18.columns
+  .grid-x.align-center
+    .small-20.cell.text-center
       - if @game.instagram
         = link_to @game.instagram, @game.instagram
   %br
   - if signed_in?
-    .row
-      .small-6.columns.text_bold
+    .grid-x
+      .small-6.cell.text_bold
         = t('activerecord.attributes.game.game_times')
-      .small-18.columns
+      .small-18.cell
         = @game.game_times
-  .row
-    .small-6.columns.text_bold
+  .grid-x
+    .small-6.cell.text_bold
       = t('activerecord.attributes.game.story')
-    .small-18.columns
+    .small-18.cell
       %article
         = simple_format(@game.story, {}, :sanitize => false)
 
   - if @articles.present?
     %br
-    .row
-      .small-6.columns.text_bold
+    .grid-x
+      .small-6.cell.text_bold
         = t('related_articles')
-      .small-18.columns
+      .small-18.cell
         - @articles.each do |article|
-          .row
-            .small-24.columns
+          .grid-x
+            .small-24.cell
               = link_to article.title, article#, :class => 'button'
 
   %br
-  .row
-    .small-16.columns.small-offset-1
+  .grid-x
+    .small-16.cell.small-offset-1
       - if signed_in?
         = link_to t('edit'), edit_game_path(@game), :class => 'button'
         - if @articles_with_games.exclude?(@game.id)
@@ -118,16 +103,16 @@
       = link_to t('back'), games_path, :class => 'button'
 
 - if signed_in?
-  .row
-    .small-24.columns
+  .grid-x
+    .small-24.cell
       - @game.game_comments.each do |game_comment|
         %br
         %fieldset
           %legend
             = game_comment.user.display_name
-          .small-16.columns
+          .small-16.cell
             = simple_format(game_comment.comment, {}, :sanitize => false)
-          .small-8.columns
+          .small-8.cell
             .float-right
               %i.text_small.grey
                 = format_time(game_comment.updated_at)

@@ -41,10 +41,10 @@ class Article < ActiveRecord::Base
   after_update :notify_update
   before_validation :calculate_average
 
-  belongs_to :game
-  belongs_to :picture
-  belongs_to :created_by, :foreign_key => 'created_by_id', :class_name => 'User'
-  belongs_to :updated_by, :foreign_key => 'updated_by_id', :class_name => 'User'
+  belongs_to :game, optional: true
+  belongs_to :picture, optional: true
+  belongs_to :created_by, :foreign_key => 'created_by_id', :class_name => 'User', optional: true
+  belongs_to :updated_by, :foreign_key => 'updated_by_id', :class_name => 'User', optional: true
 
   has_many :article_categories_articles
   has_many :article_categories, -> {order(:name)}, :through => :article_categories_articles

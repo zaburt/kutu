@@ -1,5 +1,5 @@
 - if notice.present?
-  .row
+  .grid-x
     .callout.warning{'data-closable' => ''}
       %i.fi-alert
         = notice
@@ -8,7 +8,7 @@
           &times;
 
 - if alert.present?
-  .row
+  .grid-x
     .callout.alert{'data-closable' => ''}
       %i.fi-x.red
         = alert

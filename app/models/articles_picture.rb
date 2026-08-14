@@ -12,8 +12,8 @@
 #
 
 class ArticlesPicture < ActiveRecord::Base
-  belongs_to :article
-  belongs_to :picture
+  belongs_to :article, optional: true
+  belongs_to :picture, optional: true
 
 end
 

@@ -1,7 +1,7 @@
 %fieldset
   %legend
     = t('games')
-  .row
+  .grid-x.align-center
     = render :partial => 'shared/game_filter', :locals => {:cities => @cities, :game_categories => @game_categories}
 
   %table#games_index.kutu_datatables

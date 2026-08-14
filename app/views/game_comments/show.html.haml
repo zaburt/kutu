@@ -1,36 +1,36 @@
 %fieldset
   %legend
     = GameComment.model_name.human
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.game_comment.game')
-    .small-16.columns
+    .small-16.cell
       = link_to @game_comment.game.name, @game_comment.game
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.game_comment.user')
-    .small-16.columns
+    .small-16.cell
       = @game_comment.user.try(:display_name)
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('created_at')
-    .small-16.columns
+    .small-16.cell
       = format_time(@game_comment.created_at)
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('updated_at')
-    .small-16.columns
+    .small-16.cell
       = format_time(@game_comment.updated_at)
   %br
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.game_comment.comment')
-    .small-16.columns
+    .small-16.cell
       = @game_comment.comment
 
   %br
-  .row
-    .small-12.columns.small-offset-1
+  .grid-x
+    .small-12.cell.small-offset-1
       - if signed_in?
         = link_to t('edit'), edit_game_comment_path(@game_comment), :class => 'button'
         = link_to t('delete'), @game_comment, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'

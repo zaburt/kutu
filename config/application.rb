@@ -45,6 +45,13 @@ module Kutu
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+    # Disable CSS minification. dartsass-sprockets defaults non-development
+    # environments to `:sass`, which recompiles the *raw* Sprockets-processed
+    # CSS (including `image-url`/`asset-url` helper calls) through a bare
+    # SassC::Engine that has no Sprockets context/importer registered,
+    # raising `Sass::CompileError` for any stylesheet that uses those helpers.
+    config.assets.css_compressor = nil
+
     # force add fonts to asset pipeline
     # config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.paths << Rails.root.join('app', 'assets', 'images')
@@ -62,7 +69,7 @@ module Kutu
     #### after rails app:update
     #
     # Initialize configuration defaults for originally generated Rails version.
-    # config.load_defaults 5.0
+    config.load_defaults 8.1
   end
 
 end

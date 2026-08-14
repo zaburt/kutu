@@ -1,47 +1,47 @@
 require 'test_helper'
 
-class ArticlesControllerTest < ActionController::TestCase
+class ArticlesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @article = articles(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
-    get :index
+    get articles_path
     assert_response :success
-    assert_not_nil assigns(:articles)
   end
 
   test "should get new" do
-    get :new
+    get new_article_path
     assert_response :success
   end
 
   test "should create article" do
     assert_difference('Article.count') do
-      post :create, article: { content: @article.content, created_by_id: @article.created_by_id, game_id: @article.game_id, picture_id: @article.picture_id, publish: @article.publish, publish_time: @article.publish_time, title: @article.title, updated_by_id: @article.updated_by_id }
+      post articles_path, params: { article: { content: @article.content, created_by_id: @article.created_by_id, game_id: @article.game_id, picture_id: @article.picture_id, publish: @article.publish, publish_time: @article.publish_time, title: @article.title, updated_by_id: @article.updated_by_id } }
     end
 
-    assert_redirected_to article_path(assigns(:article))
+    assert_redirected_to article_path(Article.last)
   end
 
   test "should show article" do
-    get :show, id: @article
+    get article_path(@article)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @article
+    get edit_article_path(@article)
     assert_response :success
   end
 
   test "should update article" do
-    patch :update, id: @article, article: { content: @article.content, created_by_id: @article.created_by_id, game_id: @article.game_id, picture_id: @article.picture_id, publish: @article.publish, publish_time: @article.publish_time, title: @article.title, updated_by_id: @article.updated_by_id }
-    assert_redirected_to article_path(assigns(:article))
+    patch article_path(@article), params: { article: { content: @article.content, created_by_id: @article.created_by_id, game_id: @article.game_id, picture_id: @article.picture_id, publish: @article.publish, publish_time: @article.publish_time, title: @article.title, updated_by_id: @article.updated_by_id } }
+    assert_redirected_to article_path(@article.reload)
   end
 
   test "should destroy article" do
     assert_difference('Article.count', -1) do
-      delete :destroy, id: @article
+      delete article_path(@article)
     end
 
     assert_redirected_to articles_path

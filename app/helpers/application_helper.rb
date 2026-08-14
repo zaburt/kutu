@@ -52,7 +52,7 @@ module ApplicationHelper
   def format_time(timeval, timeformat = :no_tz_no_sec)
     return nil if timeval.blank?
 
-    timeval.to_s(timeformat)
+    timeval.to_fs(timeformat)
   end
 
   def title_for_game(game)

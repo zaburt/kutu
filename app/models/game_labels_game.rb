@@ -15,6 +15,6 @@
 #
 
 class GameLabelsGame < ActiveRecord::Base
-  belongs_to :game
-  belongs_to :game_label
+  belongs_to :game, optional: true
+  belongs_to :game_label, optional: true
 end

@@ -14,10 +14,10 @@
 
 = f.input form_attr_raw_name, :as => :hidden
 
-.row
-  .small-6.columns
+.grid-x
+  .small-6.cell
     = f.label form_attr
-  .small-18.columns
+  .small-18.cell
     %a{'data-open' => 'image_selector_modal'}
       - picture_obj = form_object.try(form_attr)
       = image_tag image_thumb_url_or_fallback(picture_obj), :id => :form_image_preview, :class => 'image_thumb_preview'

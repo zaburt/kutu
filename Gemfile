@@ -1,21 +1,23 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
-  "https://github.com/#{repo_name}.git"
-end
+#git_source(:github) do |repo_name|
+#  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
+#  "https://github.com/#{repo_name}.git"
+#end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 8.1.2'
 gem 'rails-i18n'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
 # gem 'mysql2', '>= 0.3.13', '< 0.5'
 
-# Use SCSS for stylesheets
-gem 'sass-rails'
+# Use Dart Sass (via Sprockets) for stylesheets. sass-rails/libsass are
+# deprecated and can't compile modern SCSS (e.g. Foundation 6.9's
+# `@use "sass:math"` module syntax), so we compile with Dart Sass instead.
+gem 'dartsass-sprockets'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
@@ -41,14 +43,14 @@ gem 'jquery-ui-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn'
+gem 'unicorn-maintained'
 gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # foundation
-gem 'foundation-rails', '~> 6.2.4'
+gem 'foundation-rails', '~> 6.9.0'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 # gem 'will_paginate-foundation'
 

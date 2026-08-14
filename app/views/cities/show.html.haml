@@ -1,25 +1,25 @@
 %fieldset
   %legend
     = City.model_name.human
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('activerecord.attributes.city.name')
-    .small-16.columns
+    .small-16.cell
       = @city.name
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('created_at')
-    .small-16.columns
+    .small-16.cell
       = format_time(@city.created_at)
-  .row
-    .small-8.columns.text_bold
+  .grid-x
+    .small-8.cell.text_bold
       = t('updated_at')
-    .small-16.columns
+    .small-16.cell
       = format_time(@city.updated_at)
 
   %br
-  .row
-    .small-12.columns.small-offset-1
+  .grid-x
+    .small-12.cell.small-offset-1
       - if signed_in?
         = link_to t('edit'), edit_city_path(@city), :class => 'button'
         = link_to t('delete'), @city, :method => :delete, :data => {:confirm => t('are_you_sure')}, :class => 'button'

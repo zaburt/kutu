@@ -7,7 +7,7 @@
     = f.input :email
     = f.submit t('.send_me_reset_password_instructions', :default => 'Send me reset password instructions'), :class => 'button right'
 
-.row
-  .small-12.columns.small-offset-1
+.grid-x
+  .small-12.cell.small-offset-1
     = render 'devise/shared/links'
 

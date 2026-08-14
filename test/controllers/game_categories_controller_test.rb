@@ -1,47 +1,47 @@
 require 'test_helper'
 
-class GameCategoriesControllerTest < ActionController::TestCase
+class GameCategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @game_category = game_categories(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
-    get :index
+    get game_categories_path
     assert_response :success
-    assert_not_nil assigns(:game_categories)
   end
 
   test "should get new" do
-    get :new
+    get new_game_category_path
     assert_response :success
   end
 
   test "should create game_category" do
     assert_difference('GameCategory.count') do
-      post :create, game_category: { name: @game_category.name }
+      post game_categories_path, params: { game_category: { name: @game_category.name } }
     end
 
-    assert_redirected_to game_category_path(assigns(:game_category))
+    assert_redirected_to game_category_path(GameCategory.last)
   end
 
   test "should show game_category" do
-    get :show, id: @game_category
+    get game_category_path(@game_category)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @game_category
+    get edit_game_category_path(@game_category)
     assert_response :success
   end
 
   test "should update game_category" do
-    patch :update, id: @game_category, game_category: { name: @game_category.name }
-    assert_redirected_to game_category_path(assigns(:game_category))
+    patch game_category_path(@game_category), params: { game_category: { name: @game_category.name } }
+    assert_redirected_to game_category_path(@game_category)
   end
 
   test "should destroy game_category" do
     assert_difference('GameCategory.count', -1) do
-      delete :destroy, id: @game_category
+      delete game_category_path(@game_category)
     end
 
     assert_redirected_to game_categories_path

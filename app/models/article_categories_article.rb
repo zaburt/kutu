@@ -12,8 +12,8 @@
 #
 
 class ArticleCategoriesArticle < ActiveRecord::Base
-  belongs_to :article_category
-  belongs_to :article
+  belongs_to :article_category, optional: true
+  belongs_to :article, optional: true
 
 end
 

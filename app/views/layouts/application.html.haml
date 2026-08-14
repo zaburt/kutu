@@ -1,4 +1,5 @@
-!!!
+!!! 5
+
 %html{:lang => 'en'}
   %head
     %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}
@@ -15,16 +16,22 @@
     = favicon_link_tag 'schrodingiller_small.png'
     = csrf_meta_tags
   %body
-    = render 'layouts/header'
-    = render 'layouts/alerts'
-    #main.row.full-min-height
-      - if @fullwidth
-        .small-24.columns.small-centered
-          = yield
-      - else
-        %br
-        .small-24.large-16.columns.small-centered
-          = yield
-        %br
+    .grid-y
+      .grid-x
+        .cell
+          = render 'layouts/header'
+          = render 'layouts/alerts'
+      .grid-x.grid-padding-x
+        .cell
+          #main.full-min-height
+            - if @fullwidth
+              .cell
+                = yield
+            - else
+              %br
+              .grid-x.align-center
+                .small-24.large-16.cell
+                  = yield
+              %br
     =# render 'layouts/footer'
 

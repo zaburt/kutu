@@ -15,10 +15,10 @@
     = f.input :rating_service, :collection => (0..10), :include_blank => false
     =# f.association :picture
     = render :partial => 'shared/image_selector_modal', :locals => {:f => f, :form_object => @article, :form_attr => :picture}
-    .row
-      .small-6.columns
+    .grid-x
+      .small-6.cell
         = f.label t('additional_pictures')
-      .small-18.columns
+      .small-18.cell
         - @article.pictures.each do |pict|
           = image_tag image_thumb_url_or_fallback(pict), :class => 'image_thumb_preview'
     %br

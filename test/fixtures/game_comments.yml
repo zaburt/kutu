@@ -19,10 +19,10 @@
 
 one:
   comment: MyText
-  game_id: 
-  user_id: 
+  game: two
+  user: one
 
 two:
   comment: MyText
-  game_id: 
-  user_id: 
+  game: two
+  user: two 

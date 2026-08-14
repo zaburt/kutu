@@ -1,47 +1,47 @@
 require 'test_helper'
 
-class CitiesControllerTest < ActionController::TestCase
+class CitiesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @city = cities(:one)
+    sign_in users(:one)
   end
 
   test "should get index" do
-    get :index
+    get cities_path
     assert_response :success
-    assert_not_nil assigns(:cities)
   end
 
   test "should get new" do
-    get :new
+    get new_city_path
     assert_response :success
   end
 
   test "should create city" do
     assert_difference('City.count') do
-      post :create, city: { name: @city.name }
+      post cities_path, params: { city: { name: @city.name } }
     end
 
-    assert_redirected_to city_path(assigns(:city))
+    assert_redirected_to city_path(City.last)
   end
 
   test "should show city" do
-    get :show, id: @city
+    get city_path(@city)
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @city
+    get edit_city_path(@city)
     assert_response :success
   end
 
   test "should update city" do
-    patch :update, id: @city, city: { name: @city.name }
-    assert_redirected_to city_path(assigns(:city))
+    patch city_path(@city), params: { city: { name: @city.name } }
+    assert_redirected_to city_path(@city)
   end
 
   test "should destroy city" do
     assert_difference('City.count', -1) do
-      delete :destroy, id: @city
+      delete city_path(@city)
     end
 
     assert_redirected_to cities_path
