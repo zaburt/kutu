@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+# Enable jemalloc for reduced memory usage and latency, if it's available
+if [ -z "${LD_PRELOAD+x}" ]; then
+  LD_PRELOAD="$(find /usr/lib -name libjemalloc.so.2 -print -quit 2>/dev/null || true)"
+  export LD_PRELOAD
+fi
+
+# If running the rails server, create/migrate the database schema before
+# starting. This intentionally does not run db:seed (unlike db:prepare) so
+# that container boot never depends on seed data assumptions (e.g. mailer
+# host config); run `bin/rails db:seed` manually if you need seed data.
+if [ "${2}" == "server" ]; then
+  ./bin/rails db:create db:migrate
+fi
+
+exec "${@}"

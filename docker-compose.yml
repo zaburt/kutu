@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: pinc
+      POSTGRES_PASSWORD: pinc
+      POSTGRES_DB: kutu
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pinc"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  memcached:
+    image: memcached:1.6-alpine
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+      memcached:
+        condition: service_started
+    ports:
+      - "3000:3000"
+    environment:
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:?set SECRET_KEY_BASE in .env}
+      RAILS_SERVE_STATIC_FILES: "true"
+      RAILS_LOG_TO_STDOUT: "true"
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: pinc
+      DATABASE_PASSWORD: pinc
+      MEMCACHE_SERVERS: memcached:11211
+    volumes:
+      - public_system:/app/public/system
+
+volumes:
+  db_data:
+  public_system:
