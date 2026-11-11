@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-ARG RUBY_VERSION=4.0.6
+ARG RUBY_VERSION=4.0.9
 
 ########################################
 # Base: common OS packages for build+run
